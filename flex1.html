@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flex</title>
+	<style>
+        html, body{
+            height: 100%;
+            margin:0;
+        }
+        .container{
+            display: flex;
+
+            height: 100%;
+            box-sizing: border-box;
+            border: 3px solid olive;
+        }
+    	.ly-a{
+
+            box-sizing: border-box;
+            background: #ddd;
+    	}
+    	.ly-b{
+            flex: auto;
+
+            background: #f8f8f8;
+
+        }
+        h2{
+            margin: 1rem;
+        }
+        input[type="button"]{
+            display: block;
+            margin: 10px;
+        }
+        .result{
+            padding: 1rem;
+        }
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="ly-a">
+        <h2>side</h2>
+        <p class="result">width: <span class="getWidth"></span></p>
+	</div>
+	<div class="ly-b">
+        <input type="button" value="Fixed side width - 100px" id="btnFixed">
+        <input type="button" value="Flexible side width : percent" id="btnPercent">
+        <input type="button" value="Reset : 10rem" id="btnReset">
+	</div>
+</div>
+
+<script>
+
+    const el = document.querySelector('.ly-a'),
+        elResult = document.querySelector('.getWidth');
+
+
+    el.style.width = '10rem';
+    elResult.textContent = el.style.width;
+
+
+    btnFixed.onclick = function(){
+        el.style.width = '200px';
+        elResult.textContent = el.style.width;
+    }
+    btnPercent.onclick = function(){
+        el.style.width = '20%';
+        elResult.textContent = el.style.width;
+    }
+    btnReset.onclick = function(){
+        el.style.width = '10rem';
+        elResult.textContent = el.style.width;
+    }
+
+
+</script>
+	
+</body>
+</html>
