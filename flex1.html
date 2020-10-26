@@ -3,9 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Flex</title>
+	<title>Flex 1</title>
 	<style>
-        html, body{
+        html{
+            height: 100%;
+        }
+        body{
             height: 100%;
             margin:0;
         }
@@ -17,16 +20,16 @@
             border: 3px solid olive;
         }
     	.ly-a{
-
             box-sizing: border-box;
             background: #ddd;
     	}
     	.ly-b{
             flex: auto;
 
+            overflow: auto;
             background: #f8f8f8;
-
         }
+        
         h2{
             margin: 1rem;
         }
@@ -49,6 +52,7 @@
         <input type="button" value="Fixed side width - 100px" id="btnFixed">
         <input type="button" value="Flexible side width : percent" id="btnPercent">
         <input type="button" value="Reset : 10rem" id="btnReset">
+        <div style="height:1000px"></div>
 	</div>
 </div>
 
