@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex 1</title>
+    <title>Flex 3</title>
     <style>
         html{
             height: 100%;
@@ -13,24 +13,26 @@
             height: 100%;
             margin:0;
         }
-        .container{
+        .root{
             display: flex;
 
             height: 100%;
+            box-sizing: border-box;
+            border: 3px solid olive;
         }
-        .ly-a{
-            flex-shrink: 0;
+        .lnb, .rnb{
+            flex-shrink: 0; 
 
             overflow: hidden;
             background: #ddd;
         }
-        .ly-b{
+        .main{
             flex: auto;
 
             overflow: auto;
             background: #f8f8f8;
-
         }
+
 
         h2{
             margin: 1rem;
@@ -39,54 +41,63 @@
             margin: 1rem;
             padding: 1rem 0;
             border-top: dashed 1px #ddd;
-            
         }
         input[type="button"]{
             display: block;
             margin: 10px;
         }
         .result{
-            margin-left: 1rem;
+            padding: 1rem;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="ly-a">
+    <div class="root">
+        <div class="lnb">
             <h2>Lnb</h2>
-            <p class="result">width: <span class="getWidth"></span></p>
         </div>
-        <div class="ly-b">
+        <main class="main">
             <h2>Main</h2>
-            
+
             <h3>Lnb Width Control</h3>
+            <p class="result">Lnb & Rnb Width : <span class="getWidth"></span></p>
             <input type="button" value="px" id="btnFixed">
-            <input type="button" value="rem " id="btnRem">
+            <input type="button" value="rem" id="btnRem">
             <input type="button" value="percent" id="btnPercent">
             <input type="button" value="Reset" id="btnReset">
             <div style="height:1000px"></div>
+        </main>
+        <div class="rnb">
+            <h2>Rnb</h2>
         </div>
     </div>
     <script>
-    const el = document.querySelector('.ly-a'),
+    const
+        elLnb = document.querySelector('.lnb'),
+        elRnb = document.querySelector('.rnb'),
         elResult = document.querySelector('.getWidth');
 
+
     btnFixed.onclick = function() {
-        el.style.flexBasis = '100px';
-        elResult.textContent = el.style.flexBasis;
+        elLnb.style.flexBasis = '100px';
+        elRnb.style.flexBasis = '100px';
+        elResult.textContent = elLnb.style.flexBasis;
     }
     btnRem.onclick = function() {
-        el.style.flexBasis = '10rem';
-        elResult.textContent = el.style.flexBasis;
+        elLnb.style.flexBasis = '10rem';
+        elRnb.style.flexBasis = '10rem';
+        elResult.textContent = elLnb.style.flexBasis;
     }
     btnPercent.onclick = function() {
-        el.style.flexBasis = '20%';
-        elResult.textContent = el.style.flexBasis;
+        elLnb.style.flexBasis = '10%';
+        elRnb.style.flexBasis = '10%';
+        elResult.textContent = elLnb.style.flexBasis;
     }
     btnReset.onclick = function() {
-        el.style.flexBasis = '';
-        elResult.textContent = el.style.flexBasis;
+        elLnb.style.flexBasis = '';
+        elRnb.style.flexBasis = '';
+        elResult.textContent = elLnb.style.flexBasis;
     }
     </script>
 </body>
