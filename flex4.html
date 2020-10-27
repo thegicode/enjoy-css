@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex 2</title>
+    <title>Flex 4</title>
     <style>
     html {
         height: 100%;
@@ -22,17 +22,27 @@
         height: 100%;
     }
 
-    .ly-a {
+    .header {
+        flex-shrink: 0;
+        flex-basis: 5rem;
+
+        overflow: hidden;
+        background: #ddd;
+
+    }
+
+    .main {
         flex: 1;
 
         overflow: auto;
         background: #f8f8f8;
     }
 
-    .ly-b {
+    .footer {
         flex-shrink: 0;
-        flex-basis: 5rem;
+        flex-basis: 2rem;
 
+        overflow: hidden;
         background: #ddd;
 
     }
@@ -41,12 +51,16 @@
 
 <body>
     <div class="root">
-        <div class="ly-a">
-            <p style="height: 2000px">contents</p>
+        <div class="header">
+            <h2>header</h2>
         </div>
-        <div class="ly-b">
-            <p>footer</p>
-        </div>
+        <main class="main">
+            <h2>main</h2>
+           <p style="height: 2000px"></p>
+        </main>
+        <footer class="footer">
+            footer
+        </footer>
     </div>
     <script>
     </script>
