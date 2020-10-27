@@ -59,7 +59,7 @@
         </div>
         <div class="ly-b">
             <h2>Main</h2>
-            
+
             <h3>Lnb Width Control</h3>
             <input type="button" value="px" id="btnFixed">
             <input type="button" value="rem " id="btnRem">
@@ -69,25 +69,21 @@
         </div>
     </div>
     <script>
-    const el = document.querySelector('.ly-a'),
+
+    const 
+        el = document.querySelector('.ly-a'),
         elResult = document.querySelector('.getWidth');
 
-    btnFixed.onclick = function() {
-        el.style.flexBasis = '100px';
+    let elChange = function( val ){
+        el.style.flexBasis = val ;
         elResult.textContent = el.style.flexBasis;
-    }
-    btnRem.onclick = function() {
-        el.style.flexBasis = '10rem';
-        elResult.textContent = el.style.flexBasis;
-    }
-    btnPercent.onclick = function() {
-        el.style.flexBasis = '20%';
-        elResult.textContent = el.style.flexBasis;
-    }
-    btnReset.onclick = function() {
-        el.style.flexBasis = '';
-        elResult.textContent = el.style.flexBasis;
-    }
+    };
+
+    btnFixed.onclick = () => elChange('100px');
+    btnRem.onclick = () => elChange('10rem');
+    btnPercent.onclick = () => elChange('20%');
+    btnReset.onclick = () => elChange('');
+
     </script>
 </body>
 

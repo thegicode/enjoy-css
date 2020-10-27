@@ -78,27 +78,17 @@
         elRnb = document.querySelector('.rnb'),
         elResult = document.querySelector('.getWidth');
 
+    let elChange = function( val ){
+        elLnb.style.flexBasis = val;
+        elRnb.style.flexBasis = val;
+        elResult.textContent = elLnb.style.flexBasis;
+    };
 
-    btnFixed.onclick = function() {
-        elLnb.style.flexBasis = '100px';
-        elRnb.style.flexBasis = '100px';
-        elResult.textContent = elLnb.style.flexBasis;
-    }
-    btnRem.onclick = function() {
-        elLnb.style.flexBasis = '10rem';
-        elRnb.style.flexBasis = '10rem';
-        elResult.textContent = elLnb.style.flexBasis;
-    }
-    btnPercent.onclick = function() {
-        elLnb.style.flexBasis = '10%';
-        elRnb.style.flexBasis = '10%';
-        elResult.textContent = elLnb.style.flexBasis;
-    }
-    btnReset.onclick = function() {
-        elLnb.style.flexBasis = '';
-        elRnb.style.flexBasis = '';
-        elResult.textContent = elLnb.style.flexBasis;
-    }
+    btnFixed.onclick = () => elChange('100px');
+    btnRem.onclick = () => elChange('10rem');
+    btnPercent.onclick = () => elChange('10%');
+    btnReset.onclick = () => elChange('');
+
     </script>
 </body>
 
