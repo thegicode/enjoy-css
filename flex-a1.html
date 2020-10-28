@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex 1</title>
+    <title>Flex a1</title>
     <style>
         html{
             height: 100%;
@@ -18,13 +18,13 @@
 
             height: 100%;
         }
-        .ly-a{
+        .lnb{
             flex-shrink: 0;
 
             overflow: hidden;
             background: #ddd;
         }
-        .ly-b{
+        .main{
             flex: auto;
 
             overflow: auto;
@@ -53,11 +53,11 @@
 
 <body>
     <div class="root">
-        <div class="ly-a">
+        <div class="lnb">
             <h2>Lnb</h2>
             <p class="result">width: <span class="getWidth"></span></p>
         </div>
-        <div class="ly-b">
+        <main class="main">
             <h2>Main</h2>
 
             <h3>Lnb Width Control</h3>
@@ -66,11 +66,11 @@
             <input type="button" value="percent" id="btnPercent">
             <input type="button" value="Reset" id="btnReset">
             <div style="height:1000px"></div>
-        </div>
+        </main>
     </div>
     <script>
     const 
-        el = document.querySelector('.ly-a'),
+        el = document.querySelector('.lnb'),
         elResult = document.querySelector('.getWidth');
 
     let elChange = function( val ){

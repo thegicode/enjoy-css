@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex b2</title>
+    <title>Flex a4</title>
     <style>
     html {
         height: 100%;
@@ -22,15 +22,6 @@
         height: 100%;
     }
 
-    .header {
-        flex-shrink: 0;
-        flex-basis: 5rem;
-
-        overflow: hidden;
-        background: #ddd;
-
-    }
-
     .main {
         flex: 1;
 
@@ -40,9 +31,8 @@
 
     .footer {
         flex-shrink: 0;
-        flex-basis: 2rem;
+        flex-basis: 5rem;
 
-        overflow: hidden;
         background: #ddd;
 
     }
@@ -51,15 +41,11 @@
 
 <body>
     <div class="root">
-        <header class="header">
-            <h2>header</h2>
-        </header>
         <main class="main">
-            <h2>main</h2>
-           <p style="height: 2000px"></p>
+            <p style="height: 2000px">main</p>
         </main>
         <footer class="footer">
-            footer
+            <p>footer</p>
         </footer>
     </div>
     <script>
