@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex hl</title>
+    <style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .root {
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+    }
+
+    .header {
+        flex-shrink: 0;
+        flex-basis: 3rem;
+
+        overflow: hidden;
+
+        background: #ddd;
+
+    }
+
+    .container {
+        flex: 1;
+
+        overflow: hidden;
+
+        display: flex;
+
+    }
+    .lnb{
+        flex-shrink: 0;
+        flex-basis: 15%;
+
+        overflow: hidden;
+        background: #ccc;
+
+    }
+    .main{
+        flex: 1;
+
+        overflow: auto;
+        background: #f8f8f8;
+    }
+
+
+    h2 {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <header class="header">
+            <h2>Header</h2>
+        </header>
+        <div class="container">
+            <div class="lnb">
+                <h2>Lnb</h2>
+            </div>
+            <main class="main">
+                <h2>Main</h2>
+                <p style="height: 2000px"></p>
+            </main>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>
