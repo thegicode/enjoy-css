@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex rhf</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            margin:0;
+        }
+        .root{
+            display: flex;
+
+            height: 100%;
+        }
+        .container {
+            flex: auto;
+
+            /*overflow: auto;*/
+
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .rnb{
+            flex-shrink: 0;
+
+            overflow: hidden;
+            background: #ddd;
+        }
+
+        .header{
+            flex-shrink: 0;
+
+            height: 3rem;
+            background: #f8f8f8;
+
+        }
+
+        .main{
+            flex: auto;
+
+            overflow: auto;
+
+        }
+
+        .footer{
+            flex-shrink: 0;
+
+            height: 2rem;
+            background: #f8f8f8;
+
+        }
+
+
+
+        h2{
+            margin: 0;
+            font-size: 1rem;
+        }
+        h3{
+            margin: 1rem;
+            padding: 1rem 0;
+            border-top: dashed 1px #ddd;
+            
+        }
+        input[type="button"]{
+            display: block;
+            margin: 10px;
+        }
+        .result{
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div class="container">
+            <header class="header">
+                <h2>Header</h2>
+            </header>
+            <main class="main">
+                <h2>Main</h2>
+
+                <h3>Rnb Width Control</h3>
+                <input type="button" value="px" id="btnFixed">
+                <input type="button" value="rem " id="btnRem">
+                <input type="button" value="percent" id="btnPercent">
+                <input type="button" value="Reset" id="btnReset">
+                <div style="height:1000px"></div>
+            </main>
+            <footer class="footer">
+                <h2>Footer</h2>
+            </footer>
+        </div>
+        <div class="rnb">
+            <h2>Rnb</h2>
+            <p class="result">width: <span class="getWidth"></span></p>
+        </div>
+    </div>
+    <script>
+    const 
+        el = document.querySelector('.rnb'),
+        elResult = document.querySelector('.getWidth');
+
+    let elChange = function( val ){
+        el.style.flexBasis = val ;
+        elResult.textContent = el.style.flexBasis;
+    };
+
+    btnFixed.onclick = () => elChange('100px');
+    btnRem.onclick = () => elChange('10rem');
+    btnPercent.onclick = () => elChange('20%');
+    btnReset.onclick = () => elChange('');
+
+    </script>
+</body>
+
+</html>

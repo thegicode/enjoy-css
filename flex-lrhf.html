@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex lrhf</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            margin:0;
+        }
+        .root{
+            display: flex;
+
+            height: 100%;
+        }
+        .lnb, .rnb{
+            flex-shrink: 0; 
+            flex-basis: 15%;
+
+            overflow: hidden;
+            background: #ddd;
+        }
+        .container{
+            flex: auto;
+
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+        }
+        .header{
+            flex-shrink: 0;
+            flex-basis: 3rem;
+
+            background: #f8f8f8;
+        }
+        .main{
+            flex: auto;
+
+            overflow: auto;
+            
+        }
+        .footer{
+            flex-shrink: 0;
+            flex-basis: 3rem;
+
+            background: #f8f8f8;
+        }
+
+
+        h2{
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div class="lnb">
+            <h2>Lnb</h2>
+        </div>
+        <div class="container">
+            <header class="header">
+                <h2>Header</h2>
+            </header>
+            <main class="main">
+                <h2>Main</h2>
+                <div style="height:1000px"></div>
+            </main>
+            <footer class="footer">
+                <h2>Footer</h2>
+            </footer>
+        </div>
+        <div class="rnb">
+            <h2>Rnb</h2>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>
