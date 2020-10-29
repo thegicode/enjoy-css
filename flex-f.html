@@ -9,45 +9,105 @@
     html {
         height: 100%;
     }
-
     body {
         height: 100%;
         margin: 0;
     }
 
-    .root {
+    .container{
+        background: #f8f8f8;
+    }
+    .footer {
+        height: 3rem;
+        background: #ddd;
+    }
+
+   
+    /* ie8 over*/
+    body[data-footerfix="false"] .container{
+        min-height: 100%;
+        margin-bottom: -3rem;
+    }
+    body[data-footerfix="false"] .main{
+        padding-bottom: 3rem;
+    }
+
+
+    body[data-footerfix="true"] .container{
+        overflow: auto;
+        position: absolute;
+        top:0; left:0; right:0; bottom: 3rem;
+    }
+    body[data-footerfix="true"] .main{
+    }
+    body[data-footerfix="true"] .footer{
+        position: absolute; left: 0; right: 0; bottom:0;
+    }
+
+
+
+
+
+    /* flex */
+    /*.root {
         display: flex;
         flex-direction: column;
 
         height: 100%;
     }
-
     .main {
-        flex: 1;
+        flex: auto;
 
         overflow: auto;
+        
         background: #f8f8f8;
     }
-
     .footer {
         flex-shrink: 0;
-        flex-basis: 5rem;
+        flex-basis: 3rem;
 
         background: #ddd;
 
+    }*/
+
+
+    h2{
+        margin: 0;
+        font-size: 1rem;
     }
     </style>
 </head>
 
-<body>
-    <div class="root">
+<body data-footerfix="true">
+
+    <!-- float -->
+    <!-- <div class="root"> -->
+        <div class="container">
+            <main class="main">
+                <h2>Main</h2>
+                <p style="height: 2000px"></p>
+            </main>
+        </div>
+        <footer class="footer">
+            <p>Footer</p>
+        </footer>
+    <!-- </div> -->
+
+
+
+
+
+    <!-- flex -->
+    <!-- <div class="root">
         <main class="main">
-            <p style="height: 2000px">main</p>
+            <h2>Main</h2>
+            <p style="height: 2000px"></p>
         </main>
         <footer class="footer">
-            <p>footer</p>
+            <p>Footer</p>
         </footer>
-    </div>
+    </div> -->
+
     <script>
     </script>
 </body>

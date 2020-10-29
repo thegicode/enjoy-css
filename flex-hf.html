@@ -9,19 +9,16 @@
     html {
         height: 100%;
     }
-
     body {
         height: 100%;
         margin: 0;
     }
-
     .root {
         display: flex;
         flex-direction: column;
 
         height: 100%;
     }
-
     .header {
         flex-shrink: 0;
         flex-basis: 5rem;
@@ -30,21 +27,23 @@
         background: #ddd;
 
     }
-
     .main {
         flex: 1;
 
         overflow: auto;
         background: #f8f8f8;
     }
-
     .footer {
         flex-shrink: 0;
         flex-basis: 2rem;
 
         overflow: hidden;
         background: #ddd;
+    }
 
+    h2{
+        margin: 0;
+        font-size: 1rem;
     }
     </style>
 </head>
@@ -55,11 +54,11 @@
             <h2>header</h2>
         </header>
         <main class="main">
-            <h2>main</h2>
+            <h2>Main</h2>
            <p style="height: 2000px"></p>
         </main>
         <footer class="footer">
-            footer
+            Footer
         </footer>
     </div>
     <script>
