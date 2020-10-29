@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flex f</title>
     <style>
+
     html {
         height: 100%;
     }
@@ -13,75 +14,78 @@
         height: 100%;
         margin: 0;
     }
-
-    .container{
-        background: #f8f8f8;
+    .root{
+        height: 100%;
     }
     .footer {
         height: 3rem;
         background: #ddd;
     }
+    [hidden]{
+        display: none !important;
+    }
 
-   
-    /* ie8 over*/
-    body[data-footerfix="false"] .container{
+
+    body[data-lylevel="lower"] .container{
+        background: #f8f8f8;
+    }
+    body[data-lylevel="lower"][data-footerfix="false"] .container{
         min-height: 100%;
         margin-bottom: -3rem;
     }
-    body[data-footerfix="false"] .main{
+    body[data-lylevel="lower"][data-footerfix="false"] .main{
         padding-bottom: 3rem;
     }
 
-
-    body[data-footerfix="true"] .container{
+    body[data-lylevel="lower"][data-footerfix="true"] .container{
         overflow: auto;
         position: absolute;
         top:0; left:0; right:0; bottom: 3rem;
     }
-    body[data-footerfix="true"] .main{
-    }
-    body[data-footerfix="true"] .footer{
+    body[data-lylevel="lower"][data-footerfix="true"] .footer{
         position: absolute; left: 0; right: 0; bottom:0;
     }
 
 
-
-
-
-    /* flex */
-    /*.root {
+    body[data-lylevel="flex"] .root {
         display: flex;
         flex-direction: column;
-
-        height: 100%;
     }
-    .main {
+    body[data-lylevel="flex"] .main {
         flex: auto;
-
-        overflow: auto;
         
         background: #f8f8f8;
     }
-    .footer {
+    body[data-lylevel="flex"] .footer {
         flex-shrink: 0;
         flex-basis: 3rem;
 
         background: #ddd;
+    }
+    body[data-lylevel="flex"][data-footerfix="true"] .main{
+        overflow: auto;
+    }
 
-    }*/
 
 
     h2{
         margin: 0;
         font-size: 1rem;
     }
+    .actions{
+        position: fixed; top:1rem; right:1rem;
+        padding: 1rem;
+        background: #000;
+        color: #fff;
+    }
+
     </style>
 </head>
 
-<body data-footerfix="true">
+<body data-lylevel="flex" data-footerfix="true">
 
-    <!-- float -->
-    <!-- <div class="root"> -->
+    <!-- ie8 over --> 
+    <div class="root" id="ly_lower" hidden>
         <div class="container">
             <main class="main">
                 <h2>Main</h2>
@@ -89,26 +93,59 @@
             </main>
         </div>
         <footer class="footer">
-            <p>Footer</p>
+            <h2>Footer</h2>
         </footer>
-    <!-- </div> -->
+    </div>
 
-
-
-
-
+   
     <!-- flex -->
-    <!-- <div class="root">
+    <div class="root" id="ly_flex">
         <main class="main">
             <h2>Main</h2>
             <p style="height: 2000px"></p>
         </main>
         <footer class="footer">
-            <p>Footer</p>
+            <h2>Footer</h2>
         </footer>
-    </div> -->
+    </div>
 
+
+    <!-- actions -->
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Select layout level</legend>
+            <input type="radio" name="level" id="lower" value="lower" onchange="changeLevel(this)">
+            <label for="lower">Lower</label>
+            <input type="radio" name="level" id="flex" value="flex" onchange="changeLevel(this)" checked>
+            <label for="flex">Use Flex</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Is footer Fix?</legend>
+            <input type="radio" name="fix" id="true" value="true" onchange="changeFooter(this)" checked>
+            <label for="true">Yes</label>
+            <input type="radio" name="fix" id="false" value="false" onchange="changeFooter(this)">
+            <label for="false">No</label>
+        </fieldset>
+    </form>
+
+     
     <script>
+
+        let elLy = ly_flex;
+        let changeLevel = function(el){
+            let level = el.value;
+            document.body.dataset.lylevel = level;
+            elLy.hidden = true;
+            elLy = window[`ly_${level}`];
+            elLy.hidden = false;
+        }
+
+        let changeFooter = function(el){
+            document.body.dataset.footerfix = el.value;
+        }
+
+
     </script>
 </body>
 
