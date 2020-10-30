@@ -112,20 +112,19 @@
 
     <!-- actions -->
     <form class="actions" name="actions">
-        
         <fieldset>
             <legend>Select layout level</legend>
-            <input type="radio" name="level" id="lower" value="lower" onchange="changeLevel(this)">
+            <input type="radio" name="level" value="lower" id="lower" onchange="changeLevel(this)">
             <label for="lower">Lower</label>
-            <input type="radio" name="level" id="flex" value="flex" onchange="changeLevel(this)" checked>
+            <input type="radio" name="level" value="flex" id="flex" onchange="changeLevel(this)" checked>
             <label for="flex">Use Flex</label>
         </fieldset>
         <br>
         <fieldset>
             <legend>Is footer Fix?</legend>
-            <input type="radio" name="fix" id="true" value="true" onchange="changeFooter(this)" checked>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFooter(this)" checked>
             <label for="true">Yes</label>
-            <input type="radio" name="fix" id="false" value="false" onchange="changeFooter(this)">
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFooter(this)">
             <label for="false">No</label>
         </fieldset>
     </form>
@@ -145,6 +144,8 @@
         let changeFooter = function(el){
             document.body.dataset.footerfix = el.value;
         }
+
+       
 
 
     </script>

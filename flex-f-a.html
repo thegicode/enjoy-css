@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex f lower</title>
+    <style>
+
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    .root{
+        height: 100%;
+    }
+    .container{
+        background: #f8f8f8;
+    }
+    .footer {
+        height: 3rem;
+        background: #ddd;
+    }
+
+
+    body[data-footerfix="false"] .container{
+        min-height: 100%;
+        margin-bottom: -3rem;
+    }
+    body[data-footerfix="false"] .main{
+        padding-bottom: 3rem;
+    }
+
+    body[data-footerfix="true"] .container{
+        overflow: auto;
+        position: absolute;
+        top:0; left:0; right:0; bottom: 3rem;
+    }
+    body[data-footerfix="true"] .footer{
+        position: absolute; left: 0; right: 0; bottom:0;
+    }
+
+
+    h2{
+        margin: 0;
+        font-size: 1rem;
+    }
+    .actions{
+        position: fixed; top:1rem; right:1rem;
+        padding: 1rem;
+        background: #f8f8f8;
+    }
+
+    </style>
+</head>
+
+<body data-footerfix="true">
+
+    <!-- ie8 over -->
+    <div class="root">
+        <div class="container">
+            <main class="main">
+                <h2>Main</h2>
+                <p style="height: 2000px"></p>
+            </main>
+        </div>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+
+    <!-- actions -->
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Is footer Fix?</legend>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFooter(this)" checked>
+            <label for="true">Yes</label>
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFooter(this)">
+            <label for="false">No</label>
+        </fieldset>
+    </form>
+
+     
+    <script>
+
+        let changeFooter = function(el){
+            document.body.dataset.footerfix = el.value;
+        }
+
+    </script>
+</body>
+
+</html>
