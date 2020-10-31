@@ -77,15 +77,15 @@
     <form class="actions" name="actions">
         <fieldset>
             <legend>Is header fix?</legend>
-            <input type="radio" name="fix" value="true" id="true" onchange="changeFooter(this)">
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
             <label for="true">Yes</label>
-            <input type="radio" name="fix" value="false" id="false" onchange="changeFooter(this)" checked>
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
             <label for="false">No</label>
         </fieldset>
     </form>
 
     <script>
-        let changeFooter = function(el){
+        let changeFix = function(el){
             document.body.dataset.isheaderfix = el.value;
         }
     </script>

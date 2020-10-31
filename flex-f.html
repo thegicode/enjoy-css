@@ -123,9 +123,9 @@
         <br>
         <fieldset>
             <legend>Is footer fix?</legend>
-            <input type="radio" name="fix" value="true" id="true" onchange="changeFooter(this)" checked>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)" checked>
             <label for="true">Yes</label>
-            <input type="radio" name="fix" value="false" id="false" onchange="changeFooter(this)">
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)">
             <label for="false">No</label>
         </fieldset>
     </form>
@@ -142,7 +142,7 @@
             elLy.hidden = false;
         }
 
-        let changeFooter = function(el){
+        let changeFix = function(el){
             document.body.dataset.isfooterfix = el.value;
         }
 
