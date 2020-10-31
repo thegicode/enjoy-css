@@ -31,7 +31,7 @@
         background: #f8f8f8;
     }
 
-    body[data-isfooterfix="true"] .main{
+    body[data-isheaderfix="true"] .main{
         overflow: auto;
     }
 
@@ -47,7 +47,12 @@
     </style>
 </head>
 
-<body data-isfooterfix="false">
+
+<!-- 
+    Header 고정 속성 설정  -> data-isheaderfix : true | false
+-->
+
+<body data-isheaderfix="false">
 
     <!-- Flex -->
     <div class="root">
@@ -73,7 +78,7 @@
 
     <script>
         let changeFooter = function(el){
-            document.body.dataset.isfooterfix = el.value;
+            document.body.dataset.isheaderfix = el.value;
         }
     </script>
 </body>
