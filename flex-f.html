@@ -29,20 +29,20 @@
     body[data-lylevel="lower"] .container{
         background: #f8f8f8;
     }
-    body[data-lylevel="lower"][data-footerfix="false"] .container{
+    body[data-lylevel="lower"][data-isfooterfix="false"] .container{
         min-height: 100%;
         margin-bottom: -3rem;
     }
-    body[data-lylevel="lower"][data-footerfix="false"] .main{
+    body[data-lylevel="lower"][data-isfooterfix="false"] .main{
         padding-bottom: 3rem;
     }
 
-    body[data-lylevel="lower"][data-footerfix="true"] .container{
+    body[data-lylevel="lower"][data-isfooterfix="true"] .container{
         overflow: auto;
         position: absolute;
         top:0; left:0; right:0; bottom: 3rem;
     }
-    body[data-lylevel="lower"][data-footerfix="true"] .footer{
+    body[data-lylevel="lower"][data-isfooterfix="true"] .footer{
         position: absolute; left: 0; right: 0; bottom:0;
     }
 
@@ -60,7 +60,7 @@
         flex-shrink: 0;
         flex-basis: 3rem;
     }
-    body[data-lylevel="flex"][data-footerfix="true"] .main{
+    body[data-lylevel="flex"][data-isfooterfix="true"] .main{
         overflow: auto;
     }
 
@@ -73,13 +73,16 @@
     .actions{
         position: fixed; top:0; right:0;
         padding: 1rem;
-        background: #f8f8f8;
+        background: transparent;
     }
 
     </style>
 </head>
-
-<body data-lylevel="flex" data-footerfix="true">
+<!-- 
+    lower, flex 버전 -> data-lylevel : lower | flex
+    is footer fix  -> data-isfooterfix : true | false
+ -->
+<body data-lylevel="flex" data-isfooterfix="true">
 
     <!-- ie8 over --> 
     <div class="root" id="ly_lower" hidden>
@@ -139,7 +142,7 @@
         }
 
         let changeFooter = function(el){
-            document.body.dataset.footerfix = el.value;
+            document.body.dataset.isfooterfix = el.value;
         }
 
        
