@@ -26,20 +26,19 @@
     }
 
 
-    body[data-footerfix="false"] .container{
+    body[data-isfooterfix="false"] .container{
         min-height: 100%;
         margin-bottom: -3rem;
     }
-    body[data-footerfix="false"] .main{
+    body[data-isfooterfix="false"] .main{
         padding-bottom: 3rem;
     }
 
-    body[data-footerfix="true"] .container{
+    body[data-isfooterfix="true"] .container{
         overflow: auto;
-        position: absolute;
-        top:0; left:0; right:0; bottom: 3rem;
+        position: absolute; top:0; left:0; right:0; bottom: 3rem;
     }
-    body[data-footerfix="true"] .footer{
+    body[data-isfooterfix="true"] .footer{
         position: absolute; left: 0; right: 0; bottom:0;
     }
 
@@ -49,7 +48,7 @@
         font-size: 1rem;
     }
     .actions{
-        position: fixed; top:1rem; right:1rem;
+        position: fixed; top:0; right:0;
         padding: 1rem;
         background: #f8f8f8;
     }
@@ -57,9 +56,9 @@
     </style>
 </head>
 
-<body data-footerfix="true">
+<body data-isfooterfix="false">
 
-    <!-- ie8 over -->
+    <!-- Lower -->
     <div class="root">
         <div class="container">
             <main class="main">
@@ -76,9 +75,9 @@
     <form class="actions" name="actions">
         <fieldset>
             <legend>Is footer Fix?</legend>
-            <input type="radio" name="fix" value="true" id="true" onchange="changeFooter(this)" checked>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFooter(this)">
             <label for="true">Yes</label>
-            <input type="radio" name="fix" value="false" id="false" onchange="changeFooter(this)">
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFooter(this)" checked>
             <label for="false">No</label>
         </fieldset>
     </form>
@@ -87,7 +86,7 @@
     <script>
 
         let changeFooter = function(el){
-            document.body.dataset.footerfix = el.value;
+            document.body.dataset.isfooterfix = el.value;
         }
 
     </script>

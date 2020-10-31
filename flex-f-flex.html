@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex f flex</title>
+    <style>
+
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    .root{
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+    }
+    .main {
+        flex: auto;
+        
+        background: #f8f8f8;
+    }
+    .footer {
+        flex-shrink: 0;
+        flex-basis: 3rem;
+
+        background: #ddd;
+    }
+
+    body[data-isfooterfix="true"] .main{
+        overflow: auto;
+    }
+
+
+    h2{
+        margin: 0;
+        font-size: 1rem;
+    }
+    .actions{
+        position: fixed; top:0; right:0;
+        padding: 1rem;
+        background: #f8f8f8;
+    }
+
+    </style>
+</head>
+
+<body data-isfooterfix="false">
+   
+    <!-- flex -->
+    <div class="root" id="ly_flex">
+        <main class="main">
+            <h2>Main</h2>
+            <p style="height: 2000px"></p>
+        </main>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+
+
+    <!-- actions -->
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Is footer Fix?</legend>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFooter(this)">
+            <label for="true">Yes</label>
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFooter(this)" checked>
+            <label for="false">No</label>
+        </fieldset>
+    </form>
+
+    <script>
+        let changeFooter = function(el){
+            document.body.dataset.isfooterfix = el.value;
+        }
+    </script>
+</body>
+
+</html>
