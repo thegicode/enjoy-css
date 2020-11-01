@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex l v</title>
+    <style>
+    html {
+        height: 100vh;
+    }
+    body {
+        height: 100vh;
+        margin: 0;
+    }
+    .root {
+        display: flex;
+
+        height: 100vh;
+    }
+    .lnb {
+        flex-shrink: 0;
+        flex-basis: 15vw;
+
+        overflow: auto;
+        background: #ddd;
+    }
+    .main {
+        flex: auto;
+
+        overflow: auto;
+        background: #f8f8f8;
+    }
+
+
+    h2 {
+        margin: 0;
+        font-size: 1rem;
+    }
+    .actions {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 1rem;
+        background: transparent;
+    }
+    </style>
+</head>
+
+<body>
+
+    <!-- flex -->
+    <div class="root">
+        <div class="lnb">
+            <h2>Lnb</h2>
+            <div style="height:1000px"></div>
+        </div>
+        <main class="main">
+            <h2>Main</h2>
+            <div style="height:1000px"></div>
+        </main>
+    </div>
+
+    <script>
+    </script>
+</body>
+
+</html>
