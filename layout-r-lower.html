@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout r lower</title>
+    <style>
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    .root {
+        height: 100%;
+    }
+    .root::after{
+        content:'';
+        display: table;
+        clear: both;
+    }
+    .main {
+        overflow: auto;
+        float: left;
+        width: 85%; height: 100%;
+        background: #f8f8f8;
+
+    }
+    .rnb {
+        overflow: auto;
+        width: 15%; height: 100%;
+        background: #ddd;
+    }
+
+    h2 {
+        margin: 1rem;
+        font-size: 1rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <main class="main">
+            <h2>Main</h2>
+            <div style="height:1000px"></div>
+        </main>
+        <div class="rnb">
+            <h2>Rnb</h2>
+            <div style="height:1000px"></div>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>
