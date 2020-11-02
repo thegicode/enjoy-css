@@ -4,38 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>layout f lower</title>
+    <title>layout fl lower</title>
     <style>
-        html {
+    html {
         height: 100%;
     }
     body {
         height: 100%;
         margin: 0;
     }
-    .root{
+    .root {
         height: 100%;
     }
-    .container{
+    .container{}
+    .container::after{
+        content:'';
+        display: block;
+        clear: both;
+    }
+    .lnb{
+        float: left;
+        width: 15%;
         background: #f8f8f8;
     }
+
+    .main {
+        width: 85%;
+        margin-left: auto;
+    }
     .footer {
-        height: 3rem;
+        height: 50px;
         background: #ddd;
     }
 
 
     body[data-isfooterfix="false"] .container{
         min-height: 100%;
-        margin-bottom: -3rem;
+        margin-bottom: -50px;
+    }
+    body[data-isfooterfix="false"] .lnb{
+        box-sizing: border-box;
+        height: 100%;
+        padding-bottom: 50px;
     }
     body[data-isfooterfix="false"] .main{
-        padding-bottom: 3rem;
+        padding-bottom: 50px;
+    }
+    body[data-isfooterfix="false"] .footer{
+        clear: both;
     }
 
     body[data-isfooterfix="true"] .container{
+        position: absolute; top:0; left:0; right:0; bottom: 50px;
+    }
+    body[data-isfooterfix="true"] .lnb{
         overflow: auto;
-        position: absolute; top:0; left:0; right:0; bottom: 3rem;
+        min-height: 100%;
+        max-height: 100%;
+    }
+    body[data-isfooterfix="true"] .main{
+        overflow: auto;
+        max-height: 100%;
     }
     body[data-isfooterfix="true"] .footer{
         position: absolute; left: 0; right: 0; bottom:0;
@@ -51,26 +80,33 @@
         padding: 1rem;
         background: transparent;
     }
-
     </style>
 </head>
+
+
 <!-- 
     Footer 고정 속성 설정  -> data-isfooterfix : true | false
+    TODO : .container background image -> lnb bgcolor
 -->
 
 <body data-isfooterfix="false">
-    <!-- Lower -->
+
     <div class="root">
         <div class="container">
+            <div class="lnb">
+                <h2>Lnb</h2>
+                <!-- <p style="height: 1000px"></p> -->
+            </div>
             <main class="main">
                 <h2>Main</h2>
-                <p style="height: 2000px"></p>
+                <p style="height: 1000px"></p>
             </main>
         </div>
         <footer class="footer">
             <h2>Footer</h2>
         </footer>
     </div>
+
     <!-- actions -->
     <form class="actions" name="actions">
         <fieldset>

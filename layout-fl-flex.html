@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>layout fl</title>
+    <title>layout fl flex</title>
     <style>
     html {
         height: 100%;
@@ -30,8 +30,8 @@
         flex-shrink: 0;
         flex-basis: 15%;
 
+        overflow: auto;
         background: #f8f8f8;
-
     }
     .main {
         flex: auto;
@@ -40,10 +40,9 @@
     }
     .footer {
         flex-shrink: 0;
-        flex-basis: 2rem;
+        flex-basis: 50px;
 
         background: #ddd;
-
     }
 
 
@@ -54,21 +53,16 @@
     </style>
 </head>
 
-<!-- 
-    추후 정리할 파일
-    TODO : 
-        scroll down -> footer show
-        lnb show/hide
- -->
 <body>
     <div class="root">
         <div class="container">
             <div class="lnb">
                 <h2>Lnb</h2>
+                <p style="height: 1000px"></p>
             </div>
             <main class="main">
                 <h2>Main</h2>
-                <p style="height: 2000px"></p>
+                <p style="height: 1000px"></p>
             </main>
         </div>
         <footer class="footer">
