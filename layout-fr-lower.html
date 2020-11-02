@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>layout fl flex</title>
+    <title>Flex fr lower</title>
     <style>
     html {
         height: 100%;
@@ -14,49 +14,69 @@
         margin: 0;
     }
     .root {
-        display: flex;
-        flex-direction: column;
-
         height: 100%;
     }
     .container{
-        flex: auto;
-
-        display: flex;
     }
-    .lnb{
-        flex-shrink: 0;
-        flex-basis: 15%;
-
-        background: #f8f8f8;
+    .container::after{
+        content: '';
+        display: block;
+        clear: both;
     }
     .main {
-        flex: auto;
+        float: left;
+        width: 85%;
+    }
+    .rnb{
+        float: right;
+        width: 15%;
+        margin-left: auto;
+        background: #f8f8f8;
+
     }
     .footer {
-        flex-shrink: 0;
-        flex-basis: 50px;
-
+        height: 50px;
         background: #ddd;
     }
 
-    body[data-isfooterfix="true"] .container{
-        overflow: hidden;
+    body[data-isfooterfix="false"] .container{
+        min-height: 100%;
+        margin-bottom: -50px;
     }
-    body[data-isfooterfix="true"] .lnb{
-        overflow: auto;
+    body[data-isfooterfix="false"] .main{
+        padding-bottom: 50px;
+    }
+    body[data-isfooterfix="false"] .rnb{
+        box-sizing: border-box;
+        height: 100%;
+        padding-bottom: 50px;
+    }
+    body[data-isfooterfix="false"] .footer{
+        clear: both;
+    }
+
+    body[data-isfooterfix="true"] .container{
+        position: absolute; top:0; left:0; right:0; bottom: 50px;
     }
     body[data-isfooterfix="true"] .main{
         overflow: auto;
+        max-height: 100%;
     }
-
+    body[data-isfooterfix="true"] .rnb{
+        overflow: auto;
+        min-height: 100%;
+        max-height: 100%;
+    }
+    body[data-isfooterfix="true"] .footer{
+        position: absolute; left: 0; right: 0; bottom:0;
+    }
 
     h2{
         margin: 0;
         font-size: 1rem;
     }
     .actions{
-        position: fixed; top:0; right:0; 
+        position: fixed; top:10%; 
         padding: 1rem;
         background: transparent;
     }
@@ -67,17 +87,17 @@
     Footer 고정 속성 설정  -> data-isfooterfix : true | false
 -->
 
-<body>
+<body data-isfooterfix="false">
     <div class="root">
         <div class="container">
-            <div class="lnb">
-                <h2>Lnb</h2>
-                <p style="height: 1000px"></p>
-            </div>
             <main class="main">
                 <h2>Main</h2>
-                <p style="height: 1000px"></p>
+                <p style="height: 2000px"></p>
             </main>
+            <div class="rnb">
+                <h2>Rnb</h2>
+                <p style="height: 2000px"></p>
+            </div>
         </div>
         <footer class="footer">
             <h2>Footer</h2>
