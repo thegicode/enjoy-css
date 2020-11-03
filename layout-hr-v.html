@@ -4,89 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>layout hl flex</title>
+    <title>layout hr v</title>
     <style>
     html {
-        height: 100%;
+        height: 100vh;
     }
     body {
-        height: 100%;
+        height: 100vh;
         margin: 0;
     }
     .root {
-        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        height: 100vh;
     }
     .header {
-        height: 50px;
+        flex-shrink: 0;
+        flex-basis: 50px;
+
         background: #ddd;
     }
-
     .container {
-    }
-    .container::after{
-        content:'';
-        display: block;
-        clear: both;
-    }
-    .lnb{
-        float: left;
-        width: 15%;
-        background: #f8f8f8;
+        flex: auto;
+
+        display: flex;
     }
     .main{
-        width: 85%;
-        margin-left: auto;
+        flex: auto;
+    }
+    .rnb{
+        flex-shrink: 0;
+        flex-basis: 15vw;
+
+        overflow: hidden;
+        background: #f8f8f8;
+
     }
 
-    body[data-isfix="false"] .header{
-        position: relative;
-    }
-    body[data-isfix="false"] .container{
-        min-height: 100%;
-        margin-top: -50px;
-    }
-    body[data-isfix="false"] .lnb{
-        box-sizing: border-box;
-        height: 100%;
-        padding-top: 50px;
-    }
-    body[data-isfix="false"] .main{
-        padding-top: 50px;
-    }
-
-    body[data-isfix="true"] .header{
-        position: absolute; top:0; left: 0; right: 0;
-    }
     body[data-isfix="true"] .container{
-        position: absolute; top:50px; left:0; right:0; bottom: 0;
-    }
-    body[data-isfix="true"] .lnb{
-        overflow: auto;
-        min-height: 100%;
-        max-height: 100%;
+        overflow: hidden;
     }
     body[data-isfix="true"] .main{
         overflow: auto;
-        max-height: 100%;
+    }
+    body[data-isfix="true"] .rnb{
+        overflow: auto;
     }
 
 
-    h2{
+    h2 {
         margin: 0;
         font-size: 1rem;
     }
     .actions{
-        position: fixed; top:3rem; right:0;
+        position: fixed; top:5rem; left:10rem;
         padding: 1rem;
         background: transparent;
     }
+
     </style>
 </head>
 
-
 <!-- 
-    Header, Lnb 고정 설정  -> data-isfix : true | false
-    TODO : Rnb height 100% bgcolor
+    Header, Rnb 고정 설정  -> data-isfix : true | false
 -->
 
 <body data-isfix="false">
@@ -95,17 +76,17 @@
             <h2>Header</h2>
         </header>
         <div class="container">
-            <div class="lnb">
-                <h2>Lnb</h2>
-                <p style="height: 1000px"></p>
-            </div>
             <main class="main">
                 <h2>Main</h2>
-                <p style="height: 1000px;"></p>
+                <p style="height: 1000px"></p>
             </main>
+            <div class="rnb">
+                <h2>Rnb</h2>
+                <p style="height: 1000px"></p>
+
+            </div>
         </div>
     </div>
-
     <!-- actions -->
     <form class="actions" name="actions">
         <fieldset>
