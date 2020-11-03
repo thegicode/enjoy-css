@@ -37,34 +37,34 @@
         margin-left: auto;
     }
 
-    body[data-isheaderfix="false"] .header{
+    body[data-isfix="false"] .header{
         position: relative;
     }
-    body[data-isheaderfix="false"] .container{
+    body[data-isfix="false"] .container{
         min-height: 100%;
         margin-top: -50px;
     }
-    body[data-isheaderfix="false"] .lnb{
+    body[data-isfix="false"] .lnb{
         box-sizing: border-box;
         height: 100%;
         padding-top: 50px;
     }
-    body[data-isheaderfix="false"] .main{
+    body[data-isfix="false"] .main{
         padding-top: 50px;
     }
 
-    body[data-isheaderfix="true"] .header{
+    body[data-isfix="true"] .header{
         position: absolute; top:0; left: 0; right: 0;
     }
-    body[data-isheaderfix="true"] .container{
+    body[data-isfix="true"] .container{
         position: absolute; top:50px; left:0; right:0; bottom: 0;
     }
-    body[data-isheaderfix="true"] .lnb{
+    body[data-isfix="true"] .lnb{
         overflow: auto;
         min-height: 100%;
         max-height: 100%;
     }
-    body[data-isheaderfix="true"] .main{
+    body[data-isfix="true"] .main{
         overflow: auto;
         max-height: 100%;
     }
@@ -84,11 +84,10 @@
 
 
 <!-- 
-    Footer 고정 속성 설정  -> data-isfooterfix : true | false
-    TODO : .container background image -> lnb bgcolor
+    Header, Lnb 고정 설정  -> data-isfix : true | false
 -->
 
-<body data-isheaderfix="false">
+<body data-isfix="false">
     <div class="root">
         <header class="header">
             <h2>Header</h2>
@@ -117,7 +116,7 @@
     </form>
     <script>
     let changeFix = function(el) {
-        document.body.dataset.isheaderfix = el.value;
+        document.body.dataset.isfix = el.value;
     }
     </script>
 </body>
