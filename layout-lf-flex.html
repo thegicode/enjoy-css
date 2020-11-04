@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lauyout lf flex</title>
+    <style>
+    html{
+        height: 100%;
+    }
+    body{
+        height: 100%;
+        margin:0;
+    }
+    .root{
+        display: flex;
+    }
+    .lnb{
+        flex-shrink: 0;
+        flex-basis: 15%;
+
+        background: #ddd;
+    }
+    .container{
+        flex: auto;
+        flex-direction: column;
+
+        display: flex;
+    }
+    .main{
+        flex: auto;
+    }
+    .footer{
+        flex-shrink: 0;
+        flex-basis: 50px;
+
+        background: #f8f8f8;
+    }
+
+    body[data-isfix="false"] .root{
+        min-height: 100%;
+    }
+
+    body[data-isfix="true"] .root{
+        overflow: hidden;
+        height: 100%;
+    }
+    body[data-isfix="true"] .lnb{
+        overflow: auto;
+    }
+    body[data-isfix="true"] .container{
+        overflow: auto;
+    }
+  
+
+    h2{
+        margin: 0;
+        font-size: 1rem;
+    }
+    .actions{
+        position: fixed; top:0; right:0;
+        padding: 1rem;
+        background: transparent;
+    }
+    </style>
+</head>
+
+<!-- 
+    Lnb 고정 설정 : data-isfix = true | false 
+-->
+
+<body data-isfix="false">
+    <div class="root">
+        <div class="lnb">
+            <h2>Lnb</h2>
+            <div style="height: 1000px"></div>
+        </div>
+        <div class="container">
+            <main class="main">
+                <h2>Main</h2>
+                <div style="height: 1000px"></div>
+            </main>
+            <footer class="footer">
+                <h2>Footer</h2>
+            </footer>
+        </div>
+    </div>
+    <!-- actions -->
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Is lnb fix?</legend>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
+            <label for="true">Yes</label>
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
+            <label for="false">No</label>
+        </fieldset>
+    </form>
+    <script>
+    let changeFix = function(el) {
+        document.body.dataset.isfix = el.value;
+    }
+    </script>
+</body>
+
+</html>
