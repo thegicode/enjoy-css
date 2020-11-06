@@ -78,6 +78,10 @@
     </style>
 </head>
 
+<!-- 
+    Lnb, Rnb 고정 설정 : data-isfix = true | false 
+-->
+
 <body data-isfix="false">
     <div class="root">
         <div class="container">
@@ -100,7 +104,7 @@
     </div>
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Is lnb fix?</legend>
+            <legend>Is lnb & rnb fix?</legend>
             <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
             <label for="true">Yes</label>
             <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
