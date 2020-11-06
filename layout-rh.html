@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex rh</title>
+    <title>Layout rh</title>
     <style>
-        html{
-            height: 100%;
-        }
-        body{
-            height: 100%;
-            margin:0;
-        }
-        .root{
-            display: flex;
+    html{
+        height: 100%;
+    }
+    body{
+        height: 100%;
+        margin:0;
+    }
+    .root{
+        display: flex;
 
-            height: 100%;
-        }
-        .container {
-            flex: auto;
+        height: 100%;
+    }
+    .container {
+        flex: auto;
 
-            overflow: auto;
+        overflow: auto;
 
-            display: flex;
-            flex-direction: column;
-        }
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .rnb{
+        flex-shrink: 0;
+
+        overflow: hidden;
+        background: #ddd;
+    }
+
+    .header{
+        flex-shrink: 0;
+
+        height: 3rem;
+    }
+
+    .main{
+        flex: auto;
+
+        background: #f8f8f8;
+    }
+
+
+
+    h2{
+        margin: 1rem;
+    }
+    h3{
+        margin: 1rem;
+        padding: 1rem 0;
+        border-top: dashed 1px #ddd;
         
-        .rnb{
-            flex-shrink: 0;
-
-            overflow: hidden;
-            background: #ddd;
-        }
-
-        .header{
-            flex-shrink: 0;
-
-            height: 3rem;
-        }
-
-        .main{
-            flex: auto;
-
-            background: #f8f8f8;
-        }
-
-
-
-        h2{
-            margin: 1rem;
-        }
-        h3{
-            margin: 1rem;
-            padding: 1rem 0;
-            border-top: dashed 1px #ddd;
-            
-        }
-        input[type="button"]{
-            display: block;
-            margin: 10px;
-        }
-        .result{
-            margin-left: 1rem;
-        }
+    }
+    input[type="button"]{
+        display: block;
+        margin: 10px;
+    }
+    .result{
+        margin-left: 1rem;
+    }
     </style>
 </head>
+
+<!-- 
+    TODO : 추후 정리할 파일
+-->
 
 <body>
     <div class="root">
