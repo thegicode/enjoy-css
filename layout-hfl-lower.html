@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout flr lower</title>
+    <title>Layout hfl lower</title>
     <style>
     html {
         height: 100%;
@@ -16,11 +16,18 @@
     .root {
         height: 100%;
     }
+    .header {
+        position: relative;
+        height: 50px;
+        background: #ddd;
+    }
     .container{
         height: 100%;
+        margin-top: -50px;
         margin-bottom: -30px;
     }
     .container-wrapper{
+        padding-top: 50px;
         padding-bottom: 30px;
     }
     .container-wrapper:after{
@@ -32,21 +39,18 @@
         float: left;
         width: 15%; height: 100%;
         background: #f8f8f8;
+
     }
     .main {
-        float: left;
-        width: 70%;
-    }
-    .rnb{
         margin-left: auto;
-        width: 15%; height: 100%;
-        background: #f8f8f8;
+        /*width: 85%;*/
+
     }
     .footer {
-        height: 30px; 
+        position: relative;
+        height: 30px;
         background: #ddd;
     }
-
     
     body[data-isfix="false"] .container{
         display: table;
@@ -54,11 +58,12 @@
     }
     body[data-isfix="false"] .container-wrapper{
         display: table-row;
-        box-sizing: border-box;
+        /*box-sizing: border-box;*/
         min-height: 100%;
     }
-    body[data-isfix="false"] .footer{
-        position: relative;
+    body[data-isfix="false"] .lnb{
+    }
+    body[data-isfix="false"] .main{
     }
 
     body[data-isfix="true"] .container{
@@ -74,16 +79,13 @@
         overflow: auto;
         height: 100%;
     }
-    body[data-isfix="true"] .rnb{
-        overflow: auto;
-    }
 
     h2{
-        margin: 0;
+        margin:0;
         font-size: 1rem;
     }
     .actions{
-        position: fixed; top:2rem; left:20%;
+        position: fixed; top:60px; left:20%;
         padding: 1rem;
         background: transparent;
     }
@@ -91,11 +93,13 @@
 </head>
 
 <!-- 
-    Footer, Lnb, Rnb 고정 설정 : data-isfix = true | false
+    Header, Footer, Lnb 고정 설정 : data-isfix = true | false 
 -->
-
-<body data-isfix="false">
+<body data-isfix="true">
     <div class="root">
+        <header class="header">
+            <h2>header</h2>
+        </header>
         <div class="container">
             <div class="container-wrapper">
                 <div class="lnb">
@@ -106,25 +110,21 @@
                     <h2>Main</h2>
                     <div style="height: 1000px"></div>
                 </main>
-                <div class="rnb">
-                    <h2>Rnb</h2>
-                    <div style="height: 1000px"></div>
-                </div>
             </div>
         </div>
         <footer class="footer">
             <h2>Footer</h2>
         </footer>
     </div>
-    <form class="actions" name="actions">
+    <!-- <form class="actions" name="actions">
         <fieldset>
-            <legend>Is footer & lnb & rnb fix?</legend>
+            <legend>Is hedaer, footer, lnb fix?</legend>
             <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
             <label for="true">Yes</label>
             <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
             <label for="false">No</label>
         </fieldset>
-    </form>
+    </form> -->
     <script>
     let changeFix = function(el) {
         document.body.dataset.isfix = el.value;

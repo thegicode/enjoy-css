@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>layout l flex</title>
+    <title>Layout hfl flex</title>
     <style>
     html {
         height: 100%;
@@ -15,16 +15,33 @@
     }
     .root {
         display: flex;
+        flex-direction: column;
     }
-    .lnb {
-        flex-shrink: 0;
-        flex-basis: 15%;
+    .header {
+        flex: none;
+        height: 50px;
 
         background: #ddd;
     }
-    .main {
-        flex: auto;
+    .container{
+        flex: 1;
+
+        display: flex;
+    }
+    .lnb{
+        flex: none;
+        width: 15%;
+
         background: #f8f8f8;
+    }
+    .main {
+        flex: 1;
+    }
+    .footer {
+        flex: none;
+        height: 30px;
+
+        background: #ddd;
     }
 
     body[data-isfix="false"] .root{
@@ -34,6 +51,9 @@
     body[data-isfix="true"] .root{
         height: 100%;
     }
+    body[data-isfix="true"] .container{
+        height: 100%;
+    }
     body[data-isfix="true"] .lnb{
         overflow: auto;
     }
@@ -41,46 +61,50 @@
         overflow: auto;
     }
 
-
-    h2 {
-        margin: 0;
+    h2{
+        margin:0;
         font-size: 1rem;
     }
     .actions{
-        position: fixed; top:0; right:0;
+        position: fixed; top:60px; left:20%;
         padding: 1rem;
         background: transparent;
     }
-
     </style>
 </head>
 
 <!-- 
-    Lnb 고정 설정 : data-isfix = true | false 
+    Header, Footer, Lnb 고정 설정 : data-isfix = true | false 
+    TODO : container scroll
 -->
-
 <body data-isfix="false">
-
     <div class="root">
-        <div class="lnb">
-            <h2>Lnb</h2>
-            <div style="height:1000px"></div>
+        <header class="header">
+            <h2>header</h2>
+        </header>
+        <div class="container">
+            <div class="lnb">
+                <h2>Lnb</h2>
+                <div style="height: 1000px"></div>
+            </div>
+            <main class="main">
+                <h2>Main</h2>
+                <div style="height: 1000px"></div>
+            </main>
         </div>
-        <main class="main">
-            <h2>Main</h2>
-            <div style="height:1000px"></div>
-        </main>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
     </div>
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Is lnb fix?</legend>
+            <legend>Is hedaer, footer, lnb fix?</legend>
             <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
             <label for="true">Yes</label>
             <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
             <label for="false">No</label>
         </fieldset>
     </form>
-
     <script>
     let changeFix = function(el) {
         document.body.dataset.isfix = el.value;
