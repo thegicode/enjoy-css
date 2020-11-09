@@ -27,8 +27,6 @@
         margin-bottom: -30px;
     }
     .container-wrapper{
-        padding-top: 50px;
-        padding-bottom: 30px;
     }
     .container-wrapper:after{
         content: '';
@@ -43,8 +41,6 @@
     }
     .main {
         margin-left: auto;
-        /*width: 85%;*/
-
     }
     .footer {
         position: relative;
@@ -58,19 +54,26 @@
     }
     body[data-isfix="false"] .container-wrapper{
         display: table-row;
-        /*box-sizing: border-box;*/
-        min-height: 100%;
     }
     body[data-isfix="false"] .lnb{
+        box-sizing: border-box;
+        padding-top: 50px;
+        padding-bottom: 30px;
     }
     body[data-isfix="false"] .main{
+        box-sizing: border-box;
+        padding-top: 50px;
+        padding-bottom: 30px;
     }
 
     body[data-isfix="true"] .container{
         overflow: hidden;
     }
     body[data-isfix="true"] .container-wrapper{
+        box-sizing: border-box;
         height: 100%;
+        padding-top: 50px;
+        padding-bottom: 30px;
     }
     body[data-isfix="true"] .lnb{
         overflow: auto;
@@ -95,7 +98,7 @@
 <!-- 
     Header, Footer, Lnb 고정 설정 : data-isfix = true | false 
 -->
-<body data-isfix="true">
+<body data-isfix="false">
     <div class="root">
         <header class="header">
             <h2>header</h2>
@@ -116,7 +119,7 @@
             <h2>Footer</h2>
         </footer>
     </div>
-    <!-- <form class="actions" name="actions">
+    <form class="actions" name="actions">
         <fieldset>
             <legend>Is hedaer, footer, lnb fix?</legend>
             <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
@@ -124,7 +127,7 @@
             <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
             <label for="false">No</label>
         </fieldset>
-    </form> -->
+    </form>
     <script>
     let changeFix = function(el) {
         document.body.dataset.isfix = el.value;
