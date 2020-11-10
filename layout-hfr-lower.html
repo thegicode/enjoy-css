@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout flr lower</title>
+    <title>Layout hfr lower</title>
     <style>
     html {
         height: 100%;
@@ -16,8 +16,14 @@
     .root {
         height: 100%;
     }
+    .header {
+        position: relative;
+        height: 50px;
+        background: #ddd;
+    }
     .container{
         height: 100%;
+        margin-top: -50px;
         margin-bottom: -30px;
     }
     .container-wrapper{
@@ -27,27 +33,21 @@
         display: block;
         clear: both;
     }
-    .lnb{
-        float: left;
-        width: 15%; height: 100%;
-        background: #f8f8f8;
-    }
     .main {
         float: left;
-        width: 70%;
+        width: 85%;
     }
     .rnb{
-        margin-left: auto;
         width: 15%; height: 100%;
+        margin-left: auto;
         background: #f8f8f8;
     }
     .footer {
         position: relative;
-        height: 30px; 
+        height: 30px;
         background: #ddd;
     }
 
-    
     body[data-isfix="false"] .container{
         display: table;
         width: 100%;
@@ -55,19 +55,15 @@
     body[data-isfix="false"] .container-wrapper{
         display: table-row;
     }
-    body[data-isfix="false"] .lnb{
-        box-sizing: border-box;
-        padding-bottom: 30px;
-    }
     body[data-isfix="false"] .main{
         box-sizing: border-box;
+        padding-top: 50px;
         padding-bottom: 30px;
     }
     body[data-isfix="false"] .rnb{
         box-sizing: border-box;
+        padding-top: 50px;
         padding-bottom: 30px;
-    }
-    body[data-isfix="false"] .footer{
     }
 
     body[data-isfix="true"] .container{
@@ -76,10 +72,8 @@
     body[data-isfix="true"] .container-wrapper{
         box-sizing: border-box;
         height: 100%;
+        padding-top: 50px;
         padding-bottom: 30px;
-    }
-    body[data-isfix="true"] .lnb{
-        overflow: auto;
     }
     body[data-isfix="true"] .main{
         overflow: auto;
@@ -90,11 +84,11 @@
     }
 
     h2{
-        margin: 0;
+        margin:0;
         font-size: 1rem;
     }
     .actions{
-        position: fixed; top:2rem; left:20%;
+        position: fixed; top:60px; left: 0;
         padding: 1rem;
         background: transparent;
     }
@@ -102,17 +96,16 @@
 </head>
 
 <!-- 
-    Footer, Lnb, Rnb 고정 설정 : data-isfix = true | false
+    All 고정 설정 : data-isfix = true | false
+    TODO : isfix true, container scroll
 -->
-
 <body data-isfix="false">
     <div class="root">
+        <header class="header">
+            <h2>header</h2>
+        </header>
         <div class="container">
             <div class="container-wrapper">
-                <div class="lnb">
-                    <h2>Lnb</h2>
-                    <div style="height: 1000px"></div>
-                </div>
                 <main class="main">
                     <h2>Main</h2>
                     <div style="height: 1000px"></div>
@@ -129,7 +122,7 @@
     </div>
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Is footer & lnb & rnb fix?</legend>
+            <legend>Is all fix?</legend>
             <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
             <label for="true">Yes</label>
             <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>

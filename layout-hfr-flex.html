@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout flr flex</title>
+    <title>Layout hfr flex</title>
     <style>
     html {
         height: 100%;
@@ -17,16 +17,16 @@
         display: flex;
         flex-direction: column;
     }
+    .header {
+        flex: none;
+        height: 50px;
+
+        background: #ddd;
+    }
     .container{
         flex: 1;
 
         display: flex;
-    }
-    .lnb{
-        flex: none;
-        width: 15%;
-
-        background: #f8f8f8;
     }
     .main {
         flex: 1;
@@ -55,9 +55,6 @@
         overflow: hidden;
         height: 100%;
     }
-    body[data-isfix="true"] .lnb{
-        overflow: auto;
-    }
     body[data-isfix="true"] .main{
         overflow: auto;
     }
@@ -66,11 +63,11 @@
     }
 
     h2{
-        margin: 0;
+        margin:0;
         font-size: 1rem;
     }
     .actions{
-        position: fixed; top:2rem; left:20%;
+        position: fixed; top:60px; left: 0;
         padding: 1rem;
         background: transparent;
     }
@@ -78,16 +75,15 @@
 </head>
 
 <!-- 
-    Lnb, Rnb 고정 설정 : data-isfix = true | false 
+    All 고정 설정 : data-isfix = true | false
     TODO : isfix true, container scroll
 -->
 <body data-isfix="false">
     <div class="root">
+        <header class="header">
+            <h2>header</h2>
+        </header>
         <div class="container">
-            <div class="lnb">
-                <h2>Lnb</h2>
-                <div style="height: 1000px"></div>
-            </div>
             <main class="main">
                 <h2>Main</h2>
                 <div style="height: 1000px"></div>
@@ -103,7 +99,7 @@
     </div>
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Is lnb & rnb fix?</legend>
+            <legend>Is all fix?</legend>
             <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
             <label for="true">Yes</label>
             <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
