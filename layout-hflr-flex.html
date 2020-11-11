@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout hflr flex</title>
+    <style>
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    .root {
+        display: flex;
+        flex-direction: column;
+    }
+    .header {
+        flex: none;
+        height: 50px;
+
+        background: #ddd;
+    }
+    .container{
+        flex: 1;
+
+        display: flex;
+    }
+    .lnb{
+        flex: none;
+        width: 15%;
+
+        background: #f8f8f8;
+    }
+    .main {
+        flex: 1;
+    }
+    .rnb{
+        flex: none;
+        width: 15%;
+
+        background: #f8f8f8;
+    }
+    .footer {
+        flex: none;
+        height: 50px;
+
+        background: #ddd;
+    }
+
+    body[data-isfix="false"] .root{
+        min-height: 100%;
+    }
+
+    body[data-isfix="true"] .root{
+        height: 100%;
+    }
+    body[data-isfix="true"] .container{
+        overflow: hidden;
+        height: 100%;
+    }
+    body[data-isfix="true"] .lnb{
+        overflow: auto;
+    }
+    body[data-isfix="true"] .main{
+        overflow: auto;
+    }
+    body[data-isfix="true"] .rnb{
+        overflow: auto;
+    }
+
+    h2{
+        margin:0;
+        font-size: 1rem;
+    }
+    .actions{
+        position: fixed; top: 60px; left: 20%;
+        padding: 1rem;
+        background: transparent;
+    }
+    </style>
+</head>
+
+<!-- 
+    All 고정 설정 : data-isfix = true | false
+-->
+<body data-isfix="false">
+    <div class="root">
+        <header class="header">
+            <h2>header</h2>
+        </header>
+        <div class="container">
+            <div class="lnb">
+                <h2>Lnb</h2>
+                <div style="height: 1000px"></div>
+            </div>
+            <main class="main">
+                <h2>Main</h2>
+                <div style="height: 1000px"></div>
+            </main>
+            <div class="rnb">
+                <h2>Rnb</h2>
+                <div style="height: 1000px"></div>
+            </div>
+        </div>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Is all fix?</legend>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
+            <label for="true">Yes</label>
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
+            <label for="false">No</label>
+        </fieldset>
+    </form>
+    <script>
+    let changeFix = function(el) {
+        document.body.dataset.isfix = el.value;
+    }
+    </script>
+</body>
+
+</html>
