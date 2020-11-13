@@ -20,22 +20,22 @@
         height: 100%;
     }
     .container{
-        flex: auto;
+        flex: 1;
 
         display: flex;
     }
     .lnb{
-        flex-shrink: 0;
-        flex-basis: 15%;
+        flex: none;
+        width: 15%;
 
         background: #f8f8f8;
     }
     .main {
-        flex: auto;
+        flex: 1;
     }
     .footer {
-        flex-shrink: 0;
-        flex-basis: 50px;
+        flex: none;
+        height: 30px;
 
         background: #ddd;
     }
@@ -50,7 +50,6 @@
         overflow: auto;
     }
 
-
     h2{
         margin: 0;
         font-size: 1rem;
@@ -64,26 +63,26 @@
 </head>
 
 <!-- 
-    Footer 고정 속성 설정  -> data-isfooterfix : true | false
+    Footer 고정 -> data-isfooterfix : true | false
 -->
-
 <body>
+
     <div class="root">
         <div class="container">
             <div class="lnb">
                 <h2>Lnb</h2>
-                <p style="height: 1000px"></p>
+                <div style="height: 1000px"></div>
             </div>
             <main class="main">
                 <h2>Main</h2>
-                <p style="height: 1000px"></p>
+                <div style="height: 1000px"></div>
             </main>
         </div>
         <footer class="footer">
             <h2>Footer</h2>
         </footer>
     </div>
-    <!-- actions -->
+
     <form class="actions" name="actions">
         <fieldset>
             <legend>Is footer fix?</legend>

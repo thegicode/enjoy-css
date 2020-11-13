@@ -15,31 +15,50 @@
     }
     .root {
         display: flex;
-
-        height: 100%;
     }
     .main {
-        flex: auto;
+        flex: 1;
 
-        overflow: auto;
         background: #f8f8f8;
-
     }
     .rnb {
-        flex-shrink: 0;
-        flex-basis: 15%;
+        flex: none;
+        width: 15%;
 
-        overflow: auto;
         background: #ddd;
     }
+
+    body[data-isfix="false"] .root{
+        min-height: 100%;
+    }
+
+    body[data-isfix="true"] .root{
+        height: 100%;
+    }
+    
+    body[data-isfix="true"] .main{
+        overflow: auto;
+    }
+    body[data-isfix="true"] .rnb{
+        overflow: auto;
+    }
+
     h2 {
         margin: 1rem;
         font-size: 1rem;
     }
+    .actions{
+        position: fixed; top: 60px; left: 0;
+        padding: 1rem;
+        background: transparent;
+    }
     </style>
 </head>
 
-<body>
+<!-- 
+    Lnb 고정 설정 : data-isfix = true | false 
+-->
+<body data-isfix="false">
     <div class="root">
         <main class="main">
             <h2>Main</h2>
@@ -50,7 +69,19 @@
             <div style="height:1000px"></div>
         </div>
     </div>
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Is lnb fix?</legend>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
+            <label for="true">Yes</label>
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
+            <label for="false">No</label>
+        </fieldset>
+    </form>
     <script>
+    let changeFix = function(el) {
+        document.body.dataset.isfix = el.value;
+    }
     </script>
 </body>
 

@@ -20,25 +20,25 @@
         height: 100%;
     }
     .header {
-        flex-shrink: 0;
-        flex-basis: 50px;
+        flex: none;
+        height: 50px;
 
         background: #ddd;
 
     }
     .container {
-        flex: auto;
+        flex: 1;
 
         display: flex;
     }
     .lnb{
-        flex-shrink: 0;
-        flex-basis: 15%;
+        flex: none;
+        width: 15%;
 
         background: #f8f8f8;
     }
     .main{
-        flex: auto;
+        flex: 1;
     }
 
     body[data-isfix="true"] .container{
@@ -75,11 +75,11 @@
         <div class="container">
             <div class="lnb">
                 <h2>Lnb</h2>
-                <p style="height: 2000px"></p>
+                <p style="height: 1000px"></p>
             </div>
             <main class="main">
                 <h2>Main</h2>
-                <p style="height: 2000px;"></p>
+                <p style="height: 1000px;"></p>
             </main>
         </div>
     </div>

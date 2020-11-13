@@ -20,13 +20,13 @@
         height: 100%;
     }
     .header {
-        flex-shrink: 0;
-        flex-basis: 3rem;
+        flex: none;
+        height: 50px;
 
         background: #ddd;
     }
     .main {
-        flex: auto;
+        flex: 1;
 
         background: #f8f8f8;
     }
@@ -40,32 +40,28 @@
         font-size: 1rem;
     }
     .actions{
-        position: fixed; top:0; right:0;
+        position: fixed; top: 60px; right:0;
         padding: 1rem;
         background: transparent;
     }
     </style>
 </head>
 
-
 <!-- 
-    Header 고정 속성 설정  -> data-isheaderfix : true | false
+    Header 고정 설정  -> data-isheaderfix : true | false
 -->
-
 <body data-isheaderfix="false">
 
-    <!-- Flex -->
     <div class="root">
         <header class="header">
             <h2>Header</h2>
         </header>
         <main class="main">
             <h2>Main</h2>
-            <p style="height: 2000px"></p>
+            <p style="height: 1000px"></p>
         </main>
     </div>
 
-    <!-- actions -->
     <form class="actions" name="actions">
         <fieldset>
             <legend>Is header fix?</legend>
@@ -77,9 +73,9 @@
     </form>
 
     <script>
-        let changeFix = function(el){
-            document.body.dataset.isheaderfix = el.value;
-        }
+    let changeFix = function(el){
+        document.body.dataset.isheaderfix = el.value;
+    }
     </script>
 </body>
 
