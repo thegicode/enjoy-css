@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>layout f v</title>
     <style>
-    /* Use vw, vh */
     html {
         height: 100vh;
     }
@@ -21,13 +20,13 @@
         height: 100vh;
     }
     .main {
-        flex: auto;
+        flex: 1;
         
         background: #f8f8f8;
     }
     .footer {
-        flex-shrink: 0;
-        flex-basis: 50px;
+        flex: none;
+        height: 30px;
 
         background: #ddd;
     }
@@ -53,7 +52,6 @@
 <!-- 
     Footer 고정 속성 설정  -> data-isfooterfix : true | false
 -->
-
 <body data-isfooterfix="false">
    
     <!-- flex -->
