@@ -45,23 +45,7 @@
     body[data-isfix="default"] .footer{
         flex: none;
     }
-
-    body[data-isfix="fl"] .container{
-        overflow: hidden;
-        display: flex;
-    }
-    body[data-isfix="fl"] .lnb{
-        overflow: auto;
-        flex: none;
-    }
-    body[data-isfix="fl"] .main{
-        overflow: auto;
-    }
-    body[data-isfix="fl"] .footer{
-        flex: none;
-    }
     
-
     body[data-isfix="footer"] .container{
         overflow: auto;
     }
@@ -77,7 +61,20 @@
     body[data-isfix="footer"] .main{
         margin-left: auto;
     }
-    body[data-isfix="footer"] .footer{
+
+    body[data-isfix="all"] .container{
+        overflow: hidden;
+        display: flex;
+    }
+    body[data-isfix="all"] .lnb{
+        overflow: auto;
+        flex: none;
+    }
+    body[data-isfix="all"] .main{
+        overflow: auto;
+    }
+    body[data-isfix="all"] .footer{
+        flex: none;
     }
 
 
@@ -94,7 +91,7 @@
 </head>
 
 <!-- 
-    Footer 고정 -> data-isfix : default | footer | fl
+    Footer 고정 -> data-isfix : default | footer | all
 -->
 <body data-isfix="default">
     <div class="root">
@@ -115,18 +112,18 @@
 
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Select fix element.</legend>
+            <legend>Select the element to be fixed.</legend>
             <div>
                 <input type="radio" name="fix" id="default" value="default" onchange="changeFix(this)" checked>
-                <label for="default">Not fix</label> 
+                <label for="default">Don't fix</label> 
             </div>
             <div>
                 <input type="radio" name="fix" id="footer" value="footer" onchange="changeFix(this)">
                 <label for="footer">Footer</label>
             </div>
             <div>
-                <input type="radio" name="fix" id="fl" value="fl" id="fl" onchange="changeFix(this)">
-                <label for="fl">Footer and Lnb</label>
+                <input type="radio" name="fix" id="all" value="all" id="all" onchange="changeFix(this)">
+                <label for="all">All</label>
             </div>
         </fieldset>
     </form>

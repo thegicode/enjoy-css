@@ -13,63 +13,96 @@
         height: 100%;
         margin: 0;
     }
-    .root {
+    .root{}
+    .container{}
+    .lnb{
+        width: 15%;
+        background: #f8f8f8;
+    }
+    .main{
+        width: 85%;
+    }
+    .footer{
+        height: 30px;
+        background: #ddd;
+    }
+
+    body[data-isfix="default"] .root{
+        display: table;
+        width: 100%; height: 100%;
+    }
+    body[data-isfix="default"] .container{
+        display: table-row;
         height: 100%;
     }
-    .container{}
-    .container::after{
+    body[data-isfix="default"] .container-inner{
+        height: 100%;
+    }
+    body[data-isfix="default"] .container-inner:after{
         content:'';
         display: block;
         clear: both;
     }
-    .lnb{
+    body[data-isfix="default"] .lnb{
         float: left;
-        width: 15%;
-        background: #f8f8f8;
+        height: 100%;
     }
-
-    .main {
-        width: 85%;
+    body[data-isfix="default"] .main{
         margin-left: auto;
     }
-    .footer {
-        height: 50px;
-        background: #ddd;
+    body[data-isfix="default"] .footer{
+        display: table-row;
     }
 
-
-    body[data-isfooterfix="false"] .container{
+    body[data-isfix="footer"] .container{
+        overflow: auto;
+        position: absolute; top: 0; right: 0; bottom: 30px; left: 0;
+    }
+    body[data-isfix="footer"] .container-inner{
+        display: table;
+        width: 100%;
         min-height: 100%;
-        margin-bottom: -50px;
     }
-    body[data-isfooterfix="false"] .lnb{
+    body[data-isfix="footer"] .lnb{
+        display: table-cell;
+    }
+    body[data-isfix="footer"] .main{
+        display: table-cell;
+    }
+    body[data-isfix="footer"] .footer{
+        position: absolute; right: 0; bottom: 0; left: 0;
+    }
+
+    body[data-isfix="all"] .root{
+        height: 100%;
+    }
+    body[data-isfix="all"] .container{
+        margin-bottom: -30px;
+        height: 100%;
+    }
+    body[data-isfix="all"] .container-inner{
         box-sizing: border-box;
         height: 100%;
-        padding-bottom: 50px;
+        padding-bottom: 30px;
     }
-    body[data-isfooterfix="false"] .main{
-        padding-bottom: 50px;
-    }
-    body[data-isfooterfix="false"] .footer{
+    body[data-isfix="all"] .container-inner:after{
+        content:'';
+        display: block;
         clear: both;
     }
-
-    body[data-isfooterfix="true"] .container{
-        position: absolute; top:0; left:0; right:0; bottom: 50px;
-    }
-    body[data-isfooterfix="true"] .lnb{
+    body[data-isfix="all"] .lnb{
         overflow: auto;
-        min-height: 100%;
-        max-height: 100%;
+        float: left;
+        height: 100%;
     }
-    body[data-isfooterfix="true"] .main{
+    body[data-isfix="all"] .main{
         overflow: auto;
-        max-height: 100%;
+        margin-left: auto;
+        height: 100%;
     }
-    body[data-isfooterfix="true"] .footer{
-        position: absolute; left: 0; right: 0; bottom:0;
+    body[data-isfix="all"] .footer{
+        position: relative;
     }
-
 
     h2{
         margin: 0;
@@ -85,41 +118,48 @@
 
 
 <!-- 
-    Footer 고정 속성 설정  -> data-isfooterfix : true | false
-    TODO : .container background image -> lnb bgcolor
+    Footer 고정 -> data-isfix : default | footer | all
 -->
-
-<body data-isfooterfix="false">
+<body data-isfix="default">
 
     <div class="root">
         <div class="container">
-            <div class="lnb">
-                <h2>Lnb</h2>
-                <!-- <div style="height: 1000px"></div> -->
+            <div class="container-inner">
+                <div class="lnb">
+                    <h2>Lnb</h2>
+                    <div style="height: 1000px"></div>
+                </div>
+                <main class="main">
+                    <h2>Main</h2>
+                    <div style="height: 1000px"></div>
+                </main>
             </div>
-            <main class="main">
-                <h2>Main</h2>
-                <div style="height: 1000px"></div>
-            </main>
         </div>
         <footer class="footer">
             <h2>Footer</h2>
         </footer>
     </div>
 
-    <!-- actions -->
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Is footer fix?</legend>
-            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
-            <label for="true">Yes</label>
-            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
-            <label for="false">No</label>
+            <legend>Select the element to be fixed.</legend>
+            <div>
+                <input type="radio" name="fix" id="default" value="default" onchange="changeFix(this)" checked>
+                <label for="default">Don't fix</label> 
+            </div>
+            <div>
+                <input type="radio" name="fix" id="footer" value="footer" onchange="changeFix(this)">
+                <label for="footer">Footer</label>
+            </div>
+            <div>
+                <input type="radio" name="fix" id="all" value="all" id="all" onchange="changeFix(this)">
+                <label for="all">All</label>
+            </div>
         </fieldset>
     </form>
     <script>
     let changeFix = function(el) {
-        document.body.dataset.isfooterfix = el.value;
+        document.body.dataset.isfix = el.value;
     }
     </script>
 </body>

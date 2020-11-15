@@ -8,4 +8,5 @@
 	> default file :  code cleanup
 	> Naming
 	> Browser check
-	> 
+	> Jslink, csshint
+	> wrapper, inner 정리
