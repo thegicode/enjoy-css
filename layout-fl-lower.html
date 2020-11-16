@@ -35,10 +35,10 @@
         display: table-row;
         height: 100%;
     }
-    body[data-isfix="default"] .container-inner{
+    body[data-isfix="default"] .container-wrapper{
         height: 100%;
     }
-    body[data-isfix="default"] .container-inner:after{
+    body[data-isfix="default"] .container-wrapper:after{
         content:'';
         display: block;
         clear: both;
@@ -58,7 +58,7 @@
         overflow: auto;
         position: absolute; top: 0; right: 0; bottom: 30px; left: 0;
     }
-    body[data-isfix="footer"] .container-inner{
+    body[data-isfix="footer"] .container-wrapper{
         display: table;
         width: 100%; height: 100%;
     }
@@ -79,12 +79,12 @@
         height: 100%;
         margin-bottom: -30px;
     }
-    body[data-isfix="all"] .container-inner{
+    body[data-isfix="all"] .container-wrapper{
         box-sizing: border-box;
         height: 100%;
         padding-bottom: 30px;
     }
-    body[data-isfix="all"] .container-inner:after{
+    body[data-isfix="all"] .container-wrapper:after{
         content:'';
         display: block;
         clear: both;
@@ -123,7 +123,7 @@
 
     <div class="root">
         <div class="container">
-            <div class="container-inner">
+            <div class="container-wrapper">
                 <div class="lnb">
                     <h2>Lnb</h2>
                     <div style="height: 1000px"></div>
