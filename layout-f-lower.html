@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>layout f lower</title>
     <style>
-        html {
+    html {
         height: 100%;
     }
     body {
@@ -28,15 +28,15 @@
         background: #ddd;
     }
 
-    body[data-isfooterfix="false"] .container{
+    body[data-isfix="default"] .container{
         min-height: 100%;
     }
 
-    body[data-isfooterfix="true"] .container{
+    body[data-isfix="footer"] .container{
         overflow: auto;
         height: 100%;
     }
-    body[data-isfooterfix="true"] .footer{
+    body[data-isfix="footer"] .footer{
         position: relative;
     }
 
@@ -44,24 +44,29 @@
         margin: 0;
         font-size: 1rem;
     }
+    .test-content{
+        height: 1000px;
+    }
+    .test-content[data-hidden="true"]{
+        display: none;
+    }
     .actions{
         position: fixed; top:0; right:0;
         padding: 1rem;
         background: transparent;
     }
-
     </style>
 </head>
 
 <!-- 
-    Footer 고정 속성 설정  -> data-isfooterfix : true | false
+    Footer 고정 속성 설정  -> data-isfix : default | footer
 -->
-<body data-isfooterfix="false">
+<body data-isfix="default">
     <div class="root">
         <div class="container">
             <main class="main">
                 <h2>Main</h2>
-                <div style="height: 1000px"></div>
+                <div class="test-content" data-hidden="false"></div>
             </main>
         </div>
         <footer class="footer">
@@ -70,17 +75,28 @@
     </div>
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Is footer fix?</legend>
-            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
-            <label for="true">Yes</label>
-            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
-            <label for="false">No</label>
+            <legend>Select to be fixed</legend>
+            <input type="radio" name="fix" id="default" value="default" onchange="fixElement(this)" checked>
+            <label for="default">Don't fix</label>
+            <input type="radio" name="fix" id="footer" value="footer" onchange="fixElement(this)">
+            <label for="footer">Footer</label>
+        </fieldset>
+        <br>
+         <fieldset>
+            <legend>Select presence of content</legend>
+            <input type="radio" name="content" id="addContent" value="false" onchange="setContent(this)" checked>
+            <label for="addContent">Add Content</label>
+            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
+            <label for="removeContent">Remove Content</label>
         </fieldset>
     </form>
     <script>
-    let changeFix = function(el) {
-        document.body.dataset.isfooterfix = el.value;
-    }
+    let fixElement = function(el) {
+        document.body.dataset.isfix = el.value;
+    };
+    let setContent = function(el){
+        document.querySelector('.test-content').dataset.hidden = el.value;
+    };
     </script>
 </body>
 
