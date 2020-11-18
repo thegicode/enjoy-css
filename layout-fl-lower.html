@@ -107,6 +107,12 @@
         margin: 0;
         font-size: 1rem;
     }
+    .test-content{
+        height: 1000px;
+    }
+    .test-content[data-hidden="true"]{
+        display: none;
+    }
     .actions{
         position: fixed; top:0; right:0;
         padding: 1rem;
@@ -126,11 +132,11 @@
             <div class="container-wrapper">
                 <div class="lnb">
                     <h2>Lnb</h2>
-                    <div style="height: 1000px"></div>
+                    <div class="test-content" data-hidden="false"></div>
                 </div>
                 <main class="main">
                     <h2>Main</h2>
-                    <div style="height: 1000px"></div>
+                    <div class="test-content" data-hidden="false"></div>
                 </main>
             </div>
         </div>
@@ -143,23 +149,38 @@
         <fieldset>
             <legend>Select the element to be fixed.</legend>
             <div>
-                <input type="radio" name="fix" id="default" value="default" onchange="changeFix(this)" checked>
+                <input type="radio" name="fix" id="default" value="default" onchange="fixElement(this)" checked>
                 <label for="default">Don't fix</label> 
             </div>
             <div>
-                <input type="radio" name="fix" id="footer" value="footer" onchange="changeFix(this)">
+                <input type="radio" name="fix" id="footer" value="footer" onchange="fixElement(this)">
                 <label for="footer">Footer</label>
             </div>
             <div>
-                <input type="radio" name="fix" id="all" value="all" id="all" onchange="changeFix(this)">
+                <input type="radio" name="fix" id="all" value="all" id="all" onchange="fixElement(this)">
                 <label for="all">All</label>
             </div>
         </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <input type="radio" name="content" id="addContent" value="false" onchange="setContent(this)" checked>
+            <label for="addContent">Add Content</label>
+            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
+            <label for="removeContent">Remove Content</label>
+        </fieldset>
     </form>
     <script>
-    let changeFix = function(el) {
+    let fixElement = function(el) {
         document.body.dataset.isfix = el.value;
-    }
+    };
+    let setContent = function(el){
+        let els = document.querySelectorAll('.test-content'),
+            i = els.length-1;
+        for(; i > -1 ; i -= 1){
+            els[i].dataset.hidden = el.value;
+        }
+    };
     </script>
 </body>
 
