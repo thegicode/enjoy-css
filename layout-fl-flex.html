@@ -147,8 +147,8 @@
     }
     let setContent = function(el){
         let els = document.querySelectorAll('.test-content'),
-            i = els.length-1;
-        for(; i > -1 ; i -= 1){
+            i = els.length;
+        while(i--){
             els[i].dataset.hidden = el.value;
         }
     };
