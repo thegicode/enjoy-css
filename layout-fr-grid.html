@@ -4,71 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex fr lower</title>
+    <title>Flex fr grid</title>
     <style>
     html {
-        height: 100%;
+        height: 100vh;
     }
     body {
-        height: 100%;
+        height: 100vh;
         margin: 0;
     }
     .root {
-        height: 100%;
-    }
-    .container{
-    }
-    .container::after{
-        content: '';
-        display: block;
-        clear: both;
+        display: grid;
+        grid-template-columns: 1fr 15%;
+        grid-template-rows: 1fr 30px;
+        grid-template-areas: 
+            "main rnb"
+            "footer footer"
     }
     .main {
-        float: left;
-        width: 85%;
+        grid-area: main;
     }
     .rnb{
-        float: right;
-        width: 15%;
-        margin-left: auto;
+        grid-area: rnb;
         background: #f8f8f8;
 
     }
     .footer {
-        height: 50px;
+        grid-area: footer;
         background: #ddd;
     }
 
-    body[data-isfix="default"] .container{
+    body[data-isfix="default"] .root{
         min-height: 100%;
-        margin-bottom: -50px;
-    }
-    body[data-isfix="default"] .main{
-        padding-bottom: 50px;
-    }
-    body[data-isfix="default"] .rnb{
-        box-sizing: border-box;
-        height: 100%;
-        padding-bottom: 50px;
-    }
-    body[data-isfix="default"] .footer{
-        clear: both;
     }
 
-    body[data-isfix="all"] .container{
-        position: absolute; top:0; left:0; right:0; bottom: 50px;
+    body[data-isfix="all"] .root{
+        height: 100%;
     }
     body[data-isfix="all"] .main{
         overflow: auto;
-        max-height: 100%;
     }
     body[data-isfix="all"] .rnb{
         overflow: auto;
-        min-height: 100%;
-        max-height: 100%;
-    }
-    body[data-isfix="all"] .footer{
-        position: absolute; left: 0; right: 0; bottom:0;
     }
 
     h2{
@@ -94,15 +71,13 @@
 -->
 <body data-isfix="default">
     <div class="root">
-        <div class="container">
-            <main class="main">
-                <h2>Main</h2>
-                    <div class="test-content" data-hidden="false"></div>
-            </main>
-            <div class="rnb">
-                <h2>Rnb</h2>
-                    <div class="test-content" data-hidden="false"></div>
-            </div>
+        <main class="main">
+            <h2>Main</h2>
+                <div class="test-content" data-hidden="false"></div>
+        </main>
+        <div class="rnb">
+            <h2>Rnb</h2>
+                <div class="test-content" data-hidden="false"></div>
         </div>
         <footer class="footer">
             <h2>Footer</h2>
