@@ -16,8 +16,6 @@
     .root {
         display: flex;
         flex-direction: column;
-
-        height: 100%;
     }
     .container{
         flex: 1;
@@ -36,6 +34,9 @@
         background: #ddd;
     }
 
+    body[data-isfix="default"] .root{
+        min-height: 100%;
+    }
     body[data-isfix="default"] .container{
         display: flex;
     }
@@ -44,8 +45,11 @@
     }
     body[data-isfix="default"] .footer{
         flex: none;
+    }   
+
+    body[data-isfix="footer"] .root{
+        height: 100%;
     }
-    
     body[data-isfix="footer"] .container{
         overflow: auto;
     }
@@ -62,6 +66,9 @@
         margin-left: auto;
     }
 
+    body[data-isfix="all"] .root{
+        height: 100%;
+    }
     body[data-isfix="all"] .container{
         overflow: hidden;
         display: flex;
