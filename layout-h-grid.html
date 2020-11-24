@@ -4,43 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>layout h lower</title>
+    <title>layout h grid</title>
     <style>
     html {
-        height: 100%;
+        height: 100vh;
     }
     body {
-        height: 100%;
+        height: 100vh;
         margin: 0;
     }
     .root {
-        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas: 
+            "header"
+            "main";
     }
     .header {
-        position: relative;
-        height: 3rem;
+        grid-area: header;
+
         background: #ddd;
     }
-    .container{
+    .main {
+        grid-area: main;
+
         background: #f8f8f8;
     }
 
-    body[data-isfix="default"] .container{
+    body[data-isfix="default"] .root{
         min-height: 100%;
-        margin-top: -3rem;
-    }
-    body[data-isfix="default"] .main{
-        padding-top: 3rem;
     }
 
-    body[data-isfix="header"] .header{
-        position: absolute; top:0; left: 0; right: 0;
+    body[data-isfix="header"] .root{
+        height: 100%;
     }
-    body[data-isfix="header"] .container{
+    body[data-isfix="header"] .main{
         overflow: auto;
-        position: absolute; top:3rem; left:0; right:0; bottom:0;
     }
-    
+
     h2{
         margin: 0;
         font-size: 1rem;
@@ -59,9 +61,8 @@
     </style>
 </head>
 
-
 <!-- 
-    레이아옷 고정 설정  -> data-isfix : header | default
+    레이아옷 고정 설정  -> data-isfix : default | header
 -->
 <body data-isfix="default">
 
@@ -69,12 +70,10 @@
         <header class="header">
             <h2>Header</h2>
         </header>
-        <div class="container">
-            <main class="main">
-                <h2>Main</h2>
-                <div class="test-content" data-hidden="false"></div>
-            </main>
-        </div>
+        <main class="main">
+            <h2>Main</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </main>
     </div>
 
     <form class="actions" name="actions">

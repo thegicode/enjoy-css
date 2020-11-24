@@ -16,8 +16,6 @@
     .root {
         display: flex;
         flex-direction: column;
-
-        height: 100%;
     }
     .header {
         flex: none;
@@ -31,13 +29,26 @@
         background: #f8f8f8;
     }
 
-    body[data-isheaderfix="true"] .main{
+    body[data-isfix="default"] .root{
+        min-height: 100%;
+    }
+
+    body[data-isfix="header"] .root{
+        height: 100%;
+    }
+    body[data-isfix="header"] .main{
         overflow: auto;
     }
 
     h2{
         margin: 0;
         font-size: 1rem;
+    }
+    .test-content{
+        height: 1000px;
+    }
+    .test-content[data-hidden="true"]{
+        display: none;
     }
     .actions{
         position: fixed; top: 60px; right:0;
@@ -48,9 +59,9 @@
 </head>
 
 <!-- 
-    Header 고정 설정  -> data-isheaderfix : true | false
+    레이아옷 고정 설정  -> data-isfix : default | header
 -->
-<body data-isheaderfix="false">
+<body data-isfix="default">
 
     <div class="root">
         <header class="header">
@@ -58,24 +69,40 @@
         </header>
         <main class="main">
             <h2>Main</h2>
-            <div style="height: 1000px"></div>
+            <div class="test-content" data-hidden="false"></div>
         </main>
     </div>
 
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Is header fix?</legend>
-            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
-            <label for="true">Yes</label>
-            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
-            <label for="false">No</label>
+            <legend>Select the element to be fixed.</legend>
+            <input type="radio" name="fix" value="default" id="default" onchange="fixElement(this)" checked>
+            <label for="default">Don't fix</label>
+            <input type="radio" name="fix" value="header" id="header" onchange="fixElement(this)" >
+            <label for="header">Header</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <input type="radio" name="content" id="addContent" value="false" onchange="setContent(this)" checked>
+            <label for="addContent">Add Content</label>
+            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
+            <label for="removeContent">Remove Content</label>
         </fieldset>
     </form>
 
     <script>
-    let changeFix = function(el){
-        document.body.dataset.isheaderfix = el.value;
-    }
+    let fixElement = function(el) {
+        document.body.dataset.isfix = el.value;
+    };
+    let setContent = function(el){
+        let els = document.querySelectorAll('.test-content'),
+            i = els.length;
+        while(i){
+            i -= 1;
+            els[i].dataset.hidden = el.value;
+        }
+    };
     </script>
 </body>
 
