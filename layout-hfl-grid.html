@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout hfl flex</title>
+    <title>Layout hfl grid</title>
     <style>
     html {
         height: 100%;
@@ -14,33 +14,27 @@
         margin: 0;
     }
     .root {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 15vw 1fr;
+        grid-template-rows: 50px 1fr 30px;
+        grid-template-areas: 
+            "header header"
+            "lnb main"
+            "footer footer";
     }
     .header {
-        flex: none;
-        height: 50px;
-
+        grid-area: header;
         background: #ddd;
     }
-    .container{
-        flex: 1;
-
-        display: flex;
-    }
     .lnb{
-        flex: none;
-        width: 15%;
-
+        grid-area: lnb;
         background: #f8f8f8;
     }
     .main {
-        flex: 1;
+        grid-area: main;
     }
     .footer {
-        flex: none;
-        height: 30px;
-
+        grid-area: footer;
         background: #ddd;
     }
 
@@ -49,10 +43,6 @@
     }
 
     body[data-isfix="all"] .root{
-        height: 100%;
-    }
-    body[data-isfix="all"] .container{
-        overflow: hidden;
         height: 100%;
     }
     body[data-isfix="all"] .lnb{
@@ -88,16 +78,14 @@
         <header class="header">
             <h2>header</h2>
         </header>
-        <div class="container">
-            <div class="lnb">
-                <h2>Lnb</h2>
-                <div class="test-content" data-hidden="false"></div>
-            </div>
-            <main class="main">
-                <h2>Main</h2>
-                <div class="test-content" data-hidden="false"></div>
-            </main>
+        <div class="lnb">
+            <h2>Lnb</h2>
+            <div class="test-content" data-hidden="false"></div>
         </div>
+        <main class="main">
+            <h2>Main</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </main>
         <footer class="footer">
             <h2>Footer</h2>
         </footer>
