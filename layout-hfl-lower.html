@@ -83,6 +83,17 @@
         height: 100%;
     }
 
+    /* For Safari */
+    @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+        body[data-isfix="default"] .lnb,
+        body[data-isfix="default"] .main{
+            box-sizing: initial;
+        }
+        
+    }}
+    
+
     h2{
         margin:0;
         font-size: 1rem;
@@ -98,6 +109,8 @@
         padding: 1rem;
         background: transparent;
     }
+
+
     </style>
 </head>
 
