@@ -170,11 +170,11 @@
         </fieldset>
     </form>
     <script>
-    let fixElement = function(el) {
+    var fixElement = function(el) {
         document.body.dataset.isfix = el.value;
     };
-    let setContent = function(el){
-        let els = document.querySelectorAll('.test-content'),
+    var setContent = function(el){
+        var els = document.querySelectorAll('.test-content'),
             i = els.length;
         while(i){
             i -= 1;
