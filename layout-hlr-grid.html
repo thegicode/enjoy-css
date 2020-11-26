@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout hfr grid</title>
+    <title>Layout hlr grid</title>
     <style>
     html {
         height: 100vh;
@@ -15,27 +15,26 @@
     }
     .root {
         display: grid;
-        grid-template-columns: 1fr 15vw;
-        grid-template-rows: 50px 1fr 30px;
-        grid-template-areas:
-            "header header"
-            "main rnb"
-            "footer footer";
+        grid-template-columns: 15vw 1fr 15vw;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas: 
+            "header header header"
+            "lnb main rnb"
     }
     .header {
         grid-area: header;
         background: #ddd;
     }
-    .main {
+    .lnb{
+        grid-area: lnb;
+        background: #f8f8f8;
+    }
+    .main{
         grid-area: main;
     }
     .rnb{
         grid-area: rnb;
         background: #f8f8f8;
-    }
-    .footer {
-        grid-area: footer;
-        background: #ddd;
     }
 
     body[data-isfix="default"] .root{
@@ -45,6 +44,13 @@
     body[data-isfix="all"] .root{
         height: 100vh;
     }
+    body[data-isfix="all"] .container{
+        overflow: hidden;
+        height: 100vh;
+    }
+    body[data-isfix="all"] .lnb{
+        overflow: auto;
+    }
     body[data-isfix="all"] .main{
         overflow: auto;
     }
@@ -52,8 +58,8 @@
         overflow: auto;
     }
 
-    h2{
-        margin:0;
+    h2 {
+        margin: 0;
         font-size: 1rem;
     }
     .test-content{
@@ -63,7 +69,7 @@
         display: none;
     }
     .actions{
-        position: fixed; top:60px; left: 0;
+        position: fixed; top: 60px; left: 20%;
         padding: 1rem;
         background: transparent;
     }
@@ -76,8 +82,12 @@
 <body data-isfix="default">
     <div class="root">
         <header class="header">
-            <h2>header</h2>
+            <h2>Header</h2>
         </header>
+        <div class="lnb">
+            <h2>Lnb</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </div>
         <main class="main">
             <h2>Main</h2>
             <div class="test-content" data-hidden="false"></div>
@@ -86,9 +96,6 @@
             <h2>Rnb</h2>
             <div class="test-content" data-hidden="false"></div>
         </div>
-        <footer class="footer">
-            <h2>Footer</h2>
-        </footer>
     </div>
     <form class="actions" name="actions">
         <fieldset>
