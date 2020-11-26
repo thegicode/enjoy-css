@@ -7,84 +7,47 @@
     <title>layout hl flex</title>
     <style>
     html {
-        height: 100%;
+        height: 100vh;
     }
     body {
-        height: 100%;
+        height: 100vh;
         margin: 0;
     }
     .root {
-        height: 100%;
+        display: grid;
+        grid-template-columns: 15vw 1fr;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas: 
+            "header header"
+            "lnb main"
     }
     .header {
-        position: relative;
-        height: 50px;
+        grid-area: header;
         background: #ddd;
     }
-    .container {
-        height: 100%;
-        margin-top: -50px;
-        margin-bottom: -30px;
-    }
-    .container-wrapper{
-        height: 100%;
-    }
-    .container::after{
-        content:'';
-        display: block;
-        clear: both;
-    }
     .lnb{
-        float: left;
-        width: 15%; height: 100%;
+        grid-area: lnb;
         background: #f8f8f8;
     }
     .main{
-        width: 85%;
-        margin-left: auto;
+        grid-area: main;
     }
 
-    body[data-isfix="default"] .container{
-        display: table;
-        width: 100%;
+    body[data-isfix="default"] .root{
+        min-height: 100%;
     }
-    body[data-isfix="default"] .container-wrapper{
-        display: table-row;
+    body[data-isfix="all"] .root{
+        height: 100%;
     }
-    body[data-isfix="default"] .lnb{
-        box-sizing: border-box;
-        padding-top: 50px;
-    }
-    body[data-isfix="default"] .main{
-        box-sizing: border-box;
-        padding-top: 50px;
-    }
-
-    
     body[data-isfix="all"] .container{
         overflow: hidden;
-    }
-    body[data-isfix="all"] .container-wrapper{
-        box-sizing: border-box;
-        padding-top: 50px;
     }
     body[data-isfix="all"] .lnb{
         overflow: auto;
     }
     body[data-isfix="all"] .main{
         overflow: auto;
-        height: 100%;
     }
-
-    /* For Safari */
-    @media not all and (min-resolution:.001dpcm)
-    { @supports (-webkit-appearance:none) {
-        body[data-isfix="default"] .lnb,
-        body[data-isfix="default"] .main{
-            box-sizing: initial;
-        }
-    }}
-
 
     h2{
         margin: 0;
@@ -104,7 +67,6 @@
     </style>
 </head>
 
-
 <!-- 
     레이아옷 고정 설정 -> data-isfix : default  | all
 -->
@@ -113,18 +75,15 @@
         <header class="header">
             <h2>Header</h2>
         </header>
-        <div class="container">
-            <div class="container-wrapper">
-                <div class="lnb">
-                    <h2>Lnb</h2>
-                    <div class="test-content" data-hidden="false"></div>
-                </div>
-                <main class="main">
-                    <h2>Main</h2>
-                    <div class="test-content" data-hidden="false"></div>
-                </main>
-            </div>
+        <div class="lnb">
+            <h2>Lnb</h2>
+            <div class="test-content" data-hidden="false"></div>
         </div>
+        <main class="main">
+            <h2>Main</h2>
+            <div class="test-content" data-hidden="false"></div>
+            
+        </main>
     </div>
 
     <form class="actions" name="actions">
@@ -145,11 +104,11 @@
         </fieldset>
     </form>
     <script>
-    var fixElement = function(el) {
+    let fixElement = function(el) {
         document.body.dataset.isfix = el.value;
     };
-    var setContent = function(el){
-        var els = document.querySelectorAll('.test-content'),
+    let setContent = function(el){
+        let els = document.querySelectorAll('.test-content'),
             i = els.length;
         while(i){
             i -= 1;
