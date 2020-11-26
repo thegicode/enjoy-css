@@ -4,47 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>layout hr flex</title>
+    <title>layout hr grid</title>
     <style>
     html {
-        height: 100%;
+        height: 100vh;
     }
     body {
-        height: 100%;
+        height: 100vh;
         margin: 0;
     }
     .root {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 15vw;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas: 
+            "header header"
+            "main rnb";
     }
     .header {
-        flex: none;
-        height: 50px;
-
+        grid-area: header;
         background: #ddd;
     }
-    .container {
-        flex: 1;
-
-        display: flex;
-    }
     .main{
-        flex: 1;
+        grid-area: main;
     }
     .rnb{
-        flex: none;
-        width: 15%;
-
+        grid-area: rnb;
         background: #f8f8f8;
-
     }
 
     body[data-isfix="default"] .root{
-        min-height: 100%;
+        min-height: 100vh;
     }
 
     body[data-isfix="all"] .root{
-        height: 100%;
+        height: 100vh;
     }
     body[data-isfix="all"] .container{
         overflow: hidden;
@@ -83,15 +77,13 @@
         <header class="header">
             <h2>Header</h2>
         </header>
-        <div class="container">
-            <main class="main">
-                <h2>Main</h2>
-                <div class="test-content" data-hidden="false"></div>
-            </main>
-            <div class="rnb">
-                <h2>Rnb</h2>
-                <div class="test-content" data-hidden="false"></div>
-            </div>
+        <main class="main">
+            <h2>Main</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </main>
+        <div class="rnb">
+            <h2>Rnb</h2>
+            <div class="test-content" data-hidden="false"></div>
         </div>
     </div>
     <form class="actions" name="actions">
