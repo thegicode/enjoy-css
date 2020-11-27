@@ -5,37 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
-    <title>layout fl grid</title>
+    <title>lauyout lf grid</title>
     <style>
-    
-    .root {
+    .root{
         display: grid;
         grid-template-columns: 15vw 1fr;
-        grid-template-rows: 1fr  30px;
-        grid-template-areas:
+        grid-template-rows: 1fr 30px;
+        grid-template-areas: 
             "lnb main"
-            "footer footer";
+            "lnb footer";
     }
     .lnb{
         grid-area: lnb;
-
-        background: #f8f8f8;
+        background: #ddd;
     }
-    .main {
+    .main{
         grid-area: main;
     }
-    .footer {
+    .footer{
         grid-area: footer;
-
-        background: #ddd;
+        background: #f8f8f8;
     }
 
     body[data-fix="default"] .root{
         min-height: 100vh;
     }
-    
+
     body[data-fix="all"] .root{
-        height: 100vh;
+        overflow: hidden;
+        height: 100%;
     }
     body[data-fix="all"] .lnb{
         overflow: auto;
@@ -43,18 +41,15 @@
     body[data-fix="all"] .main{
         overflow: auto;
     }
-
-
-    
+  
     .actions{
-        top: 0; right: 0; 
-        
+        top: 0; right: 0;
     }
     </style>
 </head>
 
 <!-- 
-    레이아옷 고정 설정 -> data-fix : default | all
+    레이아옷 고정 설정 -> data-fix : default | lnb
 -->
 <body data-fix="default">
     <div class="root">
@@ -73,14 +68,10 @@
 
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Select the element to be fixed.</legend>
+            <legend>Select the element to be fixed</legend>
             <label>
                 <input type="radio" name="fix" value="default" onchange="fixElement(this)" checked>
                 <span>Don't fix</span> 
-            </label>
-            <label>
-                <input type="radio" name="fix" value="footer" onchange="fixElement(this)">
-                <span>Footer</span>
             </label>
             <label>
                 <input type="radio" name="fix" value="all" id="all" onchange="fixElement(this)">
@@ -102,7 +93,6 @@
     </form>
 
     <script type="text/javascript" src="../js/layout.js"></script>
-   
 </body>
 
 </html>
