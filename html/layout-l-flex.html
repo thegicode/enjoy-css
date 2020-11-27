@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
     <title>layout l flex</title>
     <style>
     html {
@@ -27,17 +28,17 @@
         background: #f8f8f8;
     }
 
-    body[data-fix="false"] .root{
+    body[data-fix="default"] .root{
         min-height: 100%;
     }
 
-    body[data-fix="true"] .root{
+    body[data-fix="all"] .root{
         height: 100%;
     }
-    body[data-fix="true"] .lnb{
+    body[data-fix="all"] .lnb{
         overflow: auto;
     }
-    body[data-fix="true"] .main{
+    body[data-fix="all"] .main{
         overflow: auto;
     }
 
@@ -46,46 +47,49 @@
         margin: 0;
         font-size: 1rem;
     }
+    
     .actions{
-        position: fixed; top:0; right:0;
-        padding: 1rem;
-        background: transparent;
+        top:0; right:0;
+        
     }
 
     </style>
 </head>
 
 <!-- 
-    Lnb 고정 설정 : data-fix = true | false 
+    레이아옷 고정 설정 -> data-fix : default  | all
 -->
-
-<body data-fix="false">
+<body data-fix="default">
 
     <div class="root">
         <div class="lnb">
             <h2>Lnb</h2>
-            <div style="height:1000px"></div>
+            <div class="test-content" data-hidden="false"></div>
         </div>
         <main class="main">
             <h2>Main</h2>
-            <div style="height:1000px"></div>
+            <div class="test-content" data-hidden="false"></div>
         </main>
     </div>
+
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Is lnb fix?</legend>
-            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
-            <label for="true">Yes</label>
-            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
-            <label for="false">No</label>
+            <legend>Select the element to be fixed.</legend>
+            <input type="radio" name="fix" id="default" value="default" onchange="fixElement(this)" checked>
+            <label for="default">Don't fix</label> 
+            <input type="radio" name="fix" id="all" value="all" id="all" onchange="fixElement(this)">
+            <label for="all">All</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <input type="radio" name="content" id="addContent" value="false" onchange="setContent(this)" checked>
+            <label for="addContent">Add Content</label>
+            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
+            <label for="removeContent">Remove Content</label>
         </fieldset>
     </form>
-
-    <script>
-    let changeFix = function(el) {
-        document.body.dataset.isfix = el.value;
-    }
-    </script>
+    <script type="text/javascript" src="../js/layout.js"></script>
 </body>
 
 </html>

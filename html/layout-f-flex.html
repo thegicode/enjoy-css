@@ -4,15 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
     <title>layout f flex</title>
     <style>
-    html {
-        height: 100%;
-    }
-    body {
-        height: 100%;
-        margin: 0;
-    }
     .root{
         display: flex;
         flex-direction: column;
@@ -35,20 +30,8 @@
         overflow: auto;
     }
 
-    h2{
-        margin: 0;
-        font-size: 1rem;
-    }
-    .test-content{
-        height: 1000px;
-    }
-    .test-content[data-hidden="true"]{
-        display: none;
-    }
     .actions{
-        position: fixed; top:0; right:0;
-        padding: 1rem;
-        background: transparent;
+        top: 0; right: 0;
     }
     </style>
 </head>
@@ -85,7 +68,7 @@
             <label for="removeContent">Remove Content</label>
         </fieldset>
     </form>
-    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="../js/layout.js"></script>
 </body>
 
 </html>
