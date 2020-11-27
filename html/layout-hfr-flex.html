@@ -93,19 +93,27 @@
     </div>
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Select the element to be fixed.</legend>
-            <input type="radio" name="fix" id="default" value="default" onchange="fixElement(this)" checked>
-            <label for="default">Don't fix</label> 
-            <input type="radio" name="fix" id="all" value="all" id="all" onchange="fixElement(this)">
-            <label for="all">All</label>
+            <legend>Select the element to be fixed</legend>
+            <label>
+                <input type="radio" name="fix" value="default" onchange="fixElement(this)" checked>
+                <span>Don't fix</span> 
+            </label>
+            <label>
+                <input type="radio" name="fix" value="all" id="all" onchange="fixElement(this)">
+                <span>All</span>
+            </label>
         </fieldset>
         <br>
         <fieldset>
             <legend>Select presence of content</legend>
-            <input type="radio" name="content" id="addContent" value="false" onchange="setContent(this)" checked>
-            <label for="addContent">Add Content</label>
-            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
-            <label for="removeContent">Remove Content</label>
+            <label>
+                <input type="radio" name="content" value="false" onchange="setContent(this)" checked>
+                <span>Add Content</span>
+            </label>
+            <label>
+                <input type="radio" name="content" value="true" onchange="setContent(this)">
+                <label>Remove Content</label>
+            </label>
         </fieldset>
     </form>
     <script type="text/javascript" src="../js/layout.js"></script>

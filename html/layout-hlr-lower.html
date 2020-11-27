@@ -136,10 +136,14 @@
         <br>
         <fieldset>
             <legend>Select presence of content</legend>
-            <input type="radio" name="content" id="addContent" value="false" onchange="setContent(this)" checked>
-            <label for="addContent">Add Content</label>
-            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
-            <label for="removeContent">Remove Content</label>
+            <label>
+                <input type="radio" name="content" value="false" onchange="setContent(this)" checked>
+                <span>Add Content</span>
+            </label>
+            <label>
+                <input type="radio" name="content" value="true" onchange="setContent(this)">
+                <label>Remove Content</label>
+            </label>
         </fieldset>
     </form>
     <script>

@@ -72,11 +72,15 @@
     </div>
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Select the element to be fixed.</legend>
-            <input type="radio" name="fix" value="default" id="default" onchange="fixElement(this)" checked>
-            <label for="default">Don't fix</label>
-            <input type="radio" name="fix" value="all" id="all" onchange="fixElement(this)" >
-            <label for="all">All</label>
+            <legend>Select the element to be fixed</legend>
+            <label>
+                <input type="radio" name="fix" value="default" onchange="fixElement(this)" checked>
+                <span>Don't fix</span> 
+            </label>
+            <label>
+                <input type="radio" name="fix" value="all" id="all" onchange="fixElement(this)">
+                <span>All</span>
+            </label>
         </fieldset>
         <br>
         <fieldset>

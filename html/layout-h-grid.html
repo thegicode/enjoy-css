@@ -67,19 +67,27 @@
 
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Select the element to be fixed.</legend>
-            <input type="radio" name="fix" value="default" id="default" onchange="fixElement(this)" checked>
-            <label for="default">Don't fix</label>
-            <input type="radio" name="fix" value="header" id="header" onchange="fixElement(this)" >
-            <label for="header">Header</label>
+            <legend>Select the element to be fixed</legend>
+            <label>
+                <input type="radio" name="fix" value="default" onchange="fixElement(this)" checked>
+                <span>Don't fix</span> 
+            </label>
+            <label>
+                <input type="radio" name="fix" value="header" id="header" onchange="fixElement(this)">
+                <span>Header</span>
+            </label>
         </fieldset>
         <br>
         <fieldset>
             <legend>Select presence of content</legend>
-            <input type="radio" name="content" id="addContent" value="false" onchange="setContent(this)" checked>
-            <label for="addContent">Add Content</label>
-            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
-            <label for="removeContent">Remove Content</label>
+            <label>
+                <input type="radio" name="content" value="false" onchange="setContent(this)" checked>
+                <span>Add Content</span>
+            </label>
+            <label>
+                <input type="radio" name="content" value="true" onchange="setContent(this)">
+                <label>Remove Content</label>
+            </label>
         </fieldset>
     </form>
 
