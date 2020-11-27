@@ -9,4 +9,15 @@
 	> Jslink, csshint
 	> wrapper, inner 정리
 	> Add grid layout
-	> Add transform : header, footer, lnb, rnbeigi
+	> Add transform : header, footer, lnb, rnb
+
+# Cross Browsing
+	> flex, grid 우선 작업
+	> lower는 추후 수정하는 걸로
+	## Mac
+	> chrome : all
+	> firefox, safari : layout-f~, layout-h~
+	> 
+
+	## Window 
+	> 

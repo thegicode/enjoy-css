@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout hfl lower</title>
+    <style>
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    .root {
+        height: 100%;
+    }
+    .header {
+        position: relative;
+        height: 50px;
+        background: #ddd;
+    }
+    .container{
+        height: 100%;
+        margin-top: -50px;
+        margin-bottom: -30px;
+    }
+    .container-wrapper{
+        height: 100%;
+    }
+    .container-wrapper:after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+    .lnb{
+        float: left;
+        width: 15%; height: 100%;
+        background: #f8f8f8;
+
+    }
+    .main {
+        margin-left: auto;
+    }
+    .footer {
+        position: relative;
+        height: 30px;
+        background: #ddd;
+    }
+    
+    body[data-fix="default"] .container{
+        display: table;
+        width: 100%;
+    }
+    body[data-fix="default"] .container-wrapper{
+        display: table-row;
+    }
+    body[data-fix="default"] .lnb{
+        box-sizing: border-box;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+    body[data-fix="default"] .main{
+        box-sizing: border-box;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
+    body[data-fix="all"] .container{
+        overflow: hidden;
+    }
+    body[data-fix="all"] .container-wrapper{
+        box-sizing: border-box;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+    body[data-fix="all"] .lnb{
+        overflow: auto;
+    }
+    body[data-fix="all"] .main{
+        overflow: auto;
+        height: 100%;
+    }
+
+    /* For Safari */
+    @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+        body[data-fix="default"] .lnb,
+        body[data-fix="default"] .main{
+            box-sizing: initial;
+        }
+    }}
+    
+
+    h2{
+        margin:0;
+        font-size: 1rem;
+    }
+    .test-content{
+        height: 1000px;
+    }
+    .test-content[data-hidden="true"]{
+        display: none;
+    }
+    .actions{
+        position: fixed; top:60px; left:20%;
+        padding: 1rem;
+        background: transparent;
+    }
+
+
+    </style>
+</head>
+
+<!-- 
+    레이아옷 고정 설정 -> data-fix : default | all
+-->
+<body data-fix="default">
+    <div class="root">
+        <header class="header">
+            <h2>header</h2>
+        </header>
+        <div class="container">
+            <div class="container-wrapper">
+                <div class="lnb">
+                    <h2>Lnb</h2>
+                    <div class="test-content" data-hidden="false"></div>
+                </div>
+                <main class="main">
+                    <h2>Main</h2>
+                    <div class="test-content" data-hidden="false"></div>
+                </main>
+            </div>
+        </div>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Select the element to be fixed.</legend>
+            <input type="radio" name="fix" value="default" id="default" onchange="fixElement(this)" checked>
+            <label for="default">Don't fix</label>
+            <input type="radio" name="fix" value="all" id="all" onchange="fixElement(this)">
+            <label for="all">All</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <input type="radio" name="content" id="addContent" value="false" onchange="setContent(this)" checked>
+            <label for="addContent">Add Content</label>
+            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
+            <label for="removeContent">Remove Content</label>
+        </fieldset>
+    </form>
+    <script>
+    var fixElement = function(el) {
+        document.body.dataset.isfix = el.value;
+    };
+    var setContent = function(el){
+        var els = document.querySelectorAll('.test-content'),
+            i = els.length;
+        while(i){
+            i -= 1;
+            els[i].dataset.hidden = el.value;
+        }
+    };
+    </script>
+</body>
+
+</html>

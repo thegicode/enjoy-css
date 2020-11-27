@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout hf flex</title>
+    <style>
+    html {
+        height: 100vh;
+    }
+    body {
+        height: 100vh;
+        margin: 0;
+    }
+    .root {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 1fr 30px;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+    .header {
+        grid-area: header;
+        background: #ddd;
+
+    }
+    .main {
+        grid-area: main;
+        background: #f8f8f8;
+    }
+    .footer {
+        grid-area: footer;
+        background: #ddd;
+    }
+
+    body[data-fix="default"] .root{
+        min-height: 100vh;
+    }
+
+    body[data-fix="all"] .root{
+        height: 100vh;
+    }
+    body[data-fix="all"] .main{
+        overflow: auto;
+    }
+
+    h2{
+        margin: 0;
+        font-size: 1rem;
+    }
+    .test-content{
+        height: 1000px;
+    }
+    .test-content[data-hidden="true"]{
+        display: none;
+    }
+    .actions{
+        position: fixed; top:3rem; right:0;
+        padding: 1rem;
+        background: transparent;
+    }
+    </style>
+</head>
+
+<!-- 
+    레이아옷 고정 설정 : data-fix = default | all 
+-->
+<body data-fix="default">
+    <div class="root">
+        <header class="header">
+            <h2>header</h2>
+        </header>
+        <main class="main">
+            <h2>Main</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </main>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Select the element to be fixed.</legend>
+            <input type="radio" name="fix" value="default" id="default" onchange="fixElement(this)" checked>
+            <label for="default">Don't fix</label>
+            <input type="radio" name="fix" value="all" id="all" onchange="fixElement(this)" >
+            <label for="all">All</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <input type="radio" name="content" id="addContent" value="all" onchange="setContent(this)" checked>
+            <label for="addContent">Add Content</label>
+            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
+            <label for="removeContent">Remove Content</label>
+        </fieldset>
+    </form>
+    <script type="text/javascript" src="../js/ui.js"></script>
+   
+</body>
+
+</html>

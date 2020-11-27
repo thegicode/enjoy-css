@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout fl flex</title>
+    <style>
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    .root {
+        display: flex;
+        flex-direction: column;
+    }
+    .container{
+        flex: 1;
+    }
+    .lnb{
+        width: 15%;
+
+        background: #f8f8f8;
+    }
+    .main {
+        flex: 1;
+    }
+    .footer {
+        height: 30px;
+
+        background: #ddd;
+    }
+
+    body[data-fix="default"] .root{
+        min-height: 100%;
+    }
+    body[data-fix="default"] .container{
+        display: flex;
+    }
+    body[data-fix="default"] .lnb{
+        flex: none;
+    }
+    body[data-fix="default"] .footer{
+        flex: none;
+    }   
+
+    body[data-fix="footer"] .root{
+        height: 100%;
+    }
+    body[data-fix="footer"] .container{
+        overflow: auto;
+    }
+    body[data-fix="footer"] .container:after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+    body[data-fix="footer"] .lnb{
+        float: left;
+        min-height: 100%;
+    }
+    body[data-fix="footer"] .main{
+        margin-left: auto;
+    }
+
+    body[data-fix="all"] .root{
+        height: 100%;
+    }
+    body[data-fix="all"] .container{
+        overflow: hidden;
+        display: flex;
+    }
+    body[data-fix="all"] .lnb{
+        overflow: auto;
+        flex: none;
+    }
+    body[data-fix="all"] .main{
+        overflow: auto;
+    }
+    body[data-fix="all"] .footer{
+        flex: none;
+    }
+
+
+    h2{
+        margin: 0;
+        font-size: 1rem;
+    }
+    .test-content{
+        height: 1000px;
+    }
+    .test-content[data-hidden="true"]{
+        display: none;
+    }
+    .actions{
+        position: fixed; top:0; right:0; 
+        padding: 1rem;
+        background: transparent;
+    }
+    </style>
+</head>
+
+<!-- 
+    레이아옷 고정 설정 -> data-fix : default | footer | all
+-->
+<body data-fix="default">
+    <div class="root">
+        <div class="container">
+            <div class="lnb">
+                <h2>Lnb</h2>
+                <div class="test-content" data-hidden="false"></div>
+            </div>
+            <main class="main">
+                <h2>Main</h2>
+                <div class="test-content" data-hidden="false"></div>
+            </main>
+        </div>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Select the element to be fixed.</legend>
+            <div>
+                <input type="radio" name="fix" id="default" value="default" onchange="fixElement(this)" checked>
+                <label for="default">Don't fix</label> 
+            </div>
+            <div>
+                <input type="radio" name="fix" id="footer" value="footer" onchange="fixElement(this)">
+                <label for="footer">Footer</label>
+            </div>
+            <div>
+                <input type="radio" name="fix" id="all" value="all" id="all" onchange="fixElement(this)">
+                <label for="all">All</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <input type="radio" name="content" id="addContent" value="false" onchange="setContent(this)" checked>
+            <label for="addContent">Add Content</label>
+            <input type="radio" name="content" id="removeContent" value="true" onchange="setContent(this)">
+            <label for="removeContent">Remove Content</label>
+        </fieldset>
+    </form>
+    <script type="text/javascript" src="../js/ui.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout rhf lower</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            margin:0;
+        }
+        .root{
+            height: 100%;
+        }
+        .container {
+            width: 85%;
+        }
+        .rnb{
+            width: 15%;
+            background: #ddd;
+        }
+        .header{
+            height: 50px;
+            background: #f8f8f8;
+        }
+        .main-wrapper{
+            min-height: 100%;
+            margin-top: -50px;
+            margin-bottom: -30px;
+        }
+        .main{
+            padding-top: 50px;
+            padding-bottom: 30px
+        }
+        .footer{
+            height: 30px;
+            background: #f8f8f8;
+        }
+
+        body[data-fix="false"] .root{
+            display: table;
+            width: 100%;
+        }
+        body[data-fix="false"] .container{
+            display: table-cell;
+        }
+        body[data-fix="false"] .rnb{
+            display: table-cell;
+        }
+
+        body[data-fix="true"] .root:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        body[data-fix="true"] .container{
+            overflow: auto;
+            float: left;
+            height: 100%;
+        }
+        body[data-fix="true"] .rnb{
+            overflow: auto;
+            margin-left: auto;
+            height: 100%;
+        }
+
+        h2{
+            margin: 0;
+            font-size: 1rem;
+        }
+        .actions{
+            position: fixed; top: 60px; right: 20%;
+            padding: 1rem;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<!-- 
+    Rnb 고정 설정 : data-fix = true | false
+-->
+<body data-fix="false">
+    <div class="root">
+        <div class="container">
+            <header class="header">
+                <h2>Header</h2>
+            </header>
+            <div class="main-wrapper">
+                <main class="main">
+                    <h2>Main</h2>
+                    <div style="height: 1000px"></div>
+                </main>
+            </div>
+            <footer class="footer">
+                <h2>Footer</h2>
+            </footer>
+        </div>
+        <div class="rnb">
+            <h2>Rnb</h2>
+            <div style="height: 1000px"></div>
+        </div>
+    </div>
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Is rnb fix?</legend>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
+            <label for="true">Yes</label>
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
+            <label for="false">No</label>
+        </fieldset>
+    </form>
+    <script>
+    let changeFix = function(el) {
+        document.body.dataset.isfix = el.value;
+    }
+    </script>
+</body>
+
+</html>
