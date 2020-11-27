@@ -26,41 +26,41 @@
         background: #ddd;
     }
 
-    body[data-fix="false"] .root{
+    body[data-fix="default"] .root{
         display: table;
         width: 100%;
         min-height: 100%;
     }
-    body[data-fix="false"] .lnb{
+    body[data-fix="default"] .lnb{
         display: table-cell;
     }
-    body[data-fix="false"] .container{
+    body[data-fix="default"] .container{
         display: table-cell;
     }
-    body[data-fix="false"] .rnb{
+    body[data-fix="default"] .rnb{
         display: table-cell;
     }
 
-    body[data-fix="true"] .root{
+    body[data-fix="all"] .root{
         height: 100%;
     }
-    body[data-fix="true"] .root:after{
+    body[data-fix="all"] .root:after{
         content: '';
         display: block;
         clear: both;
     }
-    body[data-fix="true"] .lnb{
+    body[data-fix="all"] .lnb{
         overflow: auto;
         float: left;
         height: 100%;
     }
-    body[data-fix="true"] .container{
+    body[data-fix="all"] .container{
         overflow: auto;
         float: left;
         width: 70%;
         height: 100%;
     }
-    body[data-fix="true"] .rnb{
+    body[data-fix="all"] .rnb{
         overflow: auto;
         float: left;
         height: 100%;

@@ -23,18 +23,18 @@
         background: #ddd;
     }
 
-    body[data-fix="false"] .root{
+    body[data-fix="default"] .root{
         min-height: 100%;
     }
 
-    body[data-fix="true"] .root{
+    body[data-fix="all"] .root{
         height: 100%;
     }
     
-    body[data-fix="true"] .main{
+    body[data-fix="all"] .main{
         overflow: auto;
     }
-    body[data-fix="true"] .rnb{
+    body[data-fix="all"] .rnb{
         overflow: auto;
     }
 
@@ -65,18 +65,30 @@
     </div>
     <form class="actions" name="actions">
         <fieldset>
-            <legend>Is lnb fix?</legend>
-            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)">
-            <label for="true">Yes</label>
-            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)" checked>
-            <label for="false">No</label>
+            <legend>Select the element to be fixed</legend>
+            <label>
+                <input type="radio" name="fix" value="default" onchange="fixElement(this)" checked>
+                <span>Don't fix</span> 
+            </label>
+            <label>
+                <input type="radio" name="fix" value="all" onchange="fixElement(this)">
+                <span>All</span>
+            </label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <label>
+                <input type="radio" name="content" value="false" onchange="setContent(this)" checked>
+                <span>Add Content</span>
+            </label>
+            <label>
+                <input type="radio" name="content" value="true" onchange="setContent(this)">
+                <label>Remove Content</label>
+            </label>
         </fieldset>
     </form>
-    <script>
-    let changeFix = function(el) {
-        document.body.dataset.isfix = el.value;
-    }
-    </script>
+    <script type="text/javascript" src="../js/layout.js"></script>
 </body>
 
 </html>

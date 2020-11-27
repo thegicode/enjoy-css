@@ -23,43 +23,43 @@
         background: #ddd;
     }
 
-    body[data-fix="false"] .root {
+    body[data-fix="default"] .root {
         display: table;
         width: 100%;
         height: 100%;
     }
-    body[data-fix="false"] .lnb,
-    body[data-fix="false"] .rnb {
+    body[data-fix="default"] .lnb,
+    body[data-fix="default"] .rnb {
         display: table-cell;
         width: 10%;
     }
-    body[data-fix="false"] .main {
+    body[data-fix="default"] .main {
         display: table-cell;
         min-height: 100%;
     }
 
-    body[data-fix="true"] .root {
+    body[data-fix="all"] .root {
         overflow: hidden;
         height: 100%;
     }
-    body[data-fix="true"] .root:after{
+    body[data-fix="all"] .root:after{
         content:'';
         display: block;
         clear: both;
     }
-    body[data-fix="true"] .lnb{
+    body[data-fix="all"] .lnb{
         overflow: auto;
         float: left;
         width: 10%;
         height: 100%;
     }
-    body[data-fix="true"] .main {
+    body[data-fix="all"] .main {
         overflow: auto;
         float: left;
         width: 80%;
         height: 100%;
     }
-    body[data-fix="true"] .rnb {
+    body[data-fix="all"] .rnb {
         overflow: auto;
         width: 10%;
         height: 100%;

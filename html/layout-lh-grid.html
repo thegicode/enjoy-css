@@ -5,96 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
-    <title>Layout lhf lower</title>
+    <title>Layout lh flex</title>
     <style>
-
-    .root {
-        height: 100%;
+    .root{
+        display: grid;
+        grid-template-columns: 15vw 1fr;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas: 
+            "lnb header"
+            "lnb main"
     }
-    .lnb {
-        width: 15%; 
+    .lnb{
+        grid-area: lnb;
         background: #ddd;
     }
-    .container {
-    }
-    .header {
-        height: 50px;
+    .header{
+        grid-area: header;
         background: #f8f8f8;
     }
-    .main-wrapper{
-        min-height: 100%;
-        margin-top: -50px;
-        margin-bottom: -30px;
-    }
-    .main {
-        padding-top: 50px;
-        padding-bottom: 30px;
-    }
-    .footer {
-        height: 30px;
-        background: #f8f8f8;
+    .main{
+        grid-area: main;
     }
 
     body[data-fix="default"] .root{
-        display: table;
-        width: 100%;
-    }
-    body[data-fix="default"] .lnb{
-        display: table-cell;
-    }
-    body[data-fix="default"] .container{
-        display: table-cell;
         min-height: 100%;
     }
-
-    body[data-fix="all"] .root:after{
-        content: '';
-        display: block;
-        clear: both;
+    
+    body[data-fix="all"] .root{
+        overflow: hidden;
+        height: 100%;
     }
     body[data-fix="all"] .lnb{
         overflow: auto;
-        float: left;
-        height: 100%
     }
-    body[data-fix="all"] .container{
+    body[data-fix="all"] .main{
         overflow: auto;
-        height: 100%;
-        margin-left: auto;
     }
 
-    
     .actions{
-        top: 60px; left: 20%;
-        
+       top: 60px; right: 0;
     }
     </style>
 </head>
 
 <!-- 
-    Lnb 고정 설정 : data-fix = true | false 
+    레이아옷 고정 설정 -> data-fix : default | all
 -->
-<body data-fix="false">
+<body data-fix="default">
     <div class="root">
         <div class="lnb">
             <h2>Lnb</h2>
             <div class="test-content" data-hidden="false"></div>
         </div>
-        <div class="container">
-            <header class="header">
-                <h2>Header</h2>
-            </header>
-            <div class="main-wrapper">
-                <main class="main">
-                    <h2>Main</h2>
-                    <div class="test-content" data-hidden="false"></div>
-                </main>
-            </div>
-            <footer class="footer">
-                <h2>Footer</h2>
-            </footer>
-        </div>
+        <header class="header">
+            <h2>Header</h2>
+        </header>
+        <main class="main">
+            <h2>Main</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </main>
     </div>
+
     <form class="actions" name="actions">
         <fieldset>
             <legend>Select the element to be fixed</legend>
@@ -120,6 +91,7 @@
             </label>
         </fieldset>
     </form>
+
     <script type="text/javascript" src="../js/layout.js"></script>
 </body>
 

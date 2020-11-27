@@ -30,32 +30,32 @@
         background: #f8f8f8;
     }
 
-    body[data-fix="false"] .root{
+    body[data-fix="default"] .root{
         display: table;
         width: 100%;
     }
-    body[data-fix="false"] .container{
+    body[data-fix="default"] .container{
         display: table-cell;
 
         min-height: 100%;
     }
     
-    body[data-fix="false"] .rnb{
+    body[data-fix="default"] .rnb{
         display: table-cell;
         min-height: 100%;
     }
 
-    body[data-fix="true"] .root:after{
+    body[data-fix="all"] .root:after{
         content: '';
         display: block;
         clear: both;
     }
-    body[data-fix="true"] .container{
+    body[data-fix="all"] .container{
         overflow: auto;
         float: left;
         height: 100%;
     }
-    body[data-fix="true"] .rnb{
+    body[data-fix="all"] .rnb{
         overflow: auto;
         height: 100%;
         margin-left: auto;
