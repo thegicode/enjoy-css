@@ -5,19 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
-    <title>layout l flex</title>
+    <title>layout l grid</title>
     <style>
     .root {
-        display: flex;
+        display: grid;
+        grid-template-columns: 15vw 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+            "lnb main"
     }
     .lnb {
-        flex: none;
-        width: 15%;
-
+        grid-area: lnb;
         background: #ddd;
     }
     .main {
-        flex: 1;
+        grid-area: main;
         background: #f8f8f8;
     }
 
