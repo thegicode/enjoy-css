@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
     <title>Layout lhf flex</title>
     <style>
-
     .root {
         display: flex;
     }
@@ -26,7 +25,6 @@
         flex: none;
         height: 50px;
         background: #f8f8f8;
-
     }
     .main {
         flex: 1;
@@ -41,13 +39,15 @@
         min-height: 100%;
     }
 
-    body[data-fix="all"] .root{
+    body[data-fix="lnb"] .root{
         height: 100%;
     }
-    body[data-fix="all"] .container{
+    body[data-fix="lnb"] .lnb{
         overflow: auto;
     }
-
+    body[data-fix="lnb"] .container{
+        overflow: auto;
+    }
     
     .actions{
         top: 60px; left: 20%;
@@ -57,12 +57,13 @@
 </head>
 
 <!-- 
-    Lnb 고정 설정 : data-fix = true | false 
+    레이아옷 고정 설정 : data-fix : default | lnb
 -->
-<body data-fix="false">
+<body data-fix="default">
     <div class="root">
         <div class="lnb">
             <h2>Lnb</h2>
+            <div class="test-content" data-hidden="false"></div>
         </div>
         <div class="container">
             <header class="header">
@@ -85,8 +86,8 @@
                 <span>Don't fix</span> 
             </label>
             <label>
-                <input type="radio" name="fix" value="all" onchange="fixElement(this)">
-                <span>All</span>
+                <input type="radio" name="fix" value="lnb" onchange="fixElement(this)">
+                <span>Lnb</span>
             </label>
         </fieldset>
         <br>
