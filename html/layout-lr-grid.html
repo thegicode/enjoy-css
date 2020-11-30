@@ -5,50 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
-    <title>Layout lhf grid</title>
+    <title>layout lr grid</title>
     <style>
     .root {
         display: grid;
-        grid-template-columns: 15vw 1fr;
-        grid-template-rows: 50px 1fr 30px;
-        grid-template-areas:
-            "lnb header"
-            "lnb main"
-            "lnb footer";
+        grid-template-columns: 10vw 1fr 10vw;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+            "lnb main rnb";
     }
-    .lnb {
+    .lnb{
         grid-area: lnb;
         background: #ddd;
     }
-    .header {
-        grid-area: header;
-        background: #f8f8f8;
-    }
     .main {
         grid-area: main;
-    }
-    .footer {
-        grid-area: footer;
         background: #f8f8f8;
     }
+    .rnb{
+        grid-area: rnb;
+        background: #ddd;
+    }
 
-    body[data-fix="default"] .root{
+    body[data-fix="default"] .root {
         min-height: 100vh;
     }
 
-    body[data-fix="all"] .root{
-        height: 100%;
+    body[data-fix="all"] .root {
+        height: 100vh;
     }
-    body[data-fix="all"] .lnb{
+    body[data-fix="all"] .lnb,
+    body[data-fix="all"] .rnb {
         overflow: auto;
     }
-    body[data-fix="all"] .main{
+    body[data-fix="all"] .main {
         overflow: auto;
     }
-    
-    .actions{
-        top: 60px; left: 20%;
-        
+
+    .actions {
+        top: 30px; left: 12%;
     }
     </style>
 </head>
@@ -62,16 +57,14 @@
             <h2>Lnb</h2>
             <div class="test-content" data-hidden="false"></div>
         </div>
-        <header class="header">
-            <h2>Header</h2>
-        </header>
         <main class="main">
             <h2>Main</h2>
             <div class="test-content" data-hidden="false"></div>
         </main>
-        <footer class="footer">
-            <h2>Footer</h2>
-        </footer>
+        <div class="rnb">
+            <h2>Rnb</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </div>
     </div>
     <form class="actions" name="actions">
         <fieldset>
@@ -98,6 +91,7 @@
             </label>
         </fieldset>
     </form>
+
     <script type="text/javascript" src="../js/layout.js"></script>
 </body>
 
