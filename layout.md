@@ -17,9 +17,8 @@
 	* flex, grid 우선 작업
 	* lower는 추후 수정하는 걸로
 
-### Mac
-	* chrome : all
-	* firefox, safari : layout-f~, layout-h~
+### Mac(flex, grid)
+	* chrome, safari, firefox, opera : ~ layout-lrf, ~ layout-lrf
 
 ### Window 
 	* 
