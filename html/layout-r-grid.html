@@ -5,28 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
-    <title>Layout lrf grid</title>
+    <title>layout r grid</title>
     <style>
-    .root{
+    .root {
         display: grid;
-        grid-template-columns: 10vw 1fr 10vw;
-        grid-template-rows: 1fr 30px;
-        grid-template-areas: 
-            "lnb main rnb"
-            "lnb footer rnb";
+        grid-template-columns: 1fr 15vw;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "main rnb";
     }
-    .lnb{
-        grid-area: lnb;
-        background: #ddd;
-    }
-    .main{
+    .main {
         grid-area: main;
-    }
-    .footer{
-        grid-area: footer;
         background: #f8f8f8;
     }
-    .rnb{
+    .rnb {
         grid-area: rnb;
         background: #ddd;
     }
@@ -38,9 +30,6 @@
     body[data-fix="all"] .root{
         height: 100%;
     }
-    body[data-fix="all"] .lnb{
-        overflow: auto;
-    }
     body[data-fix="all"] .main{
         overflow: auto;
     }
@@ -49,32 +38,27 @@
     }
 
     .actions{
-        top: 0; left: 20%;
+        top: 30px; left: 0;
+        
     }
     </style>
 </head>
 
 <!-- 
-    레이아옷 고정 설정 : data-fix = default | all
+    레이아웃 고정 설정 : data-fix = true | false 
 -->
 <body data-fix="default">
     <div class="root">
-        <div class="lnb">
-            <h2>Lnb</h2>
-            <div class="test-content" data-hidden="false"></div>
-        </div>
         <main class="main">
             <h2>Main</h2>
             <div class="test-content" data-hidden="false"></div>
         </main>
-        <footer class="footer">
-            <h2>Footer</h2>
-        </footer>
         <div class="rnb">
             <h2>Rnb</h2>
             <div class="test-content" data-hidden="false"></div>
         </div>
     </div>
+
     <form class="actions" name="actions">
         <fieldset>
             <legend>Select the element to be fixed</legend>
@@ -100,6 +84,7 @@
             </label>
         </fieldset>
     </form>
+
     <script type="text/javascript" src="../js/layout.js"></script>
 </body>
 
