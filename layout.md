@@ -18,7 +18,7 @@
 	* lower는 추후 수정하는 걸로
 
 ### Mac(flex, grid)
-	* chrome, safari, firefox, opera : ~ layout-lrf, ~ layout-lrf
+	* chrome, safari, firefox, opera 테스트 완료
 
 ### Window 
-	* 
+	* lower : ie9 이상
