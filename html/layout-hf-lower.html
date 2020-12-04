@@ -7,9 +7,7 @@
     <title>Layout hf lower</title>
     <style>
 
-    .root {
-        width: 100%; height: 100%;
-    }
+    /*.root {}*/
     .header {
         height: 50px;
         background: #ddd;
@@ -24,6 +22,8 @@
 
     body[data-fix="default"] .root{
         display: table;
+        width: 100%; 
+        height: 100%;
     }
     body[data-fix="default"] .header{
         display: table-row;
@@ -35,21 +35,23 @@
         display: table-row;
     }
     
+    body[data-fix="all"] .root{
+        position: relative;
+        height: 100%;
+    }
     body[data-fix="all"] .header{
         position: absolute; top: 0; right: 0; left: 0;
     }
     body[data-fix="all"] .main{
-        position: absolute; top: 50px; right: 0; bottom: 30px; left: 0;
         overflow: auto;
+        position: absolute; top: 50px; right: 0; bottom: 30px; left: 0;
     }
     body[data-fix="all"] .footer{
         position: absolute; right: 0; bottom: 0; left: 0;
     }
-
     
     .actions{
         top:3rem; right:0;
-        
     }
     </style>
 </head>
@@ -91,19 +93,7 @@
             <label for="removeContent">Remove Content</label>
         </fieldset>
     </form>
-    <script>
-    var fixElement = function(el) {
-        document.body.dataset.isfix = el.value;
-    };
-    var setContent = function(el){
-        var els = document.querySelectorAll('.test-content'),
-            i = els.length;
-        while(i){
-            i -= 1;
-            els[i].dataset.hidden = el.value;
-        }
-    };
-    </script>
+    <script type="text/javascript" src="../js/layout-lower.js"></script>
 </body>
 
 </html>
