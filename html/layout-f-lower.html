@@ -8,28 +8,31 @@
     <title>Layout f lower</title>
     <style>
 
-    .root{
-        height: 100%;
-    }
+    /*.root{}*/
     .container{
         background: #f8f8f8;
     }
-    .main{}
+    /*.main{}*/
     .footer {
         height: 30px;
         background: #ddd;
     }
 
+    body[data-fix="default"] .root{
+        height: 100%;
+    }
     body[data-fix="default"] .container{
         min-height: 100%;
         margin-bottom: -30px;
     }
     body[data-fix="default"] .main{
+        box-sizing: border-box;
         padding-bottom: 30px;
     }
 
     body[data-fix="footer"] .root{
         position: relative;
+        height: 100%;
     }
     body[data-fix="footer"] .container{
         overflow: auto;
@@ -39,7 +42,7 @@
         position: absolute; right: 0; bottom: 0; left: 0;
     }
 
-    .actions{
+<input type="radio" name="fix" value="header"    .actions{
         top: 0; right: 0;
     }
     </style>

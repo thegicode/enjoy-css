@@ -8,38 +8,43 @@
     <title>Layout h lower</title>
     <style>
 
-    .root {
-        height: 100%;
-    }
+    /*.root {}*/
     .header {
-        position: relative;
-        height: 3rem;
+        height: 50px;
         background: #ddd;
     }
     .container{
         background: #f8f8f8;
     }
 
+    body[data-fix="default"] .root{
+        height: 100%;
+    }
+    body[data-fix="default"] .header{
+        position: relative;
+    }
     body[data-fix="default"] .container{
         min-height: 100%;
-        margin-top: -3rem;
+        margin-top: -50px;
     }
     body[data-fix="default"] .main{
-        padding-top: 3rem;
+        padding-top: 50px;
     }
 
+    body[data-fix="header"] .root{
+        position: relative;
+        height: 100%;
+    }
     body[data-fix="header"] .header{
         position: absolute; top:0; left: 0; right: 0;
     }
     body[data-fix="header"] .container{
         overflow: auto;
-        position: absolute; top:3rem; left:0; right:0; bottom:0;
+        position: absolute; top: 50px; left:0; right:0; bottom:0;
     }
-    
     
     .actions{
         top: 60px; right:0;
-        
     }
     </style>
 </head>
@@ -70,7 +75,7 @@
                 <span>Don't fix</span> 
             </label>
             <label>
-                <input type="radio" name="fix" value="header" id="header" onchange="fixElement(this)">
+                <input type="radio" name="fix" value="header" onchange="fixElement(this)">
                 <span>Header</span>
             </label>
         </fieldset>
@@ -88,19 +93,7 @@
         </fieldset>
     </form>
 
-    <script>
-    var fixElement = function(el) {
-        document.body.dataset.isfix = el.value;
-    };
-    var setContent = function(el){
-        var els = document.querySelectorAll('.test-content'),
-            i = els.length;
-        while(i){
-            i -= 1;
-            els[i].dataset.hidden = el.value;
-        }
-    };
-    </script>
+    <script type="text/javascript" src="../js/layout-lower.js"></script>
 </body>
 
 </html>
