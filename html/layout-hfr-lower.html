@@ -8,81 +8,77 @@
     <title>Layout hfr lower</title>
     <style>
 
-    .root {
-        height: 100%;
-    }
+    /*.root {}*/
     .header {
-        position : relative;
         height: 50px;
         background: #ddd;
     }
-    .container{
-        height: 100%;
-        margin-top: -50px;
-        margin-bottom: -30px;
-    }
-    .container-wrapper{
-    }
-    .container-wrapper:after{
-        content: '';
-        display: block;
-        clear: both;
-    }
+    /*.container{}*/
     .main {
-        float: left;
         width: 85%;
     }
     .rnb{
-        width: 15%; height: 100%;
-        margin-left: auto;
+        width: 15%; 
         background: #f8f8f8;
     }
     .footer {
-        position: relative;
         height: 30px;
         background: #ddd;
     }
 
+    body[data-fix="default"] .root{
+        height: 100%;
+    }
+    body[data-fix="default"] .header{
+        position: relative;
+    }
     body[data-fix="default"] .container{
         display: table;
         width: 100%;
-    }
-    body[data-fix="default"] .container-wrapper{
-        display: table-row;
         height: 100%;
+        margin-top: -50px;
+        margin-bottom: -30px;
     }
     body[data-fix="default"] .main{
+        display: table-cell;
         box-sizing: border-box;
         padding-top: 50px;
         padding-bottom: 30px;
     }
     body[data-fix="default"] .rnb{
+        display: table-cell;
         box-sizing: border-box;
         padding-top: 50px;
         padding-bottom: 30px;
+    }
+    body[data-fix="default"] .footer{
+        position: relative;
     }
 
-    body[data-fix="all"] .container{
-        overflow: hidden;
-    }
-    body[data-fix="all"] .container-wrapper{
-        box-sizing: border-box;
+    body[data-fix="all"] .root{
+        position: relative;
         height: 100%;
-        padding-top: 50px;
-        padding-bottom: 30px;
+    }
+    body[data-fix="all"] .header{
+        position: absolute; top: 0; right: 0; left: 0;
+    }
+    body[data-fix="all"] .container{
+        position: absolute; top: 50px; right: 0; bottom: 30px; left: 0;
     }
     body[data-fix="all"] .main{
         overflow: auto;
-        height: 100%;
+        position: absolute; top: 0; left: 0; bottom: 0;
     }
     body[data-fix="all"] .rnb{
         overflow: auto;
+        position: absolute; top: 0; right: 0; bottom : 0;
+    }
+    body[data-fix="all"] .footer{
+        position: absolute; right: 0; bottom: 0; left: 0;
     }
 
-    
     .actions{
-        top:60px; left: 0;
-        
+        top: 60px; left: 0;
     }
     </style>
 </head>
@@ -96,15 +92,13 @@
             <h2>header</h2>
         </header>
         <div class="container">
-            <div class="container-wrapper">
-                <main class="main">
-                    <h2>Main</h2>
-                    <div class="test-content" data-hidden="false"></div>
-                </main>
-                <div class="rnb">
-                    <h2>Rnb</h2>
-                    <div class="test-content" data-hidden="false"></div>
-                </div>
+            <main class="main">
+                <h2>Main</h2>
+                <div class="test-content" data-hidden="false"></div>
+            </main>
+            <div class="rnb">
+                <h2>Rnb</h2>
+                <div class="test-content" data-hidden="false"></div>
             </div>
         </div>
         <footer class="footer">
