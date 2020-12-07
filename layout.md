@@ -22,4 +22,3 @@
 
 ### Window 
 	* lower : ie9 이상
-		- 확인요 : hflr, hfr
