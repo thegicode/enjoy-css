@@ -7,21 +7,14 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
     <title>Layout lrf lower</title>
     <style>
-    .root{
-    }
+    /*.root{}*/
     .lnb{
         width: 15%;
         background: #ddd;
     }
-    .container{
-    }
-    .main-wrapper{
-        min-height: 100%;
-        margin-bottom: -30px;
-    }
-    .main{
-        padding-bottom: 30px;
-    }
+    /*.container{}*/
+    /*.main-wrapper{}*/
+    /*.main{}*/
     .footer{
         height: 30px;
         background: #f8f8f8;
@@ -41,40 +34,74 @@
     }
     body[data-fix="default"] .container{
         display: table-cell;
+        height: 100%;
     }
-    
+    body[data-fix="default"] .main-wrapper{
+        min-height: 100%;
+        margin-bottom: -30px;
+    }
+    body[data-fix="default"] .main{
+        box-sizing: border-box;
+        padding-bottom: 30px;
+    }
     body[data-fix="default"] .rnb{
         display: table-cell;
     }
 
-    body[data-fix="all"] .root{
+    body[data-fix="lnbRnb"] .root{
+        position: relative;
+        height: 100%;
+    }
+    body[data-fix="lnbRnb"] .lnb{
+        overflow: auto;
+        position: absolute; top: 0; bottom: 0; left: 0;
+    }
+    body[data-fix="lnbRnb"] .container{
+        overflow: auto;
+        position: absolute; top: 0; right: 15%; bottom: 0; left: 15%;
+    }
+    body[data-fix="lnbRnb"] .main-wrapper{
+        min-height: 100%;
+        margin-bottom: -30px;
+    }
+    body[data-fix="lnbRnb"] .main{
+        box-sizing: border-box;
+        padding-bottom: 30px;
+    }
+    body[data-fix="lnbRnb"] .rnb{
+        overflow: auto;
+        position: absolute; top: 0; right: 0; bottom: 0;
+    }
+
+
+    /*body[data-fix="lnbRnb"] .root{
         overflow: hidden;
         height: 100%;
     }
-    body[data-fix="all"] .root:after{
+    body[data-fix="lnbRnb"] .root:after{
         content: '';
         display: block;
         clear: both;
     }
-    body[data-fix="all"] .lnb{
+    body[data-fix="lnbRnb"] .lnb{
         overflow: auto;
         float: left;
         height: 100%;
     }
-    body[data-fix="all"] .container{
+    body[data-fix="lnbRnb"] .container{
         overflow: auto;
         float: left;
         width: 70%; height: 100%;
     }
-    body[data-fix="all"] .main-wrapper{
+    body[data-fix="lnbRnb"] .main-wrapper{
     }
-    body[data-fix="all"] .main{
+    body[data-fix="lnbRnb"] .main{
     }
-    body[data-fix="all"] .rnb{
+    body[data-fix="lnbRnb"] .rnb{
         overflow: auto;
         margin-left: auto;
         height: 100%;
-    }
+    }*/
 
     .actions{
         top: 0; left: 20%;
@@ -84,8 +111,7 @@
 </head>
 
 <!-- 
-    Lnb, Rnb 고정 설정 : data-fix = true | false 
-    TODO : all fix
+    레이아옷 고정 설정 : data-fix = default | lnbRnb
 -->
 <body data-fix="default">
     <div class="root">
@@ -117,8 +143,8 @@
                 <span>Don't fix</span> 
             </label>
             <label>
-                <input type="radio" name="fix" value="all" onchange="fixElement(this)">
-                <span>All</span>
+                <input type="radio" name="fix" value="lnbRnb" onchange="fixElement(this)">
+                <span>Lnb Rnb</span>
             </label>
         </fieldset>
         <br>
@@ -135,7 +161,7 @@
         </fieldset>
     </form>
     
-    <script type="text/javascript" src="../js/layout.js"></script>
+    <script type="text/javascript" src="../js/layout-lower.js"></script>
 </body>
 
 </html>
