@@ -7,22 +7,17 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
     <title>Layout lh lower</title>
     <style>
-    .root{
-    }
+    /*.root{}*/
     .lnb{
         width: 15%;
         background: #ddd;
     }
-    .container{
-    }
+    /*.container{}*/
     .header{
-
         height: 50px;
         background: #f8f8f8;
-
     }
-    .main{
-    }
+    /*.main{}*/
 
     body[data-fix="default"] .root{
         display: table;
@@ -38,24 +33,24 @@
         min-height: 100%;
     }
 
-    body[data-fix="all"] .lnb{
+    body[data-fix="lnb"] .lnb{
         overflow: auto;
         position: absolute; top: 0; bottom: 0; left: 0;
     }
-    body[data-fix="all"] .container{
+    body[data-fix="lnb"] .container{
         overflow: auto;
         position: absolute; top: 0; right: 0; bottom: 0; left: 15%;
     }
 
     .actions{
-       top: 0; right: 0;
+       top: 60px; right: 0;
         
     }
     </style>
 </head>
 
 <!-- 
-    lnb 고정 설정 : data-fix = true | false
+    레이아옷 고정 설정 : data-fix = default | lnb 
 -->
 <body data-fix="default">
     <div class="root">
@@ -81,8 +76,8 @@
                 <span>Don't fix</span> 
             </label>
             <label>
-                <input type="radio" name="fix" value="all" onchange="fixElement(this)">
-                <span>All</span>
+                <input type="radio" name="fix" value="lnb" onchange="fixElement(this)">
+                <span>Lnb</span>
             </label>
         </fieldset>
         <br>
@@ -98,7 +93,7 @@
             </label>
         </fieldset>
     </form>
-    <script type="text/javascript" src="../js/layout.js"></script>
+    <script type="text/javascript" src="../js/layout-lower.js"></script>
 </body>
 
 </html>
