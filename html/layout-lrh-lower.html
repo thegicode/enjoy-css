@@ -7,20 +7,17 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
     <title>Layout lrh lower</title>
     <style>
-    .root{
-    }
+    /*.root{}*/
     .lnb{
         width: 15%;
         background: #ddd;
     }
-    .container{
-    }
+    /*.container{}*/
     .header{
         height: 50px;
         background: #f8f8f8;
     }
-    .main{
-    }
+    /*.main{}*/
     .rnb{
         width: 15%;
         background: #ddd;
@@ -41,30 +38,47 @@
         display: table-cell;
     }
 
-    body[data-fix="all"] .root{
+    body[data-fix="lnbRnb"] .root{
+        position: relative;
         height: 100%;
     }
-    body[data-fix="all"] .root:after{
+    body[data-fix="lnbRnb"] .lnb{
+        overflow: auto;
+        position: absolute; top: 0; bottom: 0; left: 0;
+    }
+    body[data-fix="lnbRnb"] .container{
+        overflow: auto;
+        position: absolute; top: 0; right: 15%; bottom: 0; left: 15%;
+    }
+    body[data-fix="lnbRnb"] .rnb{
+        overflow: auto;
+        position: absolute; top: 0; right: 0; bottom: 0; 
+    }
+    
+    /*body[data-fix="lnbRnb"] .root{
+        height: 100%;
+    }
+    body[data-fix="lnbRnb"] .root:after{
         content: '';
         display: block;
         clear: both;
     }
-    body[data-fix="all"] .lnb{
+    body[data-fix="lnbRnb"] .lnb{
         overflow: auto;
         float: left;
         height: 100%;
     }
-    body[data-fix="all"] .container{
+    body[data-fix="lnbRnb"] .container{
         overflow: auto;
         float: left;
         width: 70%;
         height: 100%;
     }
-    body[data-fix="all"] .rnb{
+    body[data-fix="lnbRnb"] .rnb{
         overflow: auto;
         float: left;
         height: 100%;
-    }
+    }*/
 
     .actions{
         top: 60px; left: 20%;
@@ -74,7 +88,7 @@
 </head>
 
 <!-- 
-    Lnb, Rnb 고정 설정 : data-fix = true | false 
+    레이아옷 고정 설정 : data-fix = default | lnbRnb
 -->
 <body data-fix="default">
     <div class="root">
@@ -86,16 +100,17 @@
             <header class="header">
                 <h2>Header</h2>
             </header>
-            <main class="main">
+            <div class="main">
                 <h2>Main</h2>
                 <div class="test-content" data-hidden="false"></div>
-            </main>
+            </div>
         </div>
         <div class="rnb">
             <h2>Rnb</h2>
             <div class="test-content" data-hidden="false"></div>
         </div>
     </div>
+
     <form class="actions" name="actions">
         <fieldset>
             <legend>Select the element to be fixed</legend>
@@ -104,8 +119,8 @@
                 <span>Don't fix</span> 
             </label>
             <label>
-                <input type="radio" name="fix" value="all" onchange="fixElement(this)">
-                <span>All</span>
+                <input type="radio" name="fix" value="lnbRnb" onchange="fixElement(this)">
+                <span>Lnb, Rnb</span>
             </label>
         </fieldset>
         <br>
@@ -122,7 +137,7 @@
         </fieldset>
     </form>
     
-    <script type="text/javascript" src="../js/layout.js"></script>
+    <script type="text/javascript" src="../js/layout-lower.js"></script>
 </body>
 
 </html>
