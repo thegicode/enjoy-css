@@ -8,28 +8,18 @@
     <title>Layout lhf lower</title>
     <style>
 
-    .root {
-        height: 100%;
-    }
+    /*.root {}*/
     .lnb {
         width: 15%; 
         background: #ddd;
     }
-    .container {
-    }
+    /*.container {}*/
     .header {
         height: 50px;
         background: #f8f8f8;
     }
-    .main-wrapper{
-        min-height: 100%;
-        margin-top: -50px;
-        margin-bottom: -30px;
-    }
-    .main {
-        padding-top: 50px;
-        padding-bottom: 30px;
-    }
+    /*.main-wrapper{}*/
+    /*.main {}*/
     .footer {
         height: 30px;
         background: #f8f8f8;
@@ -38,32 +28,50 @@
     body[data-fix="default"] .root{
         display: table;
         width: 100%;
+        height: 100%;
     }
     body[data-fix="default"] .lnb{
         display: table-cell;
     }
     body[data-fix="default"] .container{
         display: table-cell;
-        min-height: 100%;
-    }
-
-    body[data-fix="all"] .root:after{
-        content: '';
-        display: block;
-        clear: both;
-    }
-    body[data-fix="all"] .lnb{
-        overflow: auto;
-        float: left;
-        height: 100%
-    }
-    body[data-fix="all"] .container{
-        overflow: auto;
         height: 100%;
-        margin-left: auto;
+    }
+    body[data-fix="default"] .main-wrapper{
+        min-height: 100%;
+        margin-top: -50px;
+        margin-bottom: -30px;
+    }
+    body[data-fix="default"] .main{
+        min-height: 100%;
+        box-sizing: border-box;
+        padding-top: 50px;
+        padding-bottom: 30px;
     }
 
-    
+    body[data-fix="lnb"] .root{
+        position: relative;
+        height: 100%;
+    }
+    body[data-fix="lnb"] .lnb{
+        overflow: auto;
+        position: absolute; top: 0; bottom: 0; left: 0;
+    }
+    body[data-fix="lnb"] .container{
+        overflow: auto;
+        position: absolute; top: 0; right: 0; bottom: 0; left: 15%;
+    }
+    body[data-fix="lnb"] .main-wrapper{
+        min-height: 100%;
+        margin-top: -50px;
+        margin-bottom: -30px;
+    }
+    body[data-fix="lnb"] .main{
+        box-sizing: border-box;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
     .actions{
         top: 60px; left: 20%;
         
@@ -72,7 +80,7 @@
 </head>
 
 <!-- 
-    Lnb 고정 설정 : data-fix = true | false 
+    레이아옷 고정 설정 : data-fix = default | lnb 
 -->
 <body data-fix="default">
     <div class="root">
@@ -103,8 +111,8 @@
                 <span>Don't fix</span> 
             </label>
             <label>
-                <input type="radio" name="fix" value="all" onchange="fixElement(this)">
-                <span>All</span>
+                <input type="radio" name="fix" value="lnb" onchange="fixElement(this)">
+                <span>Lnb</span>
             </label>
         </fieldset>
         <br>
@@ -120,7 +128,7 @@
             </label>
         </fieldset>
     </form>
-    <script type="text/javascript" src="../js/layout.js"></script>
+    <script type="text/javascript" src="../js/layout-lower.js"></script>
 </body>
 
 </html>
