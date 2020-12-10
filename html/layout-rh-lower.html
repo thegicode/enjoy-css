@@ -6,20 +6,18 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
     <title>Layout rh lower</title>
     <style>
-    .root{
-    }
+    /*.root{}*/
     .container {
         width: 85%;
-    }
-    .rnb{
-        width: 15%;
-        background: #ddd;
     }
     .header{
         height: 50px;
         background: #f8f8f8;
     }
-    .main{
+    /*.main{}*/
+    .rnb{
+        width: 15%;
+        background: #ddd;
     }
 
     body[data-fix="default"] .root{
@@ -34,7 +32,20 @@
         display: table-cell;
     }
 
-    body[data-fix="all"] .root{
+    body[data-fix="rnb"] .root{
+        position: relative;
+        height: 100%;
+    }
+    body[data-fix="rnb"] .container{
+        overflow: auto;
+        position: absolute; top: 0; bottom: 0; left: 0;
+    }
+    body[data-fix="rnb"] .rnb{
+        overflow: auto;
+        position: absolute; top: 0; right: 0; bottom: 0;
+    }
+
+    /*body[data-fix="all"] .root{
         height: 100%;
     }
     body[data-fix="all"] .root:after{
@@ -52,10 +63,9 @@
         margin-left: auto;
         height: 100%;
     }
-
+*/
     .actions{
-        top:5rem; left:4rem;
-        
+        top: 60px; left: 0;
     }
     </style>
 </head>
@@ -88,8 +98,8 @@
                 <span>Don't fix</span> 
             </label>
             <label>
-                <input type="radio" name="fix" value="all" onchange="fixElement(this)">
-                <span>All</span>
+                <input type="radio" name="fix" value="rnb" onchange="fixElement(this)">
+                <span>Rnb</span>
             </label>
         </fieldset>
         <br>

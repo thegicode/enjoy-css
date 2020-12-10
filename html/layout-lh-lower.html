@@ -26,13 +26,15 @@
     }
     body[data-fix="default"] .lnb{
         display: table-cell;
-        min-height: 100%;
     }
     body[data-fix="default"] .container{
         display: table-cell;
-        min-height: 100%;
     }
 
+    body[data-fix="lnb"] .root{
+        position: relative;
+        height: 100%;
+    }
     body[data-fix="lnb"] .lnb{
         overflow: auto;
         position: absolute; top: 0; bottom: 0; left: 0;
