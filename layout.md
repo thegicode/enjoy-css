@@ -22,3 +22,4 @@
 
 ### Window 
 	* lower : ie9 이상
+	* check : lrhf-lower, r-lower
