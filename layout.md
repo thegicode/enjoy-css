@@ -21,18 +21,38 @@
 ## View
 
 ### Header
-	1. Header
-	2. Header / Lnb
-	3. Header / Rnb
-	4. Header / Lnb & Rnb
-	5. Hedaer & Footer
-	6. Hedaer & Footer / Lnb
-	7. Header & Footer / Rnb
-	8. Header & Footer / Lnb & Rnb
-
+	* Header 
+		+ Grid
+		+ [Flex](https://thegicode.github.io/enjoy-css/html/layout-h-flex.html)
+		+ Lower
+	* Header / Lnb
+	* Header / Rnb
+	* Header / Lnb & Rnb
+	* Header & Footer
+	* Header & Footer / Lnb
+	* Header & Footer / Rnb
+	* Header & Footer / Lnb & Rnb
 
 ### Footer
+	* Footer
+	* Footer / Lnb
+	* Footer / Rnb
+	* Footer / Lnb & Rnb
 
 ### Lnb
+	* Lnb
+	* Lnb / Header
+	* Lnb / Footer
+	* Lnb / Header & Footer
+	* Lnb & Rnb
+	* Lnb & Rnb / Header
+	* Lnb & Rnb / Footer
+	* Lnb & Rnb / Header & Footer
 
 ### Rnb
+	* Rnb
+	* Rnb / Header
+	* Rnb / Footer
+	* Rnb / Header & Footer
+
+
