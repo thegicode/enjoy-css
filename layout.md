@@ -23,7 +23,7 @@
 ### Header
 	* Header 
 		+ Grid
-		+ Flex: <https://thegicode.github.io/enjoy-css/html/layout-h-flex.html>
+		+ Flex
 		+ Lower
 	* Header / Lnb
 	* Header / Rnb
