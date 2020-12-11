@@ -42,25 +42,6 @@
         flex: none;
     }   
 
-    body[data-fix="footer"] .root{
-        height: 100%;
-    }
-    body[data-fix="footer"] .container{
-        overflow: auto;
-    }
-    body[data-fix="footer"] .container:after{
-        content: '';
-        display: block;
-        clear: both;
-    }
-    body[data-fix="footer"] .lnb{
-        float: left;
-        min-height: 100%;
-    }
-    body[data-fix="footer"] .main{
-        margin-left: auto;
-    }
-
     body[data-fix="all"] .root{
         height: 100%;
     }
@@ -107,10 +88,6 @@
             <label>
                 <input type="radio" name="fix" value="default" onchange="fixElement(this)" checked>
                 <span>Don't fix</span> 
-            </label>
-            <label>
-                <input type="radio" name="fix" value="footer" onchange="fixElement(this)">
-                <span>Footer</span>
             </label>
             <label>
                 <input type="radio" name="fix" value="all" onchange="fixElement(this)">
