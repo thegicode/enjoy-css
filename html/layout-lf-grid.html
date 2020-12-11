@@ -41,17 +41,13 @@
     body[data-fix="all"] .main{
         overflow: auto;
     }
-  
-    .actions{
-        top: 0; right: 0;
-    }
     </style>
 </head>
 
 <!-- 
     레이아옷 고정 설정 -> data-fix : default | lnb
 -->
-<body data-fix="default">
+<body data-fix="default" onload="init();">
     <div class="root">
         <div class="lnb">
             <h2>Lnb</h2>

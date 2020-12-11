@@ -19,7 +19,9 @@
     .header {
         grid-area: header;
 
-        background: #ddd;
+        /*background: #ddd;*/
+        background: #f1f1f1;
+        border: 1px solid #ddd;
     }
     .main {
         grid-area: main;
@@ -37,19 +39,13 @@
     body[data-fix="header"] .main{
         overflow: auto;
     }
-
-    
-    .actions{
-        top: 60px; right:0;
-        
-    }
     </style>
 </head>
 
 <!-- 
     레이아옷 고정 설정 : data-fix = default | all
 -->
-<body data-fix="default">
+<body data-fix="default" onload="init();">
 
     <div class="root">
         <header class="header">

@@ -7,57 +7,53 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
     <title>Layout rhf flex</title>
     <style>
-        .root{
-            display: flex;
-        }
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .rnb{
-            flex: none;
-            width: 15%;
-            background: #ddd;
-        }
-        .header{
-            flex: none;
-            height: 50px;
-            background: #f8f8f8;
-        }
-        .main{
-            flex: 1;
-        }
-        .footer{
-            flex: none;
-            height: 30px;
-            background: #f8f8f8;
-        }
+    .root{
+        display: flex;
+    }
+    .container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .rnb{
+        flex: none;
+        width: 15%;
+        background: #ddd;
+    }
+    .header{
+        flex: none;
+        height: 50px;
+        background: #f8f8f8;
+    }
+    .main{
+        flex: 1;
+    }
+    .footer{
+        flex: none;
+        height: 30px;
+        background: #f8f8f8;
+    }
 
-        body[data-fix="default"] .root{
-            min-height: 100%;
-        }
+    body[data-fix="default"] .root{
+        min-height: 100%;
+    }
 
-        body[data-fix="all"] .root{
-            height: 100%;
-        }
-        body[data-fix="all"] .main{
-            overflow: auto;
-        }
-        body[data-fix="all"] .rnb{
-            overflow: auto;
-        }
-
-        .actions{
-            top: 60px; left: 1rem;
-        }
+    body[data-fix="all"] .root{
+        height: 100%;
+    }
+    body[data-fix="all"] .main{
+        overflow: auto;
+    }
+    body[data-fix="all"] .rnb{
+        overflow: auto;
+    }
     </style>
 </head>
 
 <!-- 
     레이아옷 고정 설정 : data-fix = default | all
 -->
-<body data-fix="default">
+<body data-fix="default" onload="init();">
     <div class="root">
         <div class="container">
             <header class="header">

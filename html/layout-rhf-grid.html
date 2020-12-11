@@ -7,55 +7,51 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css" />
     <title>Layout rhf grid</title>
     <style>
-        .root{
-            display: grid;
-            grid-template-columns: 1fr 15vw;
-            grid-template-rows: 50px 1fr 30px;
-            grid-template-areas: 
-                "header rnb"
-                "main rnb"
-                "footer rnb";
-        }
-        .rnb{
-            grid-area: rnb;
-            background: #ddd;
-        }
-        .header{
-            grid-area: header;
-            background: #f8f8f8;
-        }
-        .main{
-            grid-area: main;
-        }
-        .footer{
-            grid-area: footer;
-            background: #f8f8f8;
-        }
+    .root{
+        display: grid;
+        grid-template-columns: 1fr 15vw;
+        grid-template-rows: 50px 1fr 30px;
+        grid-template-areas: 
+            "header rnb"
+            "main rnb"
+            "footer rnb";
+    }
+    .rnb{
+        grid-area: rnb;
+        background: #ddd;
+    }
+    .header{
+        grid-area: header;
+        background: #f8f8f8;
+    }
+    .main{
+        grid-area: main;
+    }
+    .footer{
+        grid-area: footer;
+        background: #f8f8f8;
+    }
 
-        body[data-fix="default"] .root{
-            min-height: 100vh;
-        }
+    body[data-fix="default"] .root{
+        min-height: 100vh;
+    }
 
-        body[data-fix="all"] .root{
-            height: 100vh;
-        }
-        body[data-fix="all"] .main{
-            overflow: auto;
-        }
-        body[data-fix="all"] .rnb{
-            overflow: auto;
-        }
-
-        .actions{
-            top: 60px; left: 1rem;
-        }
+    body[data-fix="all"] .root{
+        height: 100vh;
+    }
+    body[data-fix="all"] .main{
+        overflow: auto;
+    }
+    body[data-fix="all"] .rnb{
+        overflow: auto;
+    }
     </style>
 </head>
 
 <!-- 
     레이아옷 고정 설정 : data-fix = default | all
 -->
-<body data-fix="default">
+<body data-fix="default" onload="init();">
     <div class="root">
         <header class="header">
             <h2>Header</h2>

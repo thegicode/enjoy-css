@@ -12,7 +12,8 @@ h2{
 }
 
 .test-content{
-    height: 1000px;
+    padding: 1.5rem;
+    min-height: 1000px;
 }
 .test-content[data-hidden="true"]{
     display: none;
@@ -20,6 +21,15 @@ h2{
     
 .actions{
     position: fixed; 
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
     padding: 1rem;
-    background: transparent;
+    background: #666;
+    font-size: 14px;
+    color: #fff;
+}
+.actions fieldset{
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
 }

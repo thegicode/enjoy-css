@@ -46,19 +46,13 @@
     body[data-fix="all"] .main{
         overflow: auto;
     }
-
-    
-    .actions{
-        top:60px; left:20%;
-        
-    }
     </style>
 </head>
 
 <!-- 
     레이아옷 고정 설정 : data-fix = default | all
 -->
-<body data-fix="default">
+<body data-fix="default" onload="init();">
     <div class="root">
         <header class="header">
             <h2>header</h2>
