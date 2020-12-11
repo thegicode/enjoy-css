@@ -6,10 +6,11 @@ var init = function(){
 
 var addContent = function(){
 	var els = document.querySelectorAll('.test-content'),
-        i = els.length;
+        i = els.length,
+        el;
     while(i){
         i -= 1;
-        var el = els[i];
+        el = els[i];
         if(el.parentElement.className === "main"){
         	el.innerHTML = content_sample;
         	return;
