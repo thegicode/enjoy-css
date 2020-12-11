@@ -1,15 +1,15 @@
 "use strict";
 
-let init = function(){
+var init = function(){
 	addContent();
 };
 
-let addContent = function(){
-	let els = document.querySelectorAll('.test-content'),
+var addContent = function(){
+	var els = document.querySelectorAll('.test-content'),
         i = els.length;
     while(i){
         i -= 1;
-        let el = els[i];
+        var el = els[i];
         if(el.parentElement.className === "main"){
         	el.innerHTML = content_sample;
         	return;
