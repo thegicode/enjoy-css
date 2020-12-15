@@ -126,7 +126,7 @@
 	+ [Lower](https://thegicode.github.io/enjoy-css/html/layout-lrhf-lower.html)
 
 
-[link-h1][https://thegicode.github.io/enjoy-css/html/layout-h-grid.html]
-[link-h2][https://thegicode.github.io/enjoy-css/html/layout-h-flex.html]
-[link-h3][https://thegicode.github.io/enjoy-css/html/layout-h-lower.html]
+[link-h1]: https://thegicode.github.io/enjoy-css/html/layout-h-grid.html
+[link-h2]: https://thegicode.github.io/enjoy-css/html/layout-h-flex.html
+[link-h3]: https://thegicode.github.io/enjoy-css/html/layout-h-lower.html
 
