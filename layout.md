@@ -21,10 +21,7 @@
 ## View
 
 ### Header
-* Header 
-	+ [Grid](https://thegicode.github.io/enjoy-css/html/layout-h-grid.html)
-	+ [Flex](https://thegicode.github.io/enjoy-css/html/layout-h-flex.html)
-	+ [Lower](https://thegicode.github.io/enjoy-css/html/layout-h-lower.html)
+* Header : [Grid][link-h1] | [Flex][link-h2] | [Lower][link-h3]
 * Header / Lnb
 	+ [Grid](https://thegicode.github.io/enjoy-css/html/layout-hl-grid.html)
 	+ [Flex](https://thegicode.github.io/enjoy-css/html/layout-hl-flex.html)
@@ -129,5 +126,7 @@
 	+ [Lower](https://thegicode.github.io/enjoy-css/html/layout-lrhf-lower.html)
 
 
-
+[link-h1][https://thegicode.github.io/enjoy-css/html/layout-h-grid.html]
+[link-h2][https://thegicode.github.io/enjoy-css/html/layout-h-flex.html]
+[link-h3][https://thegicode.github.io/enjoy-css/html/layout-h-lower.html]
 
