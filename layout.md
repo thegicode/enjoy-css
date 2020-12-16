@@ -57,101 +57,101 @@
 * Lnb & Rnb / Header & Footer : [Grid][link-lrhf-grid] | [Flex][link-lrhf-flex] | [Lower][link-lrhf-lower]
 
 
-[link-h-grid]: https://thegicode.github.io/enjoy-css/html/layout-h-grid.html
-[link-h-flex]: https://thegicode.github.io/enjoy-css/html/layout-h-flex.html
-[link-h-lower]: https://thegicode.github.io/enjoy-css/html/layout-h-lower.html
+[link-h-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-h-grid.html
+[link-h-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-h-flex.html
+[link-h-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-h-lower.html
 
-[link-hl-grid]: https://thegicode.github.io/enjoy-css/html/layout-hl-grid.html
-[link-hl-flex]: https://thegicode.github.io/enjoy-css/html/layout-hl-flex.html
-[link-hl-lower]: https://thegicode.github.io/enjoy-css/html/layout-hl-lower.html
+[link-hl-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-hl-grid.html
+[link-hl-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-hl-flex.html
+[link-hl-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-hl-lower.html
 
-[link-hr-grid]: https://thegicode.github.io/enjoy-css/html/layout-hr-grid.html
-[link-hr-flex]: https://thegicode.github.io/enjoy-css/html/layout-hr-flex.html
-[link-hr-lower]: https://thegicode.github.io/enjoy-css/html/layout-hr-lower.html
+[link-hr-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-hr-grid.html
+[link-hr-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-hr-flex.html
+[link-hr-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-hr-lower.html
 
-[link-hlr-grid]: https://thegicode.github.io/enjoy-css/html/layout-hlr-grid.html
-[link-hlr-flex]: https://thegicode.github.io/enjoy-css/html/layout-hlr-flex.html
-[link-hlr-lower]: https://thegicode.github.io/enjoy-css/html/layout-hlr-lower.html
+[link-hlr-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-hlr-grid.html
+[link-hlr-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-hlr-flex.html
+[link-hlr-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-hlr-lower.html
 
-[link-f-grid]: https://thegicode.github.io/enjoy-css/html/layout-f-grid.html
-[link-f-flex]: https://thegicode.github.io/enjoy-css/html/layout-f-flex.html
-[link-f-lower]: https://thegicode.github.io/enjoy-css/html/layout-f-lower.html
+[link-f-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-f-grid.html
+[link-f-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-f-flex.html
+[link-f-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-f-lower.html
 
-[link-fl-grid]: https://thegicode.github.io/enjoy-css/html/layout-fl-grid.html
-[link-fl-flex]: https://thegicode.github.io/enjoy-css/html/layout-fl-flex.html
-[link-fl-lower]: https://thegicode.github.io/enjoy-css/html/layout-fl-lower.html
+[link-fl-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-fl-grid.html
+[link-fl-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-fl-flex.html
+[link-fl-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-fl-lower.html
 
-[link-fr-grid]: https://thegicode.github.io/enjoy-css/html/layout-fr-grid.html
-[link-fr-flex]: https://thegicode.github.io/enjoy-css/html/layout-fr-flex.html
-[link-fr-lower]: https://thegicode.github.io/enjoy-css/html/layout-fr-lower.html
+[link-fr-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-fr-grid.html
+[link-fr-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-fr-flex.html
+[link-fr-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-fr-lower.html
 
-[link-flr-grid]: https://thegicode.github.io/enjoy-css/html/layout-flr-grid.html
-[link-flr-flex]: https://thegicode.github.io/enjoy-css/html/layout-flr-flex.html
-[link-flr-lower]: https://thegicode.github.io/enjoy-css/html/layout-flr-lower.html
+[link-flr-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-flr-grid.html
+[link-flr-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-flr-flex.html
+[link-flr-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-flr-lower.html
 
-[link-hf-grid]: https://thegicode.github.io/enjoy-css/html/layout-hf-grid.html
-[link-hf-flex]: https://thegicode.github.io/enjoy-css/html/layout-hf-flex.html
-[link-hf-lower]: https://thegicode.github.io/enjoy-css/html/layout-hf-lower.html
+[link-hf-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-hf-grid.html
+[link-hf-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-hf-flex.html
+[link-hf-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-hf-lower.html
 
-[link-hfl-grid]: https://thegicode.github.io/enjoy-css/html/layout-hfl-grid.html
-[link-hfl-flex]: https://thegicode.github.io/enjoy-css/html/layout-hfl-flex.html
-[link-hfl-lower]: https://thegicode.github.io/enjoy-css/html/layout-hfl-lower.html
+[link-hfl-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-hfl-grid.html
+[link-hfl-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-hfl-flex.html
+[link-hfl-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-hfl-lower.html
 
-[link-hfr-grid]: https://thegicode.github.io/enjoy-css/html/layout-hfr-grid.html
-[link-hfr-flex]: https://thegicode.github.io/enjoy-css/html/layout-hfr-flex.html
-[link-hfr-lower]: https://thegicode.github.io/enjoy-css/html/layout-hfr-lower.html
+[link-hfr-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-hfr-grid.html
+[link-hfr-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-hfr-flex.html
+[link-hfr-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-hfr-lower.html
 
-[link-hflr-grid]: https://thegicode.github.io/enjoy-css/html/layout-hflr-grid.html
-[link-hflr-flex]: https://thegicode.github.io/enjoy-css/html/layout-hflr-flex.html
-[link-hflr-lower]: https://thegicode.github.io/enjoy-css/html/layout-hflr-lower.html
+[link-hflr-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-hflr-grid.html
+[link-hflr-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-hflr-flex.html
+[link-hflr-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-hflr-lower.html
 
-[link-l-grid]: https://thegicode.github.io/enjoy-css/html/layout-l-grid.html
-[link-l-flex]: https://thegicode.github.io/enjoy-css/html/layout-l-flex.html
-[link-l-lower]: https://thegicode.github.io/enjoy-css/html/layout-l-lower.html
+[link-l-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-l-grid.html
+[link-l-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-l-flex.html
+[link-l-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-l-lower.html
 
-[link-lh-grid]: https://thegicode.github.io/enjoy-css/html/layout-lh-grid.html
-[link-lh-flex]: https://thegicode.github.io/enjoy-css/html/layout-lh-flex.html
-[link-lh-lower]: https://thegicode.github.io/enjoy-css/html/layout-lh-lower.html
+[link-lh-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-lh-grid.html
+[link-lh-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-lh-flex.html
+[link-lh-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-lh-lower.html
 
-[link-lf-grid]: https://thegicode.github.io/enjoy-css/html/layout-lf-grid.html
-[link-lf-flex]: https://thegicode.github.io/enjoy-css/html/layout-lf-flex.html
-[link-lf-lower]: https://thegicode.github.io/enjoy-css/html/layout-lf-lower.html
+[link-lf-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-lf-grid.html
+[link-lf-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-lf-flex.html
+[link-lf-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-lf-lower.html
 
-[link-lhf-grid]: https://thegicode.github.io/enjoy-css/html/layout-lhf-grid.html
-[link-lhf-flex]: https://thegicode.github.io/enjoy-css/html/layout-lhf-flex.html
-[link-lhf-lower]: https://thegicode.github.io/enjoy-css/html/layout-lhf-lower.html
+[link-lhf-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-lhf-grid.html
+[link-lhf-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-lhf-flex.html
+[link-lhf-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-lhf-lower.html
 
-[link-r-grid]: https://thegicode.github.io/enjoy-css/html/layout-r-grid.html
-[link-r-flex]: https://thegicode.github.io/enjoy-css/html/layout-r-flex.html
-[link-r-lower]: https://thegicode.github.io/enjoy-css/html/layout-r-lower.html
+[link-r-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-r-grid.html
+[link-r-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-r-flex.html
+[link-r-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-r-lower.html
 
-[link-rh-grid]: https://thegicode.github.io/enjoy-css/html/layout-rh-grid.html
-[link-rh-flex]: https://thegicode.github.io/enjoy-css/html/layout-rh-flex.html
-[link-rh-lower]: https://thegicode.github.io/enjoy-css/html/layout-rh-lower.html
+[link-rh-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-rh-grid.html
+[link-rh-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-rh-flex.html
+[link-rh-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-rh-lower.html
 
-[link-rf-grid]: https://thegicode.github.io/enjoy-css/html/layout-rf-grid.html
-[link-rf-flex]: https://thegicode.github.io/enjoy-css/html/layout-rf-flex.html
-[link-rf-lower]: https://thegicode.github.io/enjoy-css/html/layout-rf-lower.html
+[link-rf-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-rf-grid.html
+[link-rf-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-rf-flex.html
+[link-rf-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-rf-lower.html
 
-[link-rhf-grid]: https://thegicode.github.io/enjoy-css/html/layout-rhf-grid.html
-[link-rhf-flex]: https://thegicode.github.io/enjoy-css/html/layout-rhf-flex.html
-[link-rhf-lower]: https://thegicode.github.io/enjoy-css/html/layout-rhf-lower.html
+[link-rhf-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-rhf-grid.html
+[link-rhf-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-rhf-flex.html
+[link-rhf-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-rhf-lower.html
 
-[link-lr-grid]: https://thegicode.github.io/enjoy-css/html/layout-lr-grid.html
-[link-lr-flex]: https://thegicode.github.io/enjoy-css/html/layout-lr-flex.html
-[link-lr-lower]: https://thegicode.github.io/enjoy-css/html/layout-lr-lower.html
+[link-lr-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-lr-grid.html
+[link-lr-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-lr-flex.html
+[link-lr-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-lr-lower.html
 
-[link-lrh-grid]: https://thegicode.github.io/enjoy-css/html/layout-lrh-grid.html
-[link-lrh-flex]: https://thegicode.github.io/enjoy-css/html/layout-lrh-flex.html
-[link-lrh-lower]: https://thegicode.github.io/enjoy-css/html/layout-lrh-lower.html
+[link-lrh-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-lrh-grid.html
+[link-lrh-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-lrh-flex.html
+[link-lrh-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-lrh-lower.html
 
-[link-lrf-grid]: https://thegicode.github.io/enjoy-css/html/layout-lrf-grid.html
-[link-lrf-flex]: https://thegicode.github.io/enjoy-css/html/layout-lrf-flex.html
-[link-lrf-lower]: https://thegicode.github.io/enjoy-css/html/layout-lrf-lower.html
+[link-lrf-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-lrf-grid.html
+[link-lrf-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-lrf-flex.html
+[link-lrf-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-lrf-lower.html
 
-[link-lrhf-grid]: https://thegicode.github.io/enjoy-css/html/layout-lrhf-grid.html
-[link-lrhf-flex]: https://thegicode.github.io/enjoy-css/html/layout-lrhf-flex.html
-[link-lrhf-lower]: https://thegicode.github.io/enjoy-css/html/layout-lrhf-lower.html
+[link-lrhf-grid]: https://thegicode.github.io/enjoy-css/html/layout/layout-lrhf-grid.html
+[link-lrhf-flex]: https://thegicode.github.io/enjoy-css/html/layout/layout-lrhf-flex.html
+[link-lrhf-lower]: https://thegicode.github.io/enjoy-css/html/layout/layout-lrhf-lower.html
 
 
 

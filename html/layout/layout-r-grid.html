@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+    <title>Layout r grid</title>
+    <style>
+    .root {
+        display: grid;
+        grid-template-columns: 1fr 15vw;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "main rnb";
+    }
+    .main {
+        grid-area: main;
+        background: #f8f8f8;
+    }
+    .rnb {
+        grid-area: rnb;
+        background: #ddd;
+    }
+
+    body[data-fix="default"] .root{
+        min-height: 100%;
+    }
+
+    body[data-fix="all"] .root{
+        height: 100%;
+    }
+    body[data-fix="all"] .main{
+        overflow: auto;
+    }
+    body[data-fix="all"] .rnb{
+        overflow: auto;
+    }
+    </style>
+</head>
+
+<!-- 
+    레이아웃 고정 설정 : data-fix = true | false 
+-->
+<body data-fix="default" onload="init();">
+    <div class="root">
+        <main class="main">
+            <h2>Main</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </main>
+        <div class="rnb">
+            <h2>Rnb</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </div>
+    </div>
+
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Select the element to be fixed</legend>
+            <label>
+                <input type="radio" name="fix" value="default" onchange="fixElement(this)" checked>
+                <span>Don't fix</span> 
+            </label>
+            <label>
+                <input type="radio" name="fix" value="all" onchange="fixElement(this)">
+                <span>All</span>
+            </label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <label>
+                <input type="radio" name="content" value="false" onchange="setContent(this)" checked>
+                <span>Add Content</span>
+            </label>
+            <label>
+                <input type="radio" name="content" value="true" onchange="setContent(this)">
+                <span>Remove Content</span>
+            </label>
+        </fieldset>
+    </form>
+
+    <script type="text/javascript" src="../../js/layout.js"></script>
+</body>
+
+</html>

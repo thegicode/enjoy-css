@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+    <title>Layout lhf lower</title>
+    <style>
+
+    /*.root {}*/
+    .lnb {
+        width: 15%; 
+        background: #ddd;
+    }
+    /*.container {}*/
+    .header {
+        height: 50px;
+        background: #f8f8f8;
+    }
+    /*.main-wrapper{}*/
+    /*.main {}*/
+    .footer {
+        height: 30px;
+        background: #f8f8f8;
+    }
+
+    body[data-fix="default"] .root{
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    body[data-fix="default"] .lnb{
+        display: table-cell;
+    }
+    body[data-fix="default"] .container{
+        display: table-cell;
+        height: 100%;
+    }
+    body[data-fix="default"] .main-wrapper{
+        min-height: 100%;
+        margin-top: -50px;
+        margin-bottom: -30px;
+    }
+    body[data-fix="default"] .main{
+        box-sizing: border-box;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
+    body[data-fix="lnb"] .root{
+        position: relative;
+        height: 100%;
+    }
+    body[data-fix="lnb"] .lnb{
+        overflow: auto;
+        position: absolute; top: 0; bottom: 0; left: 0;
+    }
+    body[data-fix="lnb"] .container{
+        overflow: auto;
+        position: absolute; top: 0; right: 0; bottom: 0; left: 15%;
+    }
+    body[data-fix="lnb"] .main-wrapper{
+        min-height: 100%;
+        margin-top: -50px;
+        margin-bottom: -30px;
+    }
+    body[data-fix="lnb"] .main{
+        box-sizing: border-box;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+    </style>
+</head>
+
+<!-- 
+    레이아옷 고정 설정 : data-fix = default | lnb 
+-->
+<body data-fix="default" onload="init();">
+    <div class="root">
+        <div class="lnb">
+            <h2>Lnb</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </div>
+        <div class="container">
+            <header class="header">
+                <h2>Header</h2>
+            </header>
+            <div class="main-wrapper">
+                <div class="main">
+                    <h2>Main</h2>
+                    <div class="test-content" data-hidden="false"></div>
+                </div>
+            </div>
+            <footer class="footer">
+                <h2>Footer</h2>
+            </footer>
+        </div>
+    </div>
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Select the element to be fixed</legend>
+            <label>
+                <input type="radio" name="fix" value="default" onchange="fixElement(this)" checked>
+                <span>Don't fix</span> 
+            </label>
+            <label>
+                <input type="radio" name="fix" value="lnb" onchange="fixElement(this)">
+                <span>Lnb</span>
+            </label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <label>
+                <input type="radio" name="content" value="false" onchange="setContent(this)" checked>
+                <span>Add Content</span>
+            </label>
+            <label>
+                <input type="radio" name="content" value="true" onchange="setContent(this)">
+                <span>Remove Content</span>
+            </label>
+        </fieldset>
+    </form>
+    <script type="text/javascript" src="../../js/layout-lower.js"></script>
+</body>
+
+</html>

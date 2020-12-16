@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+    <title>Layout hf</title>
+    <style>
+
+    .root {
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+    }
+    .header {
+        flex-shrink: 0;
+        flex-basis: 5rem;
+
+        overflow: hidden;
+        background: #ddd;
+
+    }
+    .main {
+        flex: 1;
+
+        overflow: auto;
+        background: #f8f8f8;
+    }
+    .footer {
+        flex-shrink: 0;
+        flex-basis: 2rem;
+
+        overflow: hidden;
+        background: #ddd;
+    }
+
+    </style>
+</head>
+
+<!-- 
+    TODO : 추후 정리할 파일
+ -->
+<body>
+    <div class="root">
+        <header class="header">
+            <h2>header</h2>
+        </header>
+        <main class="main">
+            <h2>Main</h2>
+           <div class="test-content" data-hidden="false"></div>
+        </main>
+        <footer class="footer">
+            Footer
+        </footer>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>

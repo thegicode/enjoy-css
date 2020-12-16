@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+    <title>Layout fl flex</title>
+    <style>
+
+    .root {
+        display: flex;
+        flex-direction: column;
+    }
+    .container{
+        flex: 1;
+    }
+    .lnb{
+        width: 15%;
+
+        background: #f8f8f8;
+    }
+    .main {
+        flex: 1;
+    }
+    .footer {
+        height: 30px;
+
+        background: #ddd;
+    }
+
+    body[data-fix="default"] .root{
+        min-height: 100%;
+    }
+    body[data-fix="default"] .container{
+        display: flex;
+    }
+    body[data-fix="default"] .lnb{
+        flex: none;
+    }
+    body[data-fix="default"] .footer{
+        flex: none;
+    }   
+
+    body[data-fix="all"] .root{
+        height: 100%;
+    }
+    body[data-fix="all"] .container{
+        overflow: hidden;
+        display: flex;
+    }
+    body[data-fix="all"] .lnb{
+        overflow: auto;
+        flex: none;
+    }
+    body[data-fix="all"] .main{
+        overflow: auto;
+    }
+    body[data-fix="all"] .footer{
+        flex: none;
+    }
+    </style>
+</head>
+
+<!-- 
+    레이아옷 고정 설정 : data-fix = default | all
+-->
+<body data-fix="default" onload="init();">
+    <div class="root">
+        <div class="container">
+            <div class="lnb">
+                <h2>Lnb</h2>
+                <div class="test-content" data-hidden="false"></div>
+            </div>
+            <main class="main">
+                <h2>Main</h2>
+                <div class="test-content" data-hidden="false"></div>
+            </main>
+        </div>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Select the element to be fixed.</legend>
+            <label>
+                <input type="radio" name="fix" value="default" onchange="fixElement(this)" checked>
+                <span>Don't fix</span> 
+            </label>
+            <label>
+                <input type="radio" name="fix" value="all" onchange="fixElement(this)">
+                <span>All</span>
+            </label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Select presence of content</legend>
+            <label>
+                <input type="radio" name="content" value="false" onchange="setContent(this)" checked>
+                <span>Add Content</span>
+            </label>
+            <label>
+                <input type="radio" name="content" value="true" onchange="setContent(this)">
+                <span>Remove Content</span>
+            </label>
+        </fieldset>
+    </form>
+    <script type="text/javascript" src="../../js/layout.js"></script>
+</body>
+
+</html>

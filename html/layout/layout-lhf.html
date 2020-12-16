@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+    <title>Layout lhf</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            margin:0;
+        }
+        .root{
+            display: flex;
+
+            height: 100%;
+        }
+        .lnb{
+            flex-shrink: 0;
+
+            overflow: hidden;
+            background: #ddd;
+        }
+        .container{
+            flex: auto;
+            flex-direction: column;
+
+            /*overflow: auto;*/
+
+            display: flex;
+        }
+        .header{
+            flex-shrink: 0;
+            flex-basis: 3rem;
+
+            background: #f8f8f8;
+
+        }
+        .main{
+            flex: auto;
+
+            overflow: auto;
+            
+        }
+        .footer{
+            flex-shrink: 0;
+            flex-basis: 2rem;
+
+            background: #f8f8f8;
+
+        }
+
+        h2{
+            margin: 0;
+            font-size: 1rem;
+        }
+        h3{
+            margin: 1rem;
+            padding: 1rem 0;
+            border-top: dashed 1px #ddd;
+            
+        }
+        input[type="button"]{
+            display: block;
+            margin: 10px;
+        }
+        .result{
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<!-- 
+    TODO : 추후 정리할 파일
+ -->
+<body>
+    <div class="root">
+        <div class="lnb">
+            <h2>Lnb</h2>
+            <p class="result">width: <span class="getWidth"></span></p>
+        </div>
+        <div class="container">
+            <header class="header">
+                <h2>Header</h2>
+            </header>
+            <main class="main">
+                <h2>Main</h2>
+
+                <h3>Lnb Width Control</h3>
+                <input type="button" value="px" id="btnFixed">
+                <input type="button" value="rem " id="btnRem">
+                <input type="button" value="percent" id="btnPercent">
+                <input type="button" value="Reset" id="btnReset">
+                <div class="test-content" data-hidden="false"></div>
+            </main>
+            <footer class="footer">
+                <h2>Footer</h2>
+            </footer>
+        </div>
+        
+    </div>
+    <script>
+    const 
+        el = document.querySelector('.lnb'),
+        elResult = document.querySelector('.getWidth');
+
+    let elChange = function( val ){
+        el.style.flexBasis = val ;
+        elResult.textContent = el.style.flexBasis;
+    };
+
+    btnFixed.onclick = () => elChange('100px');
+    btnRem.onclick = () => elChange('10rem');
+    btnPercent.onclick = () => elChange('20%');
+    btnReset.onclick = () => elChange('');
+
+    </script>
+</body>
+
+</html>

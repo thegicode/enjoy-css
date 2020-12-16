@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+    <title>Layout f</title>
+    <style>
+
+
+    .root{
+        height: 100%;
+    }
+    .footer {
+        background: #ddd;
+    }
+    [hidden]{
+        display: none !important;
+    }
+
+
+    body[data-lylevel="lower"] .container{
+        background: #f8f8f8;
+    }
+    body[data-lylevel="lower"][data-isfooterfix="false"] .container{
+        min-height: 100%;
+        margin-bottom: -3rem;
+    }
+    body[data-lylevel="lower"][data-isfooterfix="false"] .main{
+        padding-bottom: 3rem;
+    }
+
+    body[data-lylevel="lower"][data-isfooterfix="true"] .container{
+        overflow: auto;
+        position: absolute;
+        top:0; left:0; right:0; bottom: 3rem;
+    }
+    body[data-lylevel="lower"][data-isfooterfix="true"] .footer{
+        position: absolute; left: 0; right: 0; bottom:0;
+    }
+
+
+    body[data-lylevel="flex"] .root {
+        display: flex;
+        flex-direction: column;
+    }
+    body[data-lylevel="flex"] .main {
+        flex: auto;
+        
+        background: #f8f8f8;
+    }
+    body[data-lylevel="flex"] .footer {
+        flex-shrink: 0;
+        flex-basis: 3rem;
+    }
+    body[data-lylevel="flex"][data-isfooterfix="true"] .main{
+        overflow: auto;
+    }
+
+
+
+    .actions{
+        top: 0; right: 0;
+        
+    }
+
+    </style>
+</head>
+<!-- 
+    Markup 하위버전, flex 버전 -> data-lylevel : lower | flex
+    Footer 고정 속성 설정  -> data-isfooterfix : true | false
+    TODO : scroll down -> footer show, scroll up -> footer hide
+ -->
+<body data-lylevel="flex" data-isfooterfix="true">
+
+    <!-- ie8 over --> 
+    <div class="root" id="ly_lower" hidden>
+        <div class="container">
+            <main class="main">
+                <h2>Main</h2>
+                <div class="test-content" data-hidden="false"></div>
+            </main>
+        </div>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+
+   
+    <!-- flex -->
+    <div class="root" id="ly_flex">
+        <main class="main">
+            <h2>Main</h2>
+            <div class="test-content" data-hidden="false"></div>
+        </main>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
+
+
+    <!-- actions -->
+    <form class="actions" name="actions">
+        <fieldset>
+            <legend>Select layout level</legend>
+            <input type="radio" name="level" value="lower" id="lower" onchange="changeLevel(this)">
+            <label for="lower">Lower</label>
+            <input type="radio" name="level" value="flex" id="flex" onchange="changeLevel(this)" checked>
+            <label for="flex">Use Flex</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Is footer fix?</legend>
+            <input type="radio" name="fix" value="true" id="true" onchange="changeFix(this)" checked>
+            <label for="true">Yes</label>
+            <input type="radio" name="fix" value="false" id="false" onchange="changeFix(this)">
+            <label for="false">No</label>
+        </fieldset>
+    </form>
+
+     
+    <script>
+
+        let elLy = ly_flex;
+        let changeLevel = function(el){
+            let level = el.value;
+            document.body.dataset.lylevel = level;
+            elLy.hidden = true;
+            elLy = window[`ly_${level}`];
+            elLy.hidden = false;
+        }
+
+        let changeFix = function(el){
+            document.body.dataset.isfooterfix = el.value;
+        }
+
+       
+
+
+    </script>
+</body>
+
+</html>
