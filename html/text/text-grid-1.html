@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Grid 1</title>
+    <style>
+        body{
+            margin: 1rem;
+        }
+        body > div {
+            padding: 0 7px;
+            background: #f1eccc;
+        }
+        hr{
+            margin: 10px 0;
+            border: none;
+        }
+        .text{
+            margin: 0;
+            padding: 5px 0;
+            border-bottom: 1px dashed #cec8a8;
+        }
+        .ellipsis{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+
+    <style>
+        .root{}
+    </style>
+    <div class="root">
+        <p class="text">한글 텍스트 하늘 구름 바람 해</p>
+    </div>
+
+    <hr>
+
+    <style>
+        .root2{}
+    </style>
+    <div class="root2">
+        <p class="text ellipsis">[말줄임] 한글 텍스트 하늘 구름 바람 해 한글 텍스트 하늘 구름 바람 해</p>
+    </div>
+
+    <hr>
+
+    <style>
+        .root3{
+            display: grid;
+            grid-template-columns: 10px 1fr;
+        }
+        .root3 .icon{
+            width: 5px; height: 5px;
+            margin-top: 10px;
+            border-radius: 50%;
+            background: #bb4328;
+        }
+        .root3 .text{
+        }
+    </style>
+    <div class="root3">
+        <span class="icon"></span>
+        <p class="text">[아이콘] 한글 텍스트 하늘 구름 바람 해 한글 텍스트 하늘 구름 바람 해</p>
+    </div>
+
+    <hr>
+
+    <style>
+        .root4{
+            display: grid;
+            grid-template-columns: 10px 1fr;
+            
+        }
+        .root4 .icon{
+            width: 5px; height: 5px;
+            margin-top: 10px;
+            border-radius: 50%;
+            background: #bb4328;
+        }
+        .root4 .text{
+        }
+    </style>
+    <div class="root4">
+        <span class="icon"></span>
+        <p class="text ellipsis">[아이콘][말줄임] 한글 텍스트 하늘 구름 바람 해 한글 텍스트 하늘 구름 바람 해</p>
+    </div>
+
+    <hr>
+
+    <style>
+        .root5{
+            display: flex;
+        }
+        .root5 .badge{
+            align-self: baseline;
+
+            margin-top: 5px;
+            padding: 3px;
+
+            border: 1px solid #ddd;
+            border-radius: 5px;
+
+            background: #c7c4af;
+
+            line-height: 1;
+            font-size: 11px;
+            color: #5a5219;
+        }
+    </style>
+    <div class="root5">
+        <p class="text ellipsis">[아이콘] 한글 텍스트 하늘 구름 바람 해 한글 텍스트 하늘 구름 바람 해</p>
+        <span class="badge">Badge</span>
+    </div>
+
+
+
+</body>
+
+</html>
