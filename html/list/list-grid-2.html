@@ -5,19 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
-    <title>List Grid</title>
+    <title>List Grid 2</title>
     <style>
         body{
             margin: 1rem;
         }
         .root{
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(5, [col-start] 1fr);
+
             height: 100px;
+            border: 1px solid #ddd;
         }
         .item{
             outline: 1px solid #adc3ac;
             background: #d5f3d4;
+        }
+        .item1{
+            grid-column: col-start ;
+        }
+        .item2{
+            grid-column: col-start 2 / span 1 ;
+        }
+        .item3{
+            grid-column: col-start 5 / span 1;
         }
     </style>
 </head>
@@ -25,11 +36,9 @@
 <body>
 
     <div class="root">
-        <div class="item">item1</div>
-        <div class="item">item2 item2</div>
-        <div class="item">item3 item3 item3</div>
-        <div class="item">item4 item4 item4 item4</div>
-        <div class="item">item5 item5 item5 item5 item5</div>
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
     </div>
 
 </body>
