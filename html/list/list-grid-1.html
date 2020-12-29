@@ -23,7 +23,7 @@
             height: 100px;
             margin-bottom: 50px;
         }
-        .item{
+        .root .item{
             outline: 1px solid #adc3ac;
             background: #d5f3d4;
         }
@@ -36,14 +36,15 @@
         <div class="item">item5</div>
     </div>
 
+
     <style>
         .root2{
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
 
+            margin-bottom: 50px;
         }
-        .root2-item{
-            
+        .root2 .item{
             padding: 5px;
             background: #d5f3d4;
 
@@ -51,9 +52,38 @@
         }
     </style>
     <div class="root2">
-        <div class="root2-item">item1</div>
-        <div class="root2-item">item2</div>
-        <div class="root2-item">item3</div>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+    
+
+    <style>
+        .root3{
+            display: grid;
+            grid-template-columns: repeat(5, [col-start] 1fr);
+
+            height: 100px;
+            border: 1px solid #ddd;
+        }
+        .root3 > div{
+            outline: 1px solid #adc3ac;
+            background: #d5f3d4;
+        }
+        .root3 .item1{
+            grid-column: col-start;
+        }
+        .root3 .item2{
+            grid-column: col-start 2;
+        }
+        .root3 .item3{
+            grid-column: col-start 5;
+        }
+    </style>
+    <div class="root3">
+        <div class="item1">item1</div>
+        <div class="item2">item2</div>
+        <div class="item3">item3</div>
     </div>
 
 </body>
