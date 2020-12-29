@@ -9,7 +9,14 @@
         body{
             margin: 1rem;
         }
-        
+        body > div {
+            margin-bottom: 50px;
+        }
+        .item{
+            outline: 1px solid #adc3ac;
+            padding: 5px;
+            background: #d5f3d4;
+        }
     </style>
 </head>
 
@@ -20,20 +27,15 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             
-            height: 100px;
-            margin-bottom: 50px;
-        }
-        .root .item{
-            outline: 1px solid #adc3ac;
-            background: #d5f3d4;
+            height: 50px;
         }
     </style>
     <div class="root">
-        <div class="item">item1</div>
-        <div class="item">item2</div>
-        <div class="item">item3</div>
-        <div class="item">item4</div>
-        <div class="item">item5</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
     </div>
 
 
@@ -42,19 +44,13 @@
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
 
-            margin-bottom: 50px;
-        }
-        .root2 .item{
-            padding: 5px;
-            background: #d5f3d4;
-
-            outline: 1px solid #adc3ac;
+            height: 50px;
         }
     </style>
     <div class="root2">
-        <div class="item">item1</div>
-        <div class="item">item2</div>
-        <div class="item">item3</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">1</div>
     </div>
     
 
@@ -63,27 +59,40 @@
             display: grid;
             grid-template-columns: repeat(5, [col-start] 1fr);
 
-            height: 100px;
+            height: 50px;
             border: 1px solid #ddd;
         }
         .root3 > div{
             outline: 1px solid #adc3ac;
+            padding: 5px;
             background: #d5f3d4;
         }
-        .root3 .item1{
+        .root3 .item:first-child{
             grid-column: col-start;
         }
-        .root3 .item2{
+        .root3 .item:nth-child(2){
             grid-column: col-start 2;
         }
-        .root3 .item3{
+        .root3 .item:nth-child(3){
             grid-column: col-start 5;
         }
     </style>
     <div class="root3">
-        <div class="item1">item1</div>
-        <div class="item2">item2</div>
-        <div class="item3">item3</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+    </div>
+
+    <style>
+        .root4{
+            display: grid;
+            grid-template-columns: 1fr 100px 50px;
+        }
+    </style>
+    <div class="root4">
+        <div class="item">auto-fill</div>
+        <div class="item">100px</div>
+        <div class="item">50px</div>
     </div>
 
 </body>
