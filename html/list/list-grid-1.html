@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
-    <title>List Flex</title>
+    <title>List Grid 1</title>
     <style>
         body{
             margin: 1rem;
         }
         .root{
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
             
             height: 100px;
         }
         .item{
-            flex: 1;
             outline: 1px solid #adc3ac;
             background: #d5f3d4;
         }
