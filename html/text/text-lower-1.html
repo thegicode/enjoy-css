@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Lower 1</title>
+    <style>
+        body{
+            margin: 1rem;
+        }
+        body > div {
+            padding: 0 7px;
+            box-sizing: border-box;
+            background: #f1eccc;
+        }
+        hr{
+            margin: 10px 0;
+            border: none;
+        }
+        .text{
+            margin: 0;
+            padding: 5px 0;
+            /*border-bottom: 1px dashed #cec8a8;*/
+        }
+        .ellipsis{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+
+    <style>
+        .root{}
+    </style>
+    <div class="root">
+        <p class="text">한글 텍스트 하늘 구름 바람 해</p>
+    </div>
+
+    <hr>
+
+    <style>
+        .root2{}
+    </style>
+    <div class="root2">
+        <p class="text ellipsis">[말줄임] 한글 텍스트 하늘 구름 바람 해 한글 텍스트 하늘 구름 바람 해</p>
+    </div>
+
+    <hr>
+
+    <style>
+        .root3{
+        }
+        .root3 .icon{
+            float: left;
+            width: 10px;
+            vertical-align: top;
+        }
+        .root3 .icon:after{
+            content: '';
+            display: block;
+            width: 5px; height: 5px;
+            margin-top: 10px;
+            border-radius: 50%;
+            background: #bb4328;*
+
+        }
+        .root3 .text{
+            margin-left: 10px;
+        }
+    </style>
+    <div class="root3">
+        <span class="icon"></span>
+        <p class="text">[아이콘] 한글 텍스트 하늘 구름 바람 해 한글 텍스트 하늘 구름 바람 해</p>
+    </div>
+
+    <hr>
+
+    <style>
+        .root4{
+        }
+        .root4:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .root4 .icon{
+            float: left;
+            width: 10px;
+            vertical-align: top;
+        }
+        .root4 .icon:after{
+            content: '';
+            display: block;
+            width: 5px; height: 5px;
+            margin-top: 10px;
+            border-radius: 50%;
+            background: #bb4328;
+        }
+    </style>
+    <div class="root4">
+        <span class="icon"></span>
+        <p class="text ellipsis">[아이콘][말줄임] 한글 텍스트 하늘 구름 바람 해 한글 텍스트 하늘 구름 바람 해</p>
+    </div>
+
+    <hr>
+
+    <style>
+        .root5{
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        .root5 .cell{
+            display: table-cell;
+        }
+        .root5 .badge{
+            padding: 3px;
+
+            border: 1px solid #ddd;
+            border-radius: 5px;
+
+            background: #c7c4af;
+
+            font-size: 11px;
+            color: #5a5219;
+        }
+        .root5 .cell-badge{
+            width: 40px;
+        }
+    </style>
+    <div class="root5">
+        <div class="cell">
+            <p class="text ellipsis">[말줄임][Badge] 한글 텍스트 하늘 구름 바람 해 한글 텍스트 하늘 구름 바람 해</p>
+        </div>
+        <div class="cell cell-badge">
+            <span class="badge">Badge</span>
+        </div>
+    </div>
+
+    <hr>
+
+    <style>
+        .root6{
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        .root6 .cell{
+            display: table-cell;
+        }
+        .root6 .icon{
+            display: inline-block;
+            width: 5px; height: 5px;
+            margin: 10px 5px 0 0;
+            border-radius: 50%;
+            background: #bb4328;
+        }
+        .root6 .badge{
+            padding: 3px;
+
+            border: 1px solid #ddd;
+            border-radius: 5px;
+
+            background: #c7c4af;
+
+            line-height: 1;
+            font-size: 11px;
+            color: #5a5219;
+        }
+        .root6 .cell-icon{
+            width: 10px;
+            vertical-align: top;
+        }
+        .root6 .cell-badge{
+            width: 40px;
+        }
+    </style>
+    <div class="root6">
+        <div class="cell cell-icon">
+            <span class="icon"></span>
+        </div>
+        <div class="cell">
+            <p class="text ellipsis">[아이콘][말줄임][Badge] 한글 텍스트 하늘 구름 바람 해 한글 텍스트 하늘 구름 바람 해</p>
+        </div>
+        <div class="cell cell-badge">
+            <span class="badge">Badge</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
