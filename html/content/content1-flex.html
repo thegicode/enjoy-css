@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>content 1 - flex </title>
+<!-- <link rel="stylesheet" href=""> -->
+<style>
+	p{
+		margin: 0;
+	}
+	.container{
+		display: flex;
+		align-items: flex-start;
+		padding: 5px;
+		border: 1px solid #ddd;
+	}
+	.item{
+		overflow: hidden;
+	}
+	.item[data-state="noflex"]{
+		flex: none;
+	}
+	.ellipsis{
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+    }
+    .__icon{
+    	display: inline-block;
+    	width: 15px;
+    	height: 15px;
+    	margin-right: 7px;
+    	border-radius: 5px;
+    	background: orange;
+    }
+    .__icon[data-size="25"]{
+    	width: 25px;
+    	height: 25px;
+    }
+    .__icon[data-size="35"]{
+    	width: 35px;
+    	height: 35px;
+    }
+    .__title{
+    	color: #333;
+    }
+    .__text{
+    	margin-top: 5px;
+    	font-size: 0.8rem;
+    	color: #999;
+    }
+</style>
+
+<h1>가로 레이아웃 샘플</h1>
+
+<section>
+	<h2>첫번째 셀 컨텐츠 사이즈에 따라 유동적</h2>
+	<h3>텍스트 짧은 경우</h3>
+	<div class="container">
+		<div class="item" data-state="noflex">
+			<span class="__icon"></span>
+		</div>
+		<div class="item">
+			<p class="__title">타이틀 타이틀</p>
+			<p class="__text">텍스트 텍스트</p>
+		</div>
+	</div>
+
+	<br>
+
+	<h3>텍스트 멀티라인</h3>
+	<div class="container">
+		<div class="item" data-state="noflex">
+			<span class="__icon" data-size="25"></span>
+		</div>
+		<div class="item">
+			<p class="__title">타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
+			<p class="__text">텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 </p>
+		</div>
+	</div>
+
+	<br>
+
+	<h3>텍스트 말줄임</h3>
+	<div class="container">
+		<div class="item" data-state="noflex">
+			<span class="__icon" data-size="35"></span>
+		</div>
+		<div class="item">
+			<p class="__title ellipsis">[말줄임] 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
+			<p class="__text ellipsis">[말줄임] 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 </p>
+		</div>
+	</div>
+</section>
