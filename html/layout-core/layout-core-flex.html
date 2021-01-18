@@ -1,62 +1,9 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
-<title>content core - flex </title>
-<!-- <link rel="stylesheet" href=""> -->
-<style>
-	section{
-		margin-top: 50px;
-		padding-top: 30px;
-		border-top: 10px solid #e4f7f0;
-	}
-	h2{
-		color: #222;
-	}
+<title>content core 가로형 - Flex </title>
+<link rel="stylesheet" href="../../css/layout-core.css">
 
-	.container{
-		border: 1px solid #ddd;
-	}
-	.container[data-display="flex"]{
-		display: flex;
-	}
-	.container[data-align-items="flex-start"]{
-		align-items: flex-start;
-	}
-	.container[data-align-items="center"]{
-		align-items: center;
-	}
-	.container[data-align-items="flex-end"]{
-		align-items: flex-end;
-	}
-
-	.item{
-		background: #a2d4c1;
-		outline: 1px solid #54957e;
-
-		font-size: 14px;
-		padding: 0.5rem;
-	}
-	.item[data-flex="1"]{
-		flex: 1;
-	}
-	.item[data-flex="none"]{
-		flex: none;
-	}
-	.item[data-align-self="flex-start"]{
-		align-self: flex-start;
-	}
-	.item[data-align-self="center"]{
-		align-self: center;
-	}
-	.item[data-align-self="flex-end"]{
-		align-self: flex-end;
-	}
-
-
-	
-  
-</style>
-
-<h1>레이아웃 core - flex</h1>
+<h1>레이아웃 core 가로형 - Flex</h1>
 
 <section>
 	<h2>각 cell 동일 사이즈</h2>
@@ -106,13 +53,6 @@
 	<div class="container" data-display="flex">
 		<div class="item" data-flex="none" style="width: 80px">item1</div>
 		<div class="item" data-flex="1">item2</div>
-	</div>
-	<br>
-	<h3>두 번째 셀 flex: none, 고정 너비</h3>
-	<div class="container" data-display="flex">
-		<div class="item" data-flex="1">item1</div>
-		<div class="item" data-flex="none" style="width: 80px">item2</div>
-		<div class="item" data-flex="1">item3</div>
 	</div>
 </section>
 
