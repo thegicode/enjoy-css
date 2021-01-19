@@ -1,0 +1,49 @@
+p {
+  margin: 0;
+}
+
+section {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 10px solid #e4f7f0;
+}
+
+h2 {
+  color: #307d61;
+}
+
+.container {
+  display: flex;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.item {
+  overflow: hidden;
+}
+
+.__icon {
+  display: inline-block;
+  margin-right: 7px;
+  border-radius: 5px;
+  background: orange;
+}
+
+.__title {
+  color: #333;
+}
+
+.__text {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.__title[data-text="ellipsis"],
+.__text[data-text="ellipsis"] {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*# sourceMappingURL=content-flex.css.map */

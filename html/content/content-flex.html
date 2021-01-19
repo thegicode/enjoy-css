@@ -1,96 +1,16 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <title>content 1 - flex </title>
-<!-- <link rel="stylesheet" href=""> -->
-<style>
-	p{
-		margin: 0;
-	}
-	section{
-		margin-top: 50px;
-		padding-top: 30px;
-		border-top: 10px solid #e4f7f0;
-	}
-	h2{
-		color: #307d61;
-	}
-
-	.container{
-		padding: 10px;
-		border: 1px solid #ddd;
-	}
-	.container[data-display="flex"]{
-		display: flex;
-	}
-	.container[data-height="70"]{
-		height: 70px;
-	}
-	.container[data-align-items="center"]{
-		align-items: center;
-	}
-	.container[data-align-items="flex-end"]{
-		align-items: flex-end;
-	}
-
-	.item{
-		overflow: hidden;
-	}
-	.item[data-flex="none"]{
-		flex: none;
-	}
-	.item[data-width="50"]{
-		width: 50px;
-	}
-	.item[data-align-self="center"]{
-		align-self: center;
-	}
-	.item[data-align-self="flex-end"]{
-		align-self: flex-end;
-	}
-
-    .__icon{
-    	display: inline-block;
-    	margin-right: 7px;
-    	border-radius: 5px;
-    	background: orange;
-    }
-    .__icon[data-size="15"]{
-    	width: 15px;
-    	height: 15px;
-    }
-    .__icon[data-size="25"]{
-    	width: 25px;
-    	height: 25px;
-    }
-    .__icon[data-size="35"]{
-    	width: 35px;
-    	height: 35px;
-    }
-
-    .__title{
-    	color: #333;
-    }
-    .__text{
-    	margin-top: 5px;
-    	font-size: 0.8rem;
-    	color: #999;
-    }
-    .__title[data-text="ellipsis"],
-	.__text[data-text="ellipsis"]{
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-    }
-</style>
+<link rel="stylesheet" href="../../css/content-flex.css">
 
 <h1>레이아웃 샘플 가로형 : Flex</h1>
 
 <section>
 	<h2>가. 첫번째 셀 유동적</h2>
 	<h3>1. 텍스트 짧은 경우</h3>
-	<div class="container" data-display="flex">
-		<div class="item" data-flex="none">
-			<span class="__icon" data-size="15"></span>
+	<div class="container">
+		<div class="item" style="flex: none">
+			<span class="__icon" style="width: 15px; height: 15px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -101,9 +21,9 @@
 	<br>
 
 	<h3>2. 텍스트 멀티라인</h3>
-	<div class="container" data-display="flex">
-		<div class="item" data-flex="none">
-			<span class="__icon" data-size="25"></span>
+	<div class="container">
+		<div class="item" style="flex: none">
+			<span class="__icon" style="width: 25px; height: 25px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
@@ -114,9 +34,9 @@
 	<br>
 
 	<h3>3. 텍스트 말줄임</h3>
-	<div class="container" data-display="flex">
-		<div class="item" data-flex="none">
-			<span class="__icon" data-size="35"></span>
+	<div class="container">
+		<div class="item" style="flex: none">
+			<span class="__icon" style="width: 35px; height: 35px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title" data-text="ellipsis">[말줄임] 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
@@ -129,9 +49,9 @@
 <section>
 	<h2>나. 첫번째 셀 고정</h2>
 	<h3>1. 텍스트 짧은 경우</h3>
-	<div class="container" data-display="flex">
-		<div class="item" data-flex="none" data-width="50">
-			<span class="__icon" data-size="15"></span>
+	<div class="container">
+		<div class="item" style="flex: none; width: 50px">
+			<span class="__icon" style="width: 15px; height: 15px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -142,9 +62,9 @@
 	<br>
 
 	<h3>2. 텍스트 멀티라인</h3>
-	<div class="container" data-display="flex">
-		<div class="item" data-flex="none" data-width="50">
-			<span class="__icon" data-size="25"></span>
+	<div class="container">
+		<div class="item" style="flex: none; width: 50px">
+			<span class="__icon" style="width: 25px; height: 25px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
@@ -155,9 +75,9 @@
 	<br>
 
 	<h3>3. 텍스트 말줄임</h3>
-	<div class="container" data-display="flex">
-		<div class="item" data-flex="none" data-width="50">
-			<span class="__icon" data-size="35"></span>
+	<div class="container">
+		<div class="item" style="flex: none; width: 50px">
+			<span class="__icon" style="width: 35px; height: 35px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title" data-text="ellipsis">[말줄임] 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
@@ -169,9 +89,9 @@
 <section>
 	<h2>다. 수직 정렬 : align-items</h2>
 	<h3>1. 기본</h3>
-	<div class="container" data-display="flex" data-height="70">
-		<div class="item" data-flex="none">
-			<span class="__icon" data-size="15"></span>
+	<div class="container" style="height: 70px;">
+		<div class="item" style="flex: none">
+			<span class="__icon" style="width: 15px; height: 15px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -182,9 +102,9 @@
 	<br>
 
 	<h3>2. align-items : center</h3>
-	<div class="container" data-display="flex" data-height="70" data-align-items="center">
-		<div class="item" data-flex="none">
-			<span class="__icon" data-size="25"></span>
+	<div class="container" style="height: 70px; align-items: center;">
+		<div class="item" style="flex: none">
+			<span class="__icon" style="width: 25px; height: 25px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -195,9 +115,9 @@
 	<br>
 
 	<h3>3. align-items : flex-end</h3>
-	<div class="container" data-display="flex" data-height="70" data-align-items="flex-end">
-		<div class="item" data-flex="none">
-			<span class="__icon" data-size="35"></span>
+	<div class="container" style="height: 70px; align-items: flex-end">
+		<div class="item" style="flex: none">
+			<span class="__icon" style="width: 35px; height: 35px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -209,9 +129,9 @@
 <section>
 	<h2>라. 수직 정렬 : align-self</h2>
 	<h3>1. 기본</h3>
-	<div class="container" data-display="flex" data-height="70">
-		<div class="item" data-flex="none">
-			<span class="__icon" data-size="15"></span>
+	<div class="container" style="height: 70px;">
+		<div class="item" style="flex: none">
+			<span class="__icon" style="width: 15px; height: 15px;"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -222,11 +142,11 @@
 	<br>
 
 	<h3>2. align-self : center</h3>
-	<div class="container" data-display="flex" data-height="70">
-		<div class="item" data-flex="none">
-			<span class="__icon" data-size="25"></span>
+	<div class="container" style="height: 70px;">
+		<div class="item" style="flex: none">
+			<span class="__icon" style="width: 25px; height: 25px;"></span>
 		</div>
-		<div class="item" data-align-self="center">
+		<div class="item" style="align-self: center">
 			<p class="__title">타이틀 타이틀</p>
 			<p class="__text">텍스트 텍스트</p>
 		</div>
@@ -235,11 +155,11 @@
 	<br>
 
 	<h3>3. align-self : flex-end</h3>
-	<div class="container" data-display="flex" data-height="70">
-		<div class="item" data-flex="none">
-			<span class="__icon" data-size="35"></span>
+	<div class="container" style="height: 70px;">
+		<div class="item" style="flex: none">
+			<span class="__icon" style="width: 35px; height: 35px;"></span>
 		</div>
-		<div class="item" data-align-self="flex-end">
+		<div class="item" style="align-self: flex-end">
 			<p class="__title">타이틀 타이틀</p>
 			<p class="__text">텍스트 텍스트</p>
 		</div>

@@ -38,13 +38,13 @@
 	<h2>일부 셀 고정</h2>
 	<h3>첫 번째 셀 컨텐츠 길이에 따라 너비 고정</h3>
 	<div class="container grid-equal">
-		<div class="item grid-fix-width">item1 - fix</div>
+		<div class="item" style="flex: none;">item1 - fix</div>
 		<div class="item">item2</div>
 	</div>
 	<br>
 	<h3>첫 번째 셀 200px로 너비 고정</h3>
 	<div class="container grid-equal">
-		<div class="item grid-fix-width" style="width: 120px">item1 - fix, 120px</div>
+		<div class="item" style="flex: none; width: 120px">item1 - fix, 120px</div>
 		<div class="item">item2</div>
 	</div>
 </section>
@@ -67,16 +67,16 @@
 	<br>
 	<h3>가운데</h3>
 	<div class="container grid-equal" style="height: 50px; align-items: center;">
-		<div class="item" data-flex="1">item</div>
-		<div class="item" data-flex="1">item</div>
-		<div class="item" data-flex="1">item</div>
+		<div class="item">item</div>
+		<div class="item">item</div>
+		<div class="item">item</div>
 	</div>
 	<br>
 	<h3>하단</h3>
 	<div class="container grid-equal" style="height: 50px; align-items: flex-end;">
-		<div class="item" data-flex="1">item</div>
-		<div class="item" data-flex="1">item</div>
-		<div class="item" data-flex="1">item</div>
+		<div class="item">item</div>
+		<div class="item">item</div>
+		<div class="item">item</div>
 	</div>
 </section>
 
