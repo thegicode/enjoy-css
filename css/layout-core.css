@@ -1,0 +1,34 @@
+section {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 10px solid #e4f7f0;
+}
+
+h2 {
+  color: #222;
+}
+
+.container {
+  border: 1px solid #ddd;
+}
+
+.item {
+  background: #a2d4c1;
+  outline: 1px solid #54957e;
+  font-size: 14px;
+  padding: 0.5rem;
+}
+
+.grid-equal {
+  display: flex;
+}
+
+.grid-equal > * {
+  flex: 1;
+}
+
+.grid-fix-width {
+  flex: none;
+}
+
+/*# sourceMappingURL=layout-core.css.map */
