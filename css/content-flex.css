@@ -22,11 +22,28 @@ h2 {
   overflow: hidden;
 }
 
-.__icon {
+.icon-rect {
   display: inline-block;
   margin-right: 7px;
   border-radius: 5px;
   background: orange;
+  width: 10px;
+  height: 10px;
+}
+
+.icon-rect.icon-15 {
+  width: 15px;
+  height: 15px;
+}
+
+.icon-rect.icon-25 {
+  width: 25px;
+  height: 25px;
+}
+
+.icon-rect.icon-35 {
+  width: 35px;
+  height: 35px;
 }
 
 .__title {
@@ -39,11 +56,35 @@ h2 {
   color: #999;
 }
 
-.__title[data-text="ellipsis"],
-.__text[data-text="ellipsis"] {
+.text-ellipsis {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.ex1 .container .item:first-child {
+  flex: none;
+}
+
+.ex2 .container .item:first-child {
+  flex: none;
+  width: 50px;
+}
+
+.ex3 .container {
+  height: 70px;
+}
+
+.ex3 .container .item:first-child {
+  flex: none;
+}
+
+.ex4 .container {
+  height: 70px;
+}
+
+.ex4 .container .item:first-child {
+  flex: none;
 }
 
 /*# sourceMappingURL=content-flex.css.map */

@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
-<title>content 1 - flex </title>
+<title>Content - flex </title>
 <link rel="stylesheet" href="../../css/content-flex.css">
 
 <h1>레이아웃 샘플 가로형 : Flex</h1>
 
-<section>
-	<h2>가. 첫번째 셀 유동적</h2>
+<section class="ex1">
+	<h2>가. 첫번째 셀 고정 : 기본</h2>
+	<h3>1. 텍스트 짧은 경우</h3>
+	<div class="ex1-1 container">
+		<div class="item">
+			<span class="icon-rect icon-15"></span>
+		</div>
+		<div class="item">
+			<p class="__title">타이틀 타이틀</p>
+			<p class="__text">텍스트 텍스트</p>
+		</div>
+	</div>
+
+	<br>
+
+	<h3>2. 텍스트 멀티라인</h3>
+	<div class="ex1-2 container">
+		<div class="item">
+			<span class="icon-rect icon-25"></span>
+		</div>
+		<div class="item">
+			<p class="__title">타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
+			<p class="__text">텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 </p>
+		</div>
+	</div>
+
+	<br>
+
+	<h3>3. 텍스트 말줄임</h3>
+	<div class="ex1-3 container">
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
+		</div>
+		<div class="item">
+			<p class="__title text-ellipsis">[말줄임] 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
+			<p class="__text text-ellipsis" >[말줄임] 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 </p>
+		</div>
+	</div>
+</section>
+
+
+<section class="ex2">
+	<h2>나. 첫번째 셀 고정값</h2>
 	<h3>1. 텍스트 짧은 경우</h3>
 	<div class="container">
-		<div class="item" style="flex: none">
-			<span class="__icon" style="width: 15px; height: 15px;"></span>
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -22,8 +63,8 @@
 
 	<h3>2. 텍스트 멀티라인</h3>
 	<div class="container">
-		<div class="item" style="flex: none">
-			<span class="__icon" style="width: 25px; height: 25px;"></span>
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
@@ -35,8 +76,8 @@
 
 	<h3>3. 텍스트 말줄임</h3>
 	<div class="container">
-		<div class="item" style="flex: none">
-			<span class="__icon" style="width: 35px; height: 35px;"></span>
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
 		</div>
 		<div class="item">
 			<p class="__title" data-text="ellipsis">[말줄임] 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
@@ -45,53 +86,12 @@
 	</div>
 </section>
 
-
-<section>
-	<h2>나. 첫번째 셀 고정</h2>
-	<h3>1. 텍스트 짧은 경우</h3>
-	<div class="container">
-		<div class="item" style="flex: none; width: 50px">
-			<span class="__icon" style="width: 15px; height: 15px;"></span>
-		</div>
-		<div class="item">
-			<p class="__title">타이틀 타이틀</p>
-			<p class="__text">텍스트 텍스트</p>
-		</div>
-	</div>
-
-	<br>
-
-	<h3>2. 텍스트 멀티라인</h3>
-	<div class="container">
-		<div class="item" style="flex: none; width: 50px">
-			<span class="__icon" style="width: 25px; height: 25px;"></span>
-		</div>
-		<div class="item">
-			<p class="__title">타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
-			<p class="__text">텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 </p>
-		</div>
-	</div>
-
-	<br>
-
-	<h3>3. 텍스트 말줄임</h3>
-	<div class="container">
-		<div class="item" style="flex: none; width: 50px">
-			<span class="__icon" style="width: 35px; height: 35px;"></span>
-		</div>
-		<div class="item">
-			<p class="__title" data-text="ellipsis">[말줄임] 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀 멀티라인 타이틀</p>
-			<p class="__text"  data-text="ellipsis">[말줄임] 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 텍스트 멀티라인 </p>
-		</div>
-	</div>
-</section>
-
-<section>
+<section class="ex3">
 	<h2>다. 수직 정렬 : align-items</h2>
 	<h3>1. 기본</h3>
-	<div class="container" style="height: 70px;">
-		<div class="item" style="flex: none">
-			<span class="__icon" style="width: 15px; height: 15px;"></span>
+	<div class="container">
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -102,9 +102,9 @@
 	<br>
 
 	<h3>2. align-items : center</h3>
-	<div class="container" style="height: 70px; align-items: center;">
-		<div class="item" style="flex: none">
-			<span class="__icon" style="width: 25px; height: 25px;"></span>
+	<div class="container" style="align-items: center;">
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -115,9 +115,9 @@
 	<br>
 
 	<h3>3. align-items : flex-end</h3>
-	<div class="container" style="height: 70px; align-items: flex-end">
-		<div class="item" style="flex: none">
-			<span class="__icon" style="width: 35px; height: 35px;"></span>
+	<div class="container" style="align-items: flex-end">
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -126,12 +126,12 @@
 	</div>
 </section>
 
-<section>
+<section class="ex4">
 	<h2>라. 수직 정렬 : align-self</h2>
 	<h3>1. 기본</h3>
-	<div class="container" style="height: 70px;">
-		<div class="item" style="flex: none">
-			<span class="__icon" style="width: 15px; height: 15px;"></span>
+	<div class="container">
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
 		</div>
 		<div class="item">
 			<p class="__title">타이틀 타이틀</p>
@@ -142,9 +142,9 @@
 	<br>
 
 	<h3>2. align-self : center</h3>
-	<div class="container" style="height: 70px;">
-		<div class="item" style="flex: none">
-			<span class="__icon" style="width: 25px; height: 25px;"></span>
+	<div class="container">
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
 		</div>
 		<div class="item" style="align-self: center">
 			<p class="__title">타이틀 타이틀</p>
@@ -155,9 +155,9 @@
 	<br>
 
 	<h3>3. align-self : flex-end</h3>
-	<div class="container" style="height: 70px;">
-		<div class="item" style="flex: none">
-			<span class="__icon" style="width: 35px; height: 35px;"></span>
+	<div class="container">
+		<div class="item">
+			<span class="icon-rect icon-35"></span>
 		</div>
 		<div class="item" style="align-self: flex-end">
 			<p class="__title">타이틀 타이틀</p>
