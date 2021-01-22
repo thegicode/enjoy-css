@@ -12,11 +12,22 @@ h2 {
   border: 1px solid #ddd;
 }
 
+.container-focus {
+  border-width: 1px;
+  border-color: purple;
+}
+
 .item {
   background: #a2d4c1;
   outline: 1px solid #54957e;
   font-size: 14px;
   padding: 0.5rem;
+}
+
+.item-focus {
+  outline-color: #2f2e2f;
+  background: purple;
+  color: #fff;
 }
 
 .grid-equal {

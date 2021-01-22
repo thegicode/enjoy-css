@@ -38,42 +38,42 @@
 	<h2>일부 셀 고정</h2>
 	<h3>첫 번째 셀 컨텐츠 길이에 따라 너비 고정</h3>
 	<div class="container grid-equal">
-		<div class="item" style="flex: none;">item1 - fix</div>
+		<div class="item item-focus" style="flex: none;">item1 - fix</div>
 		<div class="item">item2</div>
 	</div>
 	<br>
 	<h3>첫 번째 셀 200px로 너비 고정</h3>
 	<div class="container grid-equal">
-		<div class="item" style="flex: none; width: 120px">item1 - fix, 120px</div>
+		<div class="item item-focus" style="flex: none; width: 120px">item1 - fix, 120px</div>
 		<div class="item">item2</div>
 	</div>
 </section>
 
 <section>
-	<h2>세로 정렬</h2>
-	<h3>기본 - align-items: stretch</h3>
-	<div class="containert grid-equal" style="height: 50px;">
+	<h2>세로 정렬 : align-items</h2>
+	<h3>기본 : stretch</h3>
+	<div class="container container-focus grid-equal" style="height: 50px;">
 		<div class="item">item</div>
 		<div class="item">item</div>
 		<div class="item">item</div>
 	</div>
 	<br>
 	<h3>상단</h3>
-	<div class="container grid-equal" style="height: 50px; align-items: flex-start;">
+	<div class="container container-focus grid-equal" style="height: 50px; align-items: flex-start;">
 		<div class="item">item</div>
 		<div class="item">item</div>
 		<div class="item">item</div>
 	</div>
 	<br>
 	<h3>가운데</h3>
-	<div class="container grid-equal" style="height: 50px; align-items: center;">
+	<div class="container container-focus grid-equal" style="height: 50px; align-items: center;">
 		<div class="item">item</div>
 		<div class="item">item</div>
 		<div class="item">item</div>
 	</div>
 	<br>
 	<h3>하단</h3>
-	<div class="container grid-equal" style="height: 50px; align-items: flex-end;">
+	<div class="container container-focus grid-equal" style="height: 50px; align-items: flex-end;">
 		<div class="item">item</div>
 		<div class="item">item</div>
 		<div class="item">item</div>
@@ -82,22 +82,28 @@
 
 
 <section>
-	<h2>일부 셀만 세로 정렬 변경</h2>
+	<h2>일부 셀만 세로 정렬 변경 : align-self</h2>
+	<h3>기본 : stretch</h3>
+	<div class="container grid-equal" style="height: 50px;">
+		<div class="item item-focus">item</div>
+		<div class="item">item</div>
+	</div>
+	<br>
 	<h3>상단</h3>
 	<div class="container grid-equal" style="height: 50px;">
-		<div class="item" style="align-self: flex-start;">item</div>
+		<div class="item item-focus" style="align-self: flex-start;">item</div>
 		<div class="item">item</div>
 	</div>
 	<br>
 	<h3>가운데</h3>
 	<div class="container grid-equal" style="height: 50px;">
-		<div class="item" style="align-self: center;">item</div>
+		<div class="item item-focus" style="align-self: center;">item</div>
 		<div class="item" data-flex="1">item</div>
 	</div>
 	<br>
 	<h3>하단</h3>
 	<div class="container grid-equal" style="height: 50px;">
-		<div class="item" style="align-self: flex-end;">item</div>
+		<div class="item item-focus" style="align-self: flex-end;">item</div>
 		<div class="item" data-flex="1">item</div>
 	</div>
 </section>
