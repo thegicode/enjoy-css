@@ -22,26 +22,24 @@ h2 {
   overflow: hidden;
 }
 
-.icon-rect {
+span[class^="icon-rect-"] {
   display: inline-block;
   margin-right: 7px;
   border-radius: 5px;
   background: orange;
-  width: 10px;
-  height: 10px;
 }
 
-.icon-rect.icon-15 {
+.icon-rect-15 {
   width: 15px;
   height: 15px;
 }
 
-.icon-rect.icon-25 {
+.icon-rect-25 {
   width: 25px;
   height: 25px;
 }
 
-.icon-rect.icon-35 {
+.icon-rect-35 {
   width: 35px;
   height: 35px;
 }
