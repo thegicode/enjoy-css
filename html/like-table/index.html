@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 | Like Table</title>
+    <style>
+        body {
+            margin: 2rem;
+        }
+        .container {
+            display: table;
+            /* table-layout: fixed; */
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .colgroup {
+            display: table-column-group;
+        }
+        .col {
+            display: table-column;
+        }
+        .thead {
+            display: table-header-group;
+        }
+        .tbody {
+            display: table-row-group;
+        }
+        [role="rowgroup"] {
+            width: 100%;
+        }
+        [role="row"] {
+            display: table-row;
+        }
+        [role="columnheader"],
+        [role="cell"] {
+            display: table-cell;
+            height: 50px;
+            box-sizing: border-box;
+            padding: 1rem;
+            border: solid 1px rgba(0, 100, 200, 0.15);
+            background-color: rgba(0, 100, 200, 0.1);
+            color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <div role="table" class="container">
+        <!-- <div class="colgroup">
+            <span class="col" width="10%">
+            <span class="col">
+        </div> -->
+        <div role="rowgroup" class="thead">
+            <div role="row">
+                <span role="columnheader" style="width:20%">항목1</span>
+                <span role="columnheader">항목2</span>
+            </div>
+        </div>
+        <div role="rowgroup" class="tbody">
+            <div role="row">
+                <span role="cell">가</span>
+                <span role="cell">000</span>
+            </div>
+            <div role="row">
+                <span role="cell">나</span>
+                <span role="cell">111egogoeogoegoeggogo</span>
+            </div>
+            <div role="row">
+                <span role="cell">다</span>
+                <span role="cell">222</span>
+            </div>
+            <div role="row">
+                <span role="cell">라</span>
+                <span role="cell">333</span>
+            </div>
+            <div role="row">
+                <span role="cell">마</span>
+                <span role="cell">444</span>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
